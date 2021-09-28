@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đặt phòng khách sạn hạng sang</title>
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      media="all"
+      href="./assets/css/daterangepicker.css"
+    />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/js/moment.min.js"></script>
+    <script
+      type="text/javascript"
+      src="./assets/js/daterangepicker.min.js"
+    ></script>
+    <script src="./assets/js/datepicker-vi.js"></script>
+    <script src="./assets/js/pages/index.js"></script>
+  </head>
+  <body onscroll="onScrollPage(this)">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+    <div id="main">
+     <div class="wallpaper-header">
+        <div class="wrapper-content">
+          <div class="header-banner">
+            <div class="logo">
+              <img src="./assets/images/icons/icon_logo_mytour_white.svg" />
+            </div>
+            <div class="navigation-header">
+              <div class="menu-type">
+                <ul>
+                  <li class="active"><a href="">Khách sạn</a></li>
+                  <li><a href="">Vé máy bay</a></li>
+                  <li><a href="">Tour & Sự kiện</a></li>
+                  <li><a href="">The memories</a></li>
+                </ul>
+              </div>
+              <div class="menu-contact">
+                <div class="group-item-contact">
+                  <i class="far fa-handshake fa-lg"></i>
+                  <div class="text">Hợp tác với chúng tôi</div>
+                </div>
+                <div class="group-item-contact">
+                  <i class="fas fa-phone-alt fa-lg"></i>
+                  <div class="text">19002083</div>
+                </div>
+                <div class="icon icon-bell">
+                  <i class="far fa-bell fa-lg"></i>
+                </div>
+                <div class="icon icon-account">
+                  <i class="far fa-user-circle fa-lg"></i>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="icon icon-bar" onclick="openNav()">
+                  <i class="fas fa-bars fa-lg"></i>
+                </div>
+              </div>
+            </div>
+            <div class="bar-icon-drawer"></div>
+          </div>
+        </div>
+     </div>
+      <div class="bannerTop">
+        <div class="wrapper-content">
+          <div class="box-option">
+            <div class="title-box">Khách sạn</div>
+            <div class="container-box">
+              <div class="box-item item-place">
+                <div class="title">Địa điểm</div>
+                <input
+                  class="input input-place"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="Thành phố, khách sạn, điểm đến"
+                />
+                <div class="indicator"></div>
+                <div class="dropdown cities">
+                  <h3>Các địa điểm nổi bật</h3>
+                  <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Hà Nội</li>
+                    <li>
+                      <i class="fas fa-map-marker-alt"></i> TP Hồ Chí Minh
+                    </li>
+                    <li>
+                      <i class="fas fa-map-marker-alt"></i> Bà Rịa - Vũng Tàu
+                    </li>
+                    <li><i class="fas fa-map-marker-alt"></i> Đà Nẵng</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Đà Lạt</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Nha Trang</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Hội An</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Long An</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Bến Tre</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Vĩnh Long</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Khánh Hòa</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Phú Thọ</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Hà Giang</li>
+                    <li>
+                      <i class="fas fa-map-marker-alt"></i> Thừa Thiên Huế
+                    </li>
+                    <li><i class="fas fa-map-marker-alt"></i> Quảng Ngãi</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Cao Bằng</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Thái Nghyên</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="box-item item-start-day">
+                <div class="title">Thời gian đi</div>
+                <input
+                  class="input input-start-day"
+                  name="daterange"
+                  autocomplete="off"
+                  placeholder="Ngày đến"
+                  value=""
+                />
+                <div class="indicator active"></div>
+              </div>
+              <div class="total-day">
+                <span>
+                  2
+                  <i class="fas fa-moon" style="color: black"></i>
+                </span>
+              </div>
+              <div class="box-item item-people">
+                <div class="title">Số phòng, số khách</div>
+                <input
+                  class="input input-people"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="1 Phòng, 2 người lớn, 0 trẻ em"
+                  value=""
+                />
+                <div class="dropdown people">
+                  <div class="row room">
+                    <div class="type">Phòng</div>
+                    <div class="edit-number">
+                      <div class="circle minus">
+                        <i class="fas fa-minus"></i>
+                      </div>
+                      <div class="quality">2</div>
+                      <div class="circle plus">
+                        <i class="fas fa-plus"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row room">
+                    <div class="type">Người lớn</div>
+                    <div class="edit-number">
+                      <div class="circle minus">
+                        <i class="fas fa-minus"></i>
+                      </div>
+                      <div class="quality">2</div>
+                      <div class="circle plus">
+                        <i class="fas fa-plus"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row room">
+                    <div class="type">Trẻ em</div>
+                    <div class="edit-number">
+                      <div class="circle minus">
+                        <i class="fas fa-minus"></i>
+                      </div>
+                      <div class="quality">2</div>
+                      <div class="circle plus">
+                        <i class="fas fa-plus"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="indicator active"></div>
+              </div>
+              <div class="box-item item-search">
+                <i class="fas fa-search fa-2x"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper-content">
+        <div class="container-ultility">
+          <div class="box-utility">
+            <div class="picture">
+              <img src="./assets/images/icons/icon_support_247.svg" alt="" />
+            </div>
+            <div class="title">Hỗ trợ khách hàng 24/7</div>
+            <div class="description">
+              Chat là có, gọi là nghe, không quản đêm hôm, ngày nghỉ và ngày lễ
+            </div>
+          </div>
+          <div class="box-utility">
+            <div class="picture">
+              <img src="./assets/images/icons/icon_best_price.svg" alt="" />
+            </div>
+            <div class="title">Gía tốt sát ngày</div>
+            <div class="description">
+              Cam kết giá tốt nhất khi đặt gần ngày cho chuyến đi của bạn.
+            </div>
+          </div>
+          <div class="box-utility">
+            <div class="picture">
+              <img src="./assets/images/icons/icon_payment.svg" alt="" />
+            </div>
+            <div class="title">Thanh toán dễ dàng, đa dạng</div>
+            <div class="description">
+              Bao gồm thêm chuyển khoản ngân hàng và tiền mặt tại cửa hàng
+            </div>
+          </div>
+          <div class="box-utility">
+            <div class="picture">
+              <img src="./assets/images/icons/icon_total_hotel.svg" alt="" />
+            </div>
+            <div class="title">Hơn 8000+ khách sạn dọc Việt Nam</div>
+            <div class="description">
+              Hàng nghìn khách sạn, đặc biệt là 4 sao và 5 sao, cho phép bạn
+              thoải mái lựa chọn, giá cạnh tranh, phong phú.
+            </div>
+          </div>
+        </div>
+        <div class="component hotel-location">
+          <div class="title">Khách sạn theo địa điểm</div>
+        </div>
+        <div class="container-hotel-by-location">
+          <div class="item-hotel-by-location">
+            <div class="picture">
+              <img src="assets/images/wall/hochiminh.png" alt="" />
+            </div>
+            <div class="caption">Hồ Chí Minh</div>
+            <div class="description">4577 Khách sạn</div>
+          </div>
+          <div class="item-hotel-by-location">
+            <div class="picture">
+              <img src="assets/images/wall/hanoi.png" alt="" />
+            </div>
+            <div class="caption">Hà Nội</div>
+            <div class="description">2831 Khách sạn</div>
+          </div>
+          <div class="item-hotel-by-location">
+            <div class="picture">
+              <img src="assets/images/wall/danang.png" alt="" />
+            </div>
+            <div class="caption">Đà Nẵng</div>
+            <div class="description">1996 Khách sạn</div>
+          </div>
+          <div class="item-hotel-by-location">
+            <div class="picture">
+              <img src="assets/images/wall/da-lat.png" alt="" />
+            </div>
+            <div class="caption">Đà Lạt</div>
+            <div class="description">1629 Khách sạn</div>
+          </div>
+          <div class="item-hotel-by-location">
+            <div class="picture">
+              <img src="assets/images/wall/vung-tau.png" alt="" />
+            </div>
+            <div class="caption">Bà Rịa- Vũng Tàu</div>
+            <div class="description">1661 Khách sạn</div>
+          </div>
+          <div class="item-hotel-by-location">
+            <div class="picture">
+              <img src="assets/images/wall/nha-trang.png" alt="" />
+            </div>
+            <div class="caption">Nha Trang</div>
+            <div class="description">1172 Khách sạn</div>
+          </div>
+          <div class="item-hotel-by-location">
+            <div class="picture">
+              <img src="assets/images/wall/hoi-an.png" alt="" />
+            </div>
+            <div class="caption">Hội An</div>
+            <div class="description">1100 Khách sạn</div>
+          </div>
+          <div class="item-hotel-by-location">
+            <div class="picture">
+              <img src="assets/images/wall/hochiminh.png" alt="" />
+            </div>
+            <div class="caption">Hồ Chí Minh</div>
+            <div class="description">4577 Khách sạn</div>
+          </div>
+        </div>
+      </div>
+      <div class="content-page">
+        <div class="wrapper-content">
+          <div class="component">
+            <div class="header">
+              <div class="title">Khách sạn giá tốt chỉ có trên Mytour</div>
+              <div class="options">
+                <div class="item-option">
+                  <div class="icon-option">
+                    <img src="./assets/images/icons/hotel.png" alt="" />
+                  </div>
+                  <div class="title-option">Khách sạn mới</div>
+                </div>
+                <div class="item-option">
+                  <div class="icon-option">
+                    <img src="./assets/images/icons/fire.png" alt="" />
+                  </div>
+                  <div class="title-option">Gía hấp dẫn</div>
+                </div>
+                <div class="item-option">
+                  <div class="icon-option">
+                    <img src="./assets/images/icons/refresh.png" alt="" />
+                  </div>
+                  <div class="title-option">Cập nhật hàng tuần</div>
+                </div>
+                <div class="item-option">
+                  <div class="icon-option">
+                    <img src="./assets/images/icons/like.png" alt="" />
+                  </div>
+                  <div class="title-option">Dành riêng cho bạn</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-hotel">
+            <div class="box-hotel">
+              <div class="picture">
+                <img
+                  src="assets/images/photos-hotel/sheraton-nhatrang.jpg"
+                  alt=""
+                />
+                <div class="sale-percent">58%</div>
+                <div class="favorous">
+                  <i class="far fa-heart fa-2x"></i>
+                </div>
+                <div class="medal">
+                  <img
+                    src="./assets/images/icons/icon_tag_the_best.svg"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+              </div>
+              <div class="container-content-hotel">
+                <div class="content-hotel">
+                  <div class="name">Khách sạn Sheraton Nha Trang</div>
+                  <div class="star-voted">
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="location">
+                    <i class="fas fa-map-signs"></i>
+                    Thành Phố Nha Trang
+                  </div>
+                  <div class="review">
+                    <div class="mark">9.0</div>
+                    <div class="comment">Tuyệt vời (572 đánh giá)</div>
+                    <div class="mark-reivew">
+                      <img
+                        src="assets/images/icons/icon_tripadvisor.svg"
+                        alt=""
+                      />
+                      9.0
+                    </div>
+                  </div>
+                </div>
+                <div class="price">
+                  <div class="old-price">3.527.204đ</div>
+                  <div class="current-price">1.527.204đ</div>
+                </div>
+              </div>
+            </div>
+            <div class="box-hotel">
+              <div class="picture">
+                <img
+                  src="assets/images/photos-hotel/sheraton-nhatrang.jpg"
+                  alt=""
+                />
+                <div class="sale-percent">58%</div>
+                <div class="favorous">
+                  <i class="far fa-heart fa-2x"></i>
+                </div>
+                <div class="medal">
+                  <img
+                    src="./assets/images/icons/icon_tag_the_best.svg"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+              </div>
+              <div class="container-content-hotel">
+                <div class="content-hotel">
+                  <div class="name">Khách sạn Sheraton Nha Trang</div>
+                  <div class="star-voted">
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="location">
+                    <i class="fas fa-map-signs"></i>
+                    Thành Phố Nha Trang
+                  </div>
+                  <div class="review">
+                    <div class="mark">9.0</div>
+                    <div class="comment">Tuyệt vời (572 đánh giá)</div>
+                    <div class="mark-reivew">
+                      <img
+                        src="assets/images/icons/icon_tripadvisor.svg"
+                        alt=""
+                      />
+                      9.0
+                    </div>
+                  </div>
+                </div>
+                <div class="price">
+                  <div class="old-price">3.527.204đ</div>
+                  <div class="current-price">1.527.204đ</div>
+                </div>
+              </div>
+            </div>
+            <div class="box-hotel">
+              <div class="picture">
+                <img
+                  src="assets/images/photos-hotel/sheraton-nhatrang.jpg"
+                  alt=""
+                />
+                <div class="sale-percent">58%</div>
+                <div class="favorous">
+                  <i class="far fa-heart fa-2x"></i>
+                </div>
+                <div class="medal">
+                  <img
+                    src="./assets/images/icons/icon_tag_the_best.svg"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+              </div>
+              <div class="container-content-hotel">
+                <div class="content-hotel">
+                  <div class="name">Khách sạn Sheraton Nha Trang</div>
+                  <div class="star-voted">
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="location">
+                    <i class="fas fa-map-signs"></i>
+                    Thành Phố Nha Trang
+                  </div>
+                  <div class="review">
+                    <div class="mark">9.0</div>
+                    <div class="comment">Tuyệt vời (572 đánh giá)</div>
+                    <div class="mark-reivew">
+                      <img
+                        src="assets/images/icons/icon_tripadvisor.svg"
+                        alt=""
+                      />
+                      9.0
+                    </div>
+                  </div>
+                </div>
+                <div class="price">
+                  <div class="old-price">3.527.204đ</div>
+                  <div class="current-price">1.527.204đ</div>
+                </div>
+              </div>
+            </div>
+            <div class="box-hotel">
+              <div class="picture">
+                <img
+                  src="assets/images/photos-hotel/sheraton-nhatrang.jpg"
+                  alt=""
+                />
+                <div class="sale-percent">58%</div>
+                <div class="favorous">
+                  <i class="far fa-heart fa-2x"></i>
+                </div>
+                <div class="medal">
+                  <img
+                    src="./assets/images/icons/icon_tag_the_best.svg"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+              </div>
+              <div class="container-content-hotel">
+                <div class="content-hotel">
+                  <div class="name">Khách sạn Sheraton Nha Trang</div>
+                  <div class="star-voted">
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="location">
+                    <i class="fas fa-map-signs"></i>
+                    Thành Phố Nha Trang
+                  </div>
+                  <div class="review">
+                    <div class="mark">9.0</div>
+                    <div class="comment">Tuyệt vời (572 đánh giá)</div>
+                    <div class="mark-reivew">
+                      <img
+                        src="assets/images/icons/icon_tripadvisor.svg"
+                        alt=""
+                      />
+                      9.0
+                    </div>
+                  </div>
+                </div>
+                <div class="price">
+                  <div class="old-price">3.527.204đ</div>
+                  <div class="current-price">1.527.204đ</div>
+                </div>
+              </div>
+            </div>
+            <div class="box-hotel">
+              <div class="picture">
+                <img
+                  src="assets/images/photos-hotel/sheraton-nhatrang.jpg"
+                  alt=""
+                />
+                <div class="sale-percent">58%</div>
+                <div class="favorous">
+                  <i class="far fa-heart fa-2x"></i>
+                </div>
+                <div class="medal">
+                  <img
+                    src="./assets/images/icons/icon_tag_the_best.svg"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+              </div>
+              <div class="container-content-hotel">
+                <div class="content-hotel">
+                  <div class="name">Khách sạn Sheraton Nha Trang</div>
+                  <div class="star-voted">
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="location">
+                    <i class="fas fa-map-signs"></i>
+                    Thành Phố Nha Trang
+                  </div>
+                  <div class="review">
+                    <div class="mark">9.0</div>
+                    <div class="comment">Tuyệt vời (572 đánh giá)</div>
+                    <div class="mark-reivew">
+                      <img
+                        src="assets/images/icons/icon_tripadvisor.svg"
+                        alt=""
+                      />
+                      9.0
+                    </div>
+                  </div>
+                </div>
+                <div class="price">
+                  <div class="old-price">3.527.204đ</div>
+                  <div class="current-price">1.527.204đ</div>
+                </div>
+              </div>
+            </div>
+            <div class="box-hotel">
+              <div class="picture">
+                <img
+                  src="assets/images/photos-hotel/sheraton-nhatrang.jpg"
+                  alt=""
+                />
+                <div class="sale-percent">58%</div>
+                <div class="favorous">
+                  <i class="far fa-heart fa-2x"></i>
+                </div>
+                <div class="medal">
+                  <img
+                    src="./assets/images/icons/icon_tag_the_best.svg"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+              </div>
+              <div class="container-content-hotel">
+                <div class="content-hotel">
+                  <div class="name">Khách sạn Sheraton Nha Trang</div>
+                  <div class="star-voted">
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="location">
+                    <i class="fas fa-map-signs"></i>
+                    Thành Phố Nha Trang
+                  </div>
+                  <div class="review">
+                    <div class="mark">9.0</div>
+                    <div class="comment">Tuyệt vời (572 đánh giá)</div>
+                    <div class="mark-reivew">
+                      <img
+                        src="assets/images/icons/icon_tripadvisor.svg"
+                        alt=""
+                      />
+                      9.0
+                    </div>
+                  </div>
+                </div>
+                <div class="price">
+                  <div class="old-price">3.527.204đ</div>
+                  <div class="current-price">1.527.204đ</div>
+                </div>
+              </div>
+            </div>
+            <div class="box-hotel">
+              <div class="picture">
+                <img
+                  src="assets/images/photos-hotel/sheraton-nhatrang.jpg"
+                  alt=""
+                />
+                <div class="sale-percent">58%</div>
+                <div class="favorous">
+                  <i class="far fa-heart fa-2x"></i>
+                </div>
+                <div class="medal">
+                  <img
+                    src="./assets/images/icons/icon_tag_the_best.svg"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+              </div>
+              <div class="container-content-hotel">
+                <div class="content-hotel">
+                  <div class="name">Khách sạn Sheraton Nha Trang</div>
+                  <div class="star-voted">
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="location">
+                    <i class="fas fa-map-signs"></i>
+                    Thành Phố Nha Trang
+                  </div>
+                  <div class="review">
+                    <div class="mark">9.0</div>
+                    <div class="comment">Tuyệt vời (572 đánh giá)</div>
+                    <div class="mark-reivew">
+                      <img
+                        src="assets/images/icons/icon_tripadvisor.svg"
+                        alt=""
+                      />
+                      9.0
+                    </div>
+                  </div>
+                </div>
+                <div class="price">
+                  <div class="old-price">3.527.204đ</div>
+                  <div class="current-price">1.527.204đ</div>
+                </div>
+              </div>
+            </div>
+            <div class="box-hotel">
+              <div class="picture">
+                <img
+                  src="assets/images/photos-hotel/sheraton-nhatrang.jpg"
+                  alt=""
+                />
+                <div class="sale-percent">58%</div>
+                <div class="favorous">
+                  <i class="far fa-heart fa-2x"></i>
+                </div>
+                <div class="medal">
+                  <img
+                    src="./assets/images/icons/icon_tag_the_best.svg"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+              </div>
+              <div class="container-content-hotel">
+                <div class="content-hotel">
+                  <div class="name">Khách sạn Sheraton Nha Trang</div>
+                  <div class="star-voted">
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="location">
+                    <i class="fas fa-map-signs"></i>
+                    Thành Phố Nha Trang
+                  </div>
+                  <div class="review">
+                    <div class="mark">9.0</div>
+                    <div class="comment">Tuyệt vời (572 đánh giá)</div>
+                    <div class="mark-reivew">
+                      <img
+                        src="assets/images/icons/icon_tripadvisor.svg"
+                        alt=""
+                      />
+                      9.0
+                    </div>
+                  </div>
+                </div>
+                <div class="price">
+                  <div class="old-price">3.527.204đ</div>
+                  <div class="current-price">1.527.204đ</div>
+                </div>
+              </div>
+            </div>
+            <div class="box-hotel">
+              <div class="picture">
+                <img
+                  src="assets/images/photos-hotel/sheraton-nhatrang.jpg"
+                  alt=""
+                />
+                <div class="sale-percent">58%</div>
+                <div class="favorous">
+                  <i class="far fa-heart fa-2x"></i>
+                </div>
+                <div class="medal">
+                  <img
+                    src="./assets/images/icons/icon_tag_the_best.svg"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+              </div>
+              <div class="container-content-hotel">
+                <div class="content-hotel">
+                  <div class="name">Khách sạn Sheraton Nha Trang</div>
+                  <div class="star-voted">
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="location">
+                    <i class="fas fa-map-signs"></i>
+                    Thành Phố Nha Trang
+                  </div>
+                  <div class="review">
+                    <div class="mark">9.0</div>
+                    <div class="comment">Tuyệt vời (572 đánh giá)</div>
+                    <div class="mark-reivew">
+                      <img
+                        src="assets/images/icons/icon_tripadvisor.svg"
+                        alt=""
+                      />
+                      9.0
+                    </div>
+                  </div>
+                </div>
+                <div class="price">
+                  <div class="old-price">3.527.204đ</div>
+                  <div class="current-price">1.527.204đ</div>
+                </div>
+              </div>
+            </div>
+            <div class="box-hotel">
+              <div class="picture">
+                <img
+                  src="assets/images/photos-hotel/sheraton-nhatrang.jpg"
+                  alt=""
+                />
+                <div class="sale-percent">58%</div>
+                <div class="favorous">
+                  <i class="far fa-heart fa-2x"></i>
+                </div>
+                <div class="medal">
+                  <img
+                    src="./assets/images/icons/icon_tag_the_best.svg"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+              </div>
+              <div class="container-content-hotel">
+                <div class="content-hotel">
+                  <div class="name">Khách sạn Sheraton Nha Trang</div>
+                  <div class="star-voted">
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star active"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="location">
+                    <i class="fas fa-map-signs"></i>
+                    Thành Phố Nha Trang
+                  </div>
+                  <div class="review">
+                    <div class="mark">9.0</div>
+                    <div class="comment">Tuyệt vời (572 đánh giá)</div>
+                    <div class="mark-reivew">
+                      <img
+                        src="assets/images/icons/icon_tripadvisor.svg"
+                        alt=""
+                      />
+                      9.0
+                    </div>
+                  </div>
+                </div>
+                <div class="price">
+                  <div class="old-price">3.527.204đ</div>
+                  <div class="current-price">1.527.204đ</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dowload-app">
+        <div class="wallpaper"></div>
+        <div class="container-app">
+          <div class="qr-code">
+            <div class="title">Tải ứng dụng Mytour.vn</div>
+            <p>Đặt vé máy bay, khách sạn hạng sang</p>
+            <div class="row">
+              <div class="picture-qr">
+                <img src="assets/images/icons/qrcode.png" alt="" />
+              </div>
+              <div class="button-download">
+                <div class="button">
+                  <img src="./assets/images/icons/icon_app_store.svg" alt="" />
+                </div>
+                <div class="button">
+                  <img src="./assets/images/icons/icon_chplay.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="picture">
+            <img src="assets/images/wall/phone.png" alt="" />
+          </div>
+          <div class="check-list">
+            <div class="item-checked">
+              Giá tốt hơn so với đặt phòng trực tiếp tại khách sạn
+            </div>
+            <div class="item-checked">
+              Nhân viên chăm sóc, tư vấn nhiều kinh nghiệm
+            </div>
+            <div class="item-checked">
+              Hơn 5000 khách sạn tại Việt Nam với đánh giá thực
+            </div>
+            <div class="item-checked">
+              Nhiều chương trình khuyến mãi và tích lũy điểm
+            </div>
+            <div class="item-checked">Thanh toán dễ dàng, đa dạng</div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper-content">
+        <div class="component">
+          <div class="title">Các khách sạn hàng đầu</div>
+          <div class="table-province">
+            <div class="item-province">Thừa Thiên - Huế</div>
+          </div>
+        </div>
+        <div class="container-sign-up">
+          <div class="picture">
+            <img src="assets/images/icons/icon_mail_red.svg" alt="" srcset="" />
+          </div>
+          <div class="text-box">
+            <div class="title">
+              Bạn muốn tiết kiệm tới 50% khi đặt phòng khách sạn, vé máy bay?
+            </div>
+            <div class="description">
+              Nhập số điện thoại để Mytour có thể gửi đến bạn những chương trình
+              khuyến mại mới nhất!
+            </div>
+          </div>
+          <div class="input-phone-number">
+            <input type="text" placeholder="Nhập số điện thoại" />
+            <button>Đăng ký</button>
+          </div>
+        </div>
+      </div>
+      <div class="container-footer">
+        <div class="wrapper-content">
+          <div class="footer">
+            <div class="logo">
+              <img
+                src="/assets/images/icons/icon_mytour_blue_large.svg"
+                alt=""
+              />
+            </div>
+            <div class="more-info">
+              <div class="column">
+                <div class="title">
+                  Công ty cổ phần du lịch Việt Nam VNTravel
+                </div>
+                <p>Tổng đài chăm sóc: 1900 2083</p>
+                <p>Email: hotro@mytour.vn</p>
+                <p>
+                  Văn phòng Hà Nội: Tầng 11, Tòa Peakview, 36 Hoàng Cầu, Đống Đa
+                </p>
+                <p>
+                  Văn phòng HCM: Tầng 6, Tòa Nhà Central Park, 117 Nguyễn Du,
+                  Q.1
+                </p>
+                <p>Mytour Store: 168 Xã Đàn, Đống Đa, Hà Nội</p>
+              </div>
+              <div class="column column-policy">
+                <div class="title">Chính sách & Quy định</div>
+                <p>Chính sách và quy định chung</p>
+                <p>Quy định về thanh toán</p>
+                <p>Quy định về xác nhận thông tin đặt phòng</p>
+                <p>Chính sách về hủy đặt phòng và hoàn trả tiền</p>
+                <p>Chính sách bảo mật thông tin</p>
+                <p>Quy chế hoạt động</p>
+                <p>Chính sách bảo mật</p>
+                <p>Quy trình giải quyết tranh chấp, khiếu nại</p>
+              </div>
+              <div class="column column-custumer">
+                <div class="title">Khách hàng và đối tác</div>
+                <p>Đăng nhập HMS</p>
+                <p>Tuyển dụng</p>
+                <p>Liên hệ</p>
+              </div>
+            </div>
+            <div class="copy-right">
+              <p>
+                Mytour là thành viên của VNTravel Group - Một trong những tập
+                đoàn đứng đầu Đông Nam Á về du lịch trực tuyến và các dịch vụ
+                liên quan
+              </p>
+              <img
+                src="./assets/images/icons/icon_company_group.svg"
+                alt=""
+                srcset=""
+              />
+              <p>
+                Copyright © 2020 - CÔNG TY CỔ PHẦN DU LỊCH VIỆT NAM VNTRAVEL -
+                Đăng ký kinh doanh số 0108886908 - do Sở Kế hoạch và Đầu tư
+                thành phố Hà Nội cấp lần đầu ngày 04 tháng 09 năm 2019
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+   
+    const provinces = [
+      "Thừa Thiên - Huế",
+      "Kiên Giang",
+      "Hải Phòng",
+      "Gia Lai",
+      "Bình Định",
+      "An Giang",
+      "Nghệ An",
+      "Hưng Yên",
+      "Bắc Kạn",
+      "Quảng Ninh",
+      "Hà Nội",
+      "Quảng Bình",
+      "Quảng Ngãi",
+      "Bến Tre",
+      "Bà Rịa - Vũng Tàu",
+      "Thanh Hóa",
+      "Ninh Thuận",
+      "Bạc Liêu",
+      "Cao Bằng",
+      "Lâm Đồng",
+      "Lào Cai",
+      "Bình Dương",
+      "Bình Thuận",
+      "Bắc Giang",
+      "Hà Giang",
+      "Bắc Ninh",
+      "Lạng Sơn",
+      "Quảng Nam",
+      "Sơn La",
+      "Tây Ninh",
+      "Long An",
+      "Đồng Nai",
+      "Hồ Chí Minh",
+      "Hải Dương",
+      "Bình Phước",
+      "Hà Nam",
+      "Vĩnh Long",
+      "Cần Thơ",
+      "Vĩnh Phúc",
+      "Đắk Lắk",
+      "Cà Mau",
+      "Tiền Giang",
+      "Khánh Hòa",
+      "Quảng Trị",
+      "Hà Tĩnh",
+      "Trà Vinh",
+      "Đồng Tháp",
+      "Hòa Bình",
+      "Phú Thọ",
+      "Đà Nẵng",
+      "Hậu Giang",
+      "Sóc Trăng",
+      "Tuyên Quang",
+      "Đắk Nông",
+      "Thái Nguyên",
+      "Kon Tum",
+      "Điện Biên",
+      "Phú Yên",
+      "Thái Bình",
+      "Ninh Bình",
+    ];
+    var jsString = "";
+    provinces.forEach(item => {
+      jsString += `<div class="item-province">${item}</div>`;
+    });
+    document.getElementsByClassName("table-province")[0].innerHTML = jsString;
+  </script>
+</html>
