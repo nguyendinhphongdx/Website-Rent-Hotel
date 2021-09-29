@@ -19,7 +19,7 @@
   justify-content: space-evenly;
 }
 .container-ultility .box-utility {
-  width: 25%;
+  width: 23%;
   max-width: 300px;
   min-width: 200px;
   display: flex;
@@ -41,13 +41,13 @@
 .box-utility .title {
   margin: 10px 0px;
   text-align: center;
-  font-size: 18px;
   font-weight: 600;
   width: 100%;
+
 }
 .box-utility .description {
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   width: 100%;
 }
 /* END UTILITY CONTAINER  */
@@ -57,9 +57,10 @@
 }
 .component .title {
   color: #1a202c;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 29px;
+  width: 40%;
 }
 .container-hotel-by-location {
   display: flex;
@@ -125,11 +126,13 @@
 .header .options{
   display: flex;
   flex-wrap: wrap;justify-content: space-between;
+  width: 60%;
 }
 .item-option{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 25%;
 }
 .item-option .icon-option{
   width: 60px;
@@ -141,6 +144,7 @@
 .item-option .title-option{
   width: 100%;
   text-align: center;
+  font-size:14px
 }
 .container-hotel{
   display: flex;

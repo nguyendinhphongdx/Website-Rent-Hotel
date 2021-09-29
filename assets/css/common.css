@@ -89,6 +89,121 @@ body {
   }
 }
 /* edn side bar  */
+/* modal account */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+  justify-content:center;
+  align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  background-color: white;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+.modal-content>.title{
+  text-align: center;
+  margin-top:15px;
+  font-size: 22px;
+  font-weight: 600;
+}
+/* The Close Button */
+.close {
+  color: #000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.modal-header {
+
+}
+.modal-body {padding: 2px 16px;}
+.modal-body .btn-login{
+  padding: 10px 8px;
+  border-radius: 7px;
+  outline: none;
+  border: .5px solid #ccc;
+  cursor: pointer;
+  display:flex;
+  justify-content:flex-start;
+  align-items: center;  
+  width: 100%;
+  margin:20px 0px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.modal-body .btn-login:hover{
+  transition: all 0.2s;
+  opacity: .8;
+}
+.modal-body .btn-login>i{
+  font-size:24px;
+  margin-right: 30px;
+}
+.modal-body .btn-login.facebook>i{
+  color: blueviolet
+}
+.modal-body .btn-login.google>i{
+  color: rgb(190, 138, 69)
+}
+.modal-content .form-inputs input{
+  padding: 12px 10px;
+  width: 100%;
+  font-weight: 500;
+  margin:5px 0px;
+  outline: none;
+  border: none;
+  background-color:rgb(238, 222, 222)
+}
+.modal-body .btn-login.login{
+  justify-content: center;
+  background-color:rgb(221, 90, 90);
+  color: white;
+  height:46px;
+}
+.modal-content p,.modal-footer{
+  font-size: 14px;
+  text-align:center;
+  margin: 15px;
+}
+.modal-content p:hover,.modal-footer button{
+  color: blueviolet;
+  transition: all 0.2s;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+/* end modal account  */
 /* NAVIGATION  */
 @keyframes opacityHeader {
   from {opacity: 0;}
@@ -140,8 +255,53 @@ body {
 .group-item-contact i {
   margin-right: 20px;
 }
-.menu-contact .icon .icon-account {
+.menu-contact .icon.icon-account {
   display: flex;
+  position: relative;
+}
+@keyframes scaleIn{
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+.dropdown.active{
+  display:block !important;
+  animation:scaleIn;
+  transition:all 0.5s;
+}
+.icon-account .dropdown{
+    display:none;
+    top: 35px;
+    position: absolute;
+    background: white;
+    width: 220px;
+    height: fit-content;
+    padding: 5px 10px;
+    right: 0px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.icon-account .dropdown .caret-dropdown{
+  position: absolute;
+  top: -7px;
+  z-index: -10;
+  right: 15px;
+  width: 15px;
+  height: 15px;
+  background: white;
+  transform: rotate(45deg);
+}
+.icon-account .dropdown button{
+  border: none;
+  padding:10px 8px;
+  width: 100%;
+  text-align: left;
+  transition: all ease 0.2s;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.icon-account .dropdown button:hover{
+  background-color: #ccc
 }
 .menu-contact .icon {
   margin: 0px 10px;
@@ -218,6 +378,9 @@ body {
   justify-content: center;
   flex: 0.2;
   align-items: center;
+  outline:none;
+  border: none;
+  cursor: pointer;
 }
 
 .box-option .container-box .box-item .dropdown {
@@ -231,6 +394,9 @@ body {
   padding: 8px 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   z-index: 100;
+}
+.box-option .container-box .box-item .dropdown:active{
+  display: block !important;
 }
 .box-item .dropdown.people:hover {
   display: block;
@@ -246,6 +412,7 @@ body {
   padding: 20px 10px;
   color: black;
   transition: all 0.5s;
+  cursor: pointer;
 }
 .box-item .dropdown ul li i {
   margin-right: 15px;
