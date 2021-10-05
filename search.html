@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đặt phòng khách sạn hạng sang</title>
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/search.css">
+    <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+    <link
+    rel="stylesheet"
+    media="all"
+    href="./assets/css/daterangepicker.css"
+  />
+  <script type="text/javascript" src="./assets/js/moment.min.js"></script>
+  <script
+    type="text/javascript"
+    src="./assets/js/daterangepicker.min.js"
+  ></script>
+  <script src="./assets/js/datepicker-vi.js"></script>
+    <script src="./assets/js/pages/index.js"></script>
+    
+  </head>
+  <body>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+    <div id="main">
+     <div class="wallpaper-header">
+        <div class="wrapper-content">
+          <div class="header-banner">
+            <div class="logo">
+              <img src="./assets/images/icons/icon_mytour_blue_large.svg" />
+            </div>
+            <div class="navigation-header">
+              <div class="menu-type">
+                <ul>
+                  <li class="active"><a href="">Khách sạn</a></li>
+                  <li><a href="">Vé máy bay</a></li>
+                  <li><a href="">Tour & Sự kiện</a></li>
+                  <li><a href="">The memories</a></li>
+                </ul>
+              </div>
+              <div class="menu-contact">
+                <div class="group-item-contact">
+                  <i class="fas fa-phone-alt fa-lg"></i>
+                  <div class="text">19002083</div>
+                </div>
+                <div class="icon icon-bell">
+                  <i class="far fa-bell fa-lg"></i>
+                </div>
+                <div class="icon icon-account">
+                  <i class="far fa-user-circle fa-lg"></i>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="icon icon-bar" onclick="openNav()">
+                  <i class="fas fa-bars fa-lg"></i>
+                </div>
+              </div>
+            </div>
+            <div class="bar-icon-drawer"></div>
+          </div>
+          <div class="box-option">
+            <div class="container-box">
+              <div class="box-item item-place">
+                <div class="title">Địa điểm</div>
+                <input
+                  class="input input-place"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="Thành phố, khách sạn, điểm đến"
+                />
+                <div class="indicator"></div>
+                <div class="dropdown cities">
+                  <h3>Các địa điểm nổi bật</h3>
+                  <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Hà Nội</li>
+                    <li>
+                      <i class="fas fa-map-marker-alt"></i> TP Hồ Chí Minh
+                    </li>
+                    <li>
+                      <i class="fas fa-map-marker-alt"></i> Bà Rịa - Vũng Tàu
+                    </li>
+                    <li><i class="fas fa-map-marker-alt"></i> Đà Nẵng</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Đà Lạt</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Nha Trang</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Hội An</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Long An</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Bến Tre</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Vĩnh Long</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Khánh Hòa</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Phú Thọ</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Hà Giang</li>
+                    <li>
+                      <i class="fas fa-map-marker-alt"></i> Thừa Thiên Huế
+                    </li>
+                    <li><i class="fas fa-map-marker-alt"></i> Quảng Ngãi</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Cao Bằng</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Thái Nghyên</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="box-item item-start-day">
+                <div class="title">Thời gian đi</div>
+                <input
+                  class="input input-start-day"
+                  name="daterange"
+                  autocomplete="off"
+                  placeholder="Ngày đến"
+                  value=""
+                />
+                <div class="indicator active"></div>
+              </div>
+              <div class="total-day">
+                <span>
+                  2
+                  <i class="fas fa-moon" style="color: black"></i>
+                </span>
+              </div>
+              <div class="box-item item-people">
+                <div class="title">Số phòng, số khách</div>
+                <input
+                  class="input input-people"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="1 Phòng, 2 người lớn, 0 trẻ em"
+                  value=""
+                />
+                <div class="dropdown people">
+                  <div class="row room">
+                    <div class="type">Phòng</div>
+                    <div class="edit-number">
+                      <div class="circle minus">
+                        <i class="fas fa-minus"></i>
+                      </div>
+                      <div class="quality">2</div>
+                      <div class="circle plus">
+                        <i class="fas fa-plus"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row room">
+                    <div class="type">Người lớn</div>
+                    <div class="edit-number">
+                      <div class="circle minus">
+                        <i class="fas fa-minus"></i>
+                      </div>
+                      <div class="quality">2</div>
+                      <div class="circle plus">
+                        <i class="fas fa-plus"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row room">
+                    <div class="type">Trẻ em</div>
+                    <div class="edit-number">
+                      <div class="circle minus">
+                        <i class="fas fa-minus"></i>
+                      </div>
+                      <div class="quality">2</div>
+                      <div class="circle plus">
+                        <i class="fas fa-plus"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="indicator active"></div>
+              </div>
+              <div class="box-item item-search">
+                <i class="fas fa-search fa-2x"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+     </div>
+      <div class="content-page">
+        <div class="wrapper-content">
+            <div class="box-filter">
+
+            </div>
+            
+        </div>
+      </div>
+      <div class="container-footer">
+        <div class="wrapper-content">
+          <div class="footer">
+            <div class="logo">
+              <img
+                src="/assets/images/icons/icon_mytour_blue_large.svg"
+                alt=""
+              />
+            </div>
+            <div class="more-info">
+              <div class="column">
+                <div class="title">
+                  Công ty cổ phần du lịch Việt Nam VNTravel
+                </div>
+                <p>Tổng đài chăm sóc: 1900 2083</p>
+                <p>Email: hotro@mytour.vn</p>
+                <p>
+                  Văn phòng Hà Nội: Tầng 11, Tòa Peakview, 36 Hoàng Cầu, Đống Đa
+                </p>
+                <p>
+                  Văn phòng HCM: Tầng 6, Tòa Nhà Central Park, 117 Nguyễn Du,
+                  Q.1
+                </p>
+                <p>Mytour Store: 168 Xã Đàn, Đống Đa, Hà Nội</p>
+              </div>
+              <div class="column column-policy">
+                <div class="title">Chính sách & Quy định</div>
+                <p>Chính sách và quy định chung</p>
+                <p>Quy định về thanh toán</p>
+                <p>Quy định về xác nhận thông tin đặt phòng</p>
+                <p>Chính sách về hủy đặt phòng và hoàn trả tiền</p>
+                <p>Chính sách bảo mật thông tin</p>
+                <p>Quy chế hoạt động</p>
+                <p>Chính sách bảo mật</p>
+                <p>Quy trình giải quyết tranh chấp, khiếu nại</p>
+              </div>
+              <div class="column column-custumer">
+                <div class="title">Khách hàng và đối tác</div>
+                <p>Đăng nhập HMS</p>
+                <p>Tuyển dụng</p>
+                <p>Liên hệ</p>
+              </div>
+            </div>
+            <div class="copy-right">
+              <p>
+                Mytour là thành viên của VNTravel Group - Một trong những tập
+                đoàn đứng đầu Đông Nam Á về du lịch trực tuyến và các dịch vụ
+                liên quan
+              </p>
+              <img
+                src="./assets/images/icons/icon_company_group.svg"
+                alt=""
+                srcset=""
+              />
+              <p>
+                Copyright © 2020 - CÔNG TY CỔ PHẦN DU LỊCH VIỆT NAM VNTRAVEL -
+                Đăng ký kinh doanh số 0108886908 - do Sở Kế hoạch và Đầu tư
+                thành phố Hà Nội cấp lần đầu ngày 04 tháng 09 năm 2019
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

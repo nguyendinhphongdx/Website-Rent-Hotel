@@ -1,0 +1,46 @@
+.wallpaper-header{
+    padding: 7px 0px;
+    top: 0;
+    background-color: white;
+}
+.content-page{
+    margin-top: 150px;
+    margin-bottom: 20px;
+}
+.content-page .wrapper-content{
+    height: 100vh;
+}
+.header-banner{
+    padding: 5px 0px;
+}
+.header-banner .logo{
+    width: 125px;
+    margin-right: 20px;
+}
+.header-banner .logo img{
+    width: 100%;
+}
+.menu-type ul li.active a{
+    border: none;
+}
+.menu-type ul a{
+    color: black;
+}
+.menu-contact{
+    color: black;
+}
+.box-option{
+    padding: 0;
+    margin-top: 0px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.box-option .container-box .box-item .input, .total-day span{
+    height: 40px;
+}
+.container-footer{
+    margin-top: 0px;
+}
+.footer{
+    padding-top: 0px;
+}

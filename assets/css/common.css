@@ -219,7 +219,9 @@ body {
   flex: 0.2;
   align-items: center;
 }
-
+.box-item.item-search i{
+  color: #fff;
+}
 .box-option .container-box .box-item .dropdown {
   display: none;
   position: absolute;
@@ -330,7 +332,8 @@ body {
 /* END FOOTER */
 @media only screen and (max-width: 1400px) {
   .wrapper-content {
-    width: 1000px;
+    width: 100%;
+    max-width: 1170px;
     margin: 0 auto;
   }
 }
