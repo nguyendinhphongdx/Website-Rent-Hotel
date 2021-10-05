@@ -7,24 +7,29 @@
     <title>Đặt phòng khách sạn hạng sang</title>
     <link rel="stylesheet" href="./assets/css/index.css" />
     <link rel="stylesheet" href="./assets/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/common.css" />
-    <link rel="stylesheet" href="assets/css/search.css">
+    <link rel="stylesheet" href="./assets/css/common.css" />
+    <link rel="stylesheet" href="./assets/css/search.css" />
+    <link rel="stylesheet" href="./assets//css/jquery-ui.css" />
     <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+
     <link
-    rel="stylesheet"
-    media="all"
-    href="./assets/css/daterangepicker.css"
-  />
-  <script type="text/javascript" src="./assets/js/moment.min.js"></script>
-  <script
-    type="text/javascript"
-    src="./assets/js/daterangepicker.min.js"
-  ></script>
-  <script src="./assets/js/datepicker-vi.js"></script>
+      rel="stylesheet"
+      media="all"
+      href="./assets/css/daterangepicker.css"
+    />
+    <script type="text/javascript" src="./assets/js/moment.min.js"></script>
+    <script
+      type="text/javascript"
+      src="./assets/js/daterangepicker.min.js"
+    ></script>
     <script src="./assets/js/pages/index.js"></script>
-    
+    <script>
+      function OnchangePriceDistance(e) {
+        //   document.getElementById("max").setAttribute("min",e.value);
+      }
+    </script>
   </head>
-  <body>
+  <body onload="listentEvent()">
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
         >&times;</a
@@ -35,11 +40,13 @@
       <a href="#">Contact</a>
     </div>
     <div id="main">
-     <div class="wallpaper-header">
+      <div class="wallpaper-header">
         <div class="wrapper-content">
           <div class="header-banner">
             <div class="logo">
-              <img src="./assets/images/icons/icon_mytour_blue_large.svg" />
+              <a href="index.html"
+                ><img src="./assets/images/icons/icon_mytour_blue_large.svg"
+              /></a>
             </div>
             <div class="navigation-header">
               <div class="menu-type">
@@ -58,9 +65,14 @@
                 <div class="icon icon-bell">
                   <i class="far fa-bell fa-lg"></i>
                 </div>
-                <div class="icon icon-account">
+                <div class="icon icon-account" onclick="openDropdownAccount()">
                   <i class="far fa-user-circle fa-lg"></i>
                   <i class="fas fa-chevron-down"></i>
+                  <div id="dropdown-account" class="dropdown account">
+                    <div class="caret-dropdown"></div>
+                    <button class="sign-in" id="btn-signIn">Đăng Nhập</button>
+                    <button class="sign-out">Đăng Ký</button>
+                  </div>
                 </div>
                 <div class="icon icon-bar" onclick="openNav()">
                   <i class="fas fa-bars fa-lg"></i>
@@ -70,80 +82,67 @@
             <div class="bar-icon-drawer"></div>
           </div>
           <div class="box-option">
+            <form action="search.html">
             <div class="container-box">
               <div class="box-item item-place">
                 <div class="title">Địa điểm</div>
-                <input
-                  class="input input-place"
-                  type="text"
-                  autocomplete="off"
-                  placeholder="Thành phố, khách sạn, điểm đến"
-                />
+                <input class="input input-place" name="place" type="text" id="input-place" autocomplete="off"
+                  placeholder="Thành phố, khách sạn, điểm đến" />
                 <div class="indicator"></div>
                 <div class="dropdown cities">
                   <h3>Các địa điểm nổi bật</h3>
                   <ul>
-                    <li><i class="fas fa-map-marker-alt"></i> Hà Nội</li>
-                    <li>
+                    <li class="item-cities"><i class="fas fa-map-marker-alt"></i> Hà Nội</li>
+                    <li class="item-cities">
                       <i class="fas fa-map-marker-alt"></i> TP Hồ Chí Minh
                     </li>
-                    <li>
+                    <li class="item-cities">
                       <i class="fas fa-map-marker-alt"></i> Bà Rịa - Vũng Tàu
                     </li>
-                    <li><i class="fas fa-map-marker-alt"></i> Đà Nẵng</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Đà Lạt</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Nha Trang</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Hội An</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Long An</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Bến Tre</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Vĩnh Long</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Khánh Hòa</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Phú Thọ</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Hà Giang</li>
-                    <li>
+                    <li class="item-cities"><i class="fas fa-map-marker-alt"></i> Đà Nẵng</li>
+                    <li class="item-cities"><i class="fas fa-map-marker-alt"></i> Đà Lạt</li>
+                    <li class="item-cities"><i class="fas fa-map-marker-alt"></i> Nha Trang</li>
+                    <li class="item-cities"><i class="fas fa-map-marker-alt"></i> Hội An</li>
+                    <li class="item-cities"><i class="fas fa-map-marker-alt"></i> Long An</li>
+                    <li class="item-cities"><i class="fas fa-map-marker-alt"></i> Bến Tre</li>
+                    <li class="item-cities"><i class="fas fa-map-marker-alt"></i> Vĩnh Long</li>
+                    <li class="item-cities"><i class="fas fa-map-marker-alt"></i> Khánh Hòa</li>
+                    <li class="item-cities"><i class="fas fa-map-marker-alt"></i> Phú Thọ</li>
+                    <li class="item-cities"><i class="fas fa-map-marker-alt"></i> Hà Giang</li>
+                    <li class="item-cities">
                       <i class="fas fa-map-marker-alt"></i> Thừa Thiên Huế
                     </li>
-                    <li><i class="fas fa-map-marker-alt"></i> Quảng Ngãi</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Cao Bằng</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Thái Nghyên</li>
+                    <li class="item-cities"><i class="fas fa-map-marker-alt"></i> Quảng Ngãi</li>
+                    <li class="item-cities"><i class="fas fa-map-marker-alt"></i> Cao Bằng</li>
+                    <li class="item-cities"><i class="fas fa-map-marker-alt"></i> Thái Nghyên</li>
                   </ul>
                 </div>
               </div>
               <div class="box-item item-start-day">
                 <div class="title">Thời gian đi</div>
-                <input
-                  class="input input-start-day"
-                  name="daterange"
-                  autocomplete="off"
-                  placeholder="Ngày đến"
-                  value=""
-                />
+                <input class="input input-start-day" name="daterange" id="daterange" autocomplete="off"
+                placeholder="Ngày đến" value="" onchange="listentInputTime(this)" />
                 <div class="indicator active"></div>
               </div>
               <div class="total-day">
                 <span>
-                  2
+                  <span id="number-date">2</span>
                   <i class="fas fa-moon" style="color: black"></i>
                 </span>
               </div>
               <div class="box-item item-people">
                 <div class="title">Số phòng, số khách</div>
-                <input
-                  class="input input-people"
-                  type="text"
-                  autocomplete="off"
-                  placeholder="1 Phòng, 2 người lớn, 0 trẻ em"
-                  value=""
-                />
+                <input class="input input-people" type="text" id="input-people" name="people" autocomplete="off"
+                  placeholder="1 Phòng, 2 người lớn, 0 trẻ em" value="1 Phòng, 2 người lớn, 0 trẻ em" readonly />
                 <div class="dropdown people">
                   <div class="row room">
                     <div class="type">Phòng</div>
                     <div class="edit-number">
-                      <div class="circle minus">
+                      <div class="circle minus" onclick="editNumber('room','minus')">
                         <i class="fas fa-minus"></i>
                       </div>
-                      <div class="quality">2</div>
-                      <div class="circle plus">
+                      <div class="quality" id="quality-room">1</div>
+                      <div class="circle plus" onclick="editNumber('room','plus')">
                         <i class="fas fa-plus"></i>
                       </div>
                     </div>
@@ -151,23 +150,23 @@
                   <div class="row room">
                     <div class="type">Người lớn</div>
                     <div class="edit-number">
-                      <div class="circle minus">
+                      <div class="circle minus" onclick="editNumber('person','minus')">
                         <i class="fas fa-minus"></i>
                       </div>
-                      <div class="quality">2</div>
-                      <div class="circle plus">
+                      <div class="quality" id="quality-person">2</div>
+                      <div class="circle plus" onclick="editNumber('person','plus')">
                         <i class="fas fa-plus"></i>
                       </div>
                     </div>
                   </div>
                   <div class="row room">
                     <div class="type">Trẻ em</div>
-                    <div class="edit-number">
+                    <div class="edit-number" onclick="editNumber('child','minus')">
                       <div class="circle minus">
                         <i class="fas fa-minus"></i>
                       </div>
-                      <div class="quality">2</div>
-                      <div class="circle plus">
+                      <div class="quality" id="quality-child">0</div>
+                      <div class="circle plus" onclick="editNumber('child','plus')">
                         <i class="fas fa-plus"></i>
                       </div>
                     </div>
@@ -175,20 +174,427 @@
                 </div>
                 <div class="indicator active"></div>
               </div>
-              <div class="box-item item-search">
+              <button class="box-item item-search" style="color:white">
                 <i class="fas fa-search fa-2x"></i>
-              </div>
+              </button>
             </div>
+          </form>
           </div>
         </div>
-       
-     </div>
+      </div>
       <div class="content-page">
         <div class="wrapper-content">
+          <div class="path">
+            <div class="item">Khách sạn</div>
+            <i class="fas fa-angle-right"></i>
+            <div class="item">Hà Nội</div>
+          </div>
+          <div class="container-content">
             <div class="box-filter">
-
+              <div class="tittle">
+                <div class="">Bộ lọc</div>
+                <a href="">xóa tất cả</a>
+              </div>
+              <div class="filter-item price">
+                <div class="tittle">Khoảng giá (1 đêm)</div>
+                <div id="slider">
+                  <input
+                    type="number"
+                    name="min"
+                    min="0"
+                    oninput="OnchangePriceDistance(this)"
+                    placeholder="From"
+                  />
+                  <i class="fas fa-angle-double-right"></i>
+                  <input
+                    type="number"
+                    id="max"
+                    name="max"
+                    max="0"
+                    placeholder="To"
+                  />
+                </div>
+              </div>
+              <div class="filter-item ranked-hotel">
+                <div class="tittle">Hạng khách sạn</div>
+                <div class="filter-row stars five-star">
+                  <input type="checkbox" name="" id="" />
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="filter-row stars four-star">
+                  <input type="checkbox" name="" id="" />
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="filter-row stars three-star">
+                  <input type="checkbox" name="" id="" />
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="filter-row stars two-star">
+                  <input type="checkbox" name="" id="" />
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="filter-row stars one-star">
+                  <input type="checkbox" name="" id="" />
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="filter-item bonus">
+                <div class="tittle">Dịch vụ đi kèm</div>
+                <div class="filter-row">
+                  <input type="checkbox" name="bonus" id="" />
+                  Ăn sáng miễn phí
+                </div>
+                <div class="filter-row">
+                  <input type="checkbox" name="bonus" id="" />
+                  Hủy linh hoạt
+                </div>
+                <div class="filter-row">
+                  <input type="checkbox" name="bonus" id="" />
+                  Khuyến mãi - Giảm giá
+                </div>
+              </div>
+              <div class="filter-item review">
+                <div class="tittle">Người dùng đánh giá</div>
+                <div class="filter-row">
+                  <input type="checkbox" name="wonderful" id="" />
+                  Tuyệt vời (9.0 +)
+                </div>
+                <div class="filter-row">
+                  <input type="checkbox" name="great" id="" />
+                  Rất tốt (8.0 +)
+                </div>
+                <div class="filter-row">
+                  <input type="checkbox" name="good" id="" /> Tốt (7.0 +)
+                </div>
+              </div>
             </div>
-            
+            <div class="tabs-container">
+              <div class="tabs-header">
+                <ul>
+                  <li>
+                    <a href="search.html?suggestion">
+                      <p>MYTOUR đề xuất</p>
+                    </a>
+                    <div class="active-tab"></div>
+                  </li>
+                  <li>
+                    <a href="search.html?sort=asc">
+                      <p>Gía tăng dần</p>
+                    </a>
+                    <div class="active-tab"></div>
+                  </li>
+                  <li>
+                    <a href="search.html?sort=desc">
+                      <p>Gía giảm dần</p>
+                    </a>
+                    <div class="active-tab"></div>
+                  </li>
+                  <li>
+                    <a href="search.html?sort=rank"><p>Xếp hạng sao</p></a>
+                    
+                    <div class="active-tab"></div>
+                  </li>
+                  <li>
+                    <a href="search.html?sort=top">
+                      <p>Đánh giá cao nhất</p>
+                    </a>
+                    <div class="active-tab"></div>
+                  </li>
+                </ul>
+              </div>
+              <div class="container-hotel">
+                <div class="box-hotel">
+                  <div class="picture">
+                    <img
+                      src="assets/images/photos-hotel/sheraton-nhatrang.jpg"
+                      alt=""
+                    />
+                    <div class="sale-percent">58%</div>
+                    <div class="favorous">
+                       <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="medal">
+                      <img
+                        src="./assets/images/icons/icon_tag_the_best.svg"
+                        alt=""
+                        srcset=""
+                      />
+                    </div>
+                  </div>
+                  <div class="container-content-hotel">
+                    <div class="content-hotel">
+                      <div class="name">Khách sạn Sheraton Nha Trang</div>
+                      <div class="star-voted">
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <span class="type-hotel">Home stay</span>
+                      </div>
+                      <div class="location">
+                        <i class="fas fa-map-signs"></i>
+                        Thành Phố Nha Trang
+                      </div>
+                      <div class="review">
+                        <div class="mark">9.0</div>
+                        <div class="comment">Tuyệt vời (572 đánh giá)</div>
+                        <div class="mark-reivew">
+                          <img
+                            src="assets/images/icons/icon_tripadvisor.svg"
+                            alt=""
+                          />
+                          9.0
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <div class="old-price">3.527.204đ / đêm</div>
+                      <div class="current-price">1.527.204đ / đêm</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-hotel">
+                  <div class="picture">
+                    <img
+                      src="assets/images/photos-hotel/sheraton-nhatrang.jpg"
+                      alt=""
+                    />
+                    <div class="sale-percent">58%</div>
+                    <div class="favorous">
+                       <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="medal">
+                      <img
+                        src="./assets/images/icons/icon_tag_the_best.svg"
+                        alt=""
+                        srcset=""
+                      />
+                    </div>
+                  </div>
+                  <div class="container-content-hotel">
+                    <div class="content-hotel">
+                      <div class="name">Khách sạn Sheraton Nha Trang</div>
+                      <div class="star-voted">
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <span class="type-hotel">Home stay</span>
+                      </div>
+                      <div class="location">
+                        <i class="fas fa-map-signs"></i>
+                        Thành Phố Nha Trang
+                      </div>
+                      <div class="review">
+                        <div class="mark">9.0</div>
+                        <div class="comment">Tuyệt vời (572 đánh giá)</div>
+                        <div class="mark-reivew">
+                          <img
+                            src="assets/images/icons/icon_tripadvisor.svg"
+                            alt=""
+                          />
+                          9.0
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <div class="old-price">3.527.204đ / đêm</div>
+                      <div class="current-price">1.527.204đ / đêm</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-hotel">
+                  <div class="picture">
+                    <img
+                      src="assets/images/photos-hotel/sheraton-nhatrang.jpg"
+                      alt=""
+                    />
+                    <div class="sale-percent">58%</div>
+                    <div class="favorous">
+                       <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="medal">
+                      <img
+                        src="./assets/images/icons/icon_tag_the_best.svg"
+                        alt=""
+                        srcset=""
+                      />
+                    </div>
+                  </div>
+                  <div class="container-content-hotel">
+                    <div class="content-hotel">
+                      <div class="name">Khách sạn Sheraton Nha Trang</div>
+                      <div class="star-voted">
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <span class="type-hotel">Home stay</span>
+                      </div>
+                      <div class="location">
+                        <i class="fas fa-map-signs"></i>
+                        Thành Phố Nha Trang
+                      </div>
+                      <div class="review">
+                        <div class="mark">9.0</div>
+                        <div class="comment">Tuyệt vời (572 đánh giá)</div>
+                        <div class="mark-reivew">
+                          <img
+                            src="assets/images/icons/icon_tripadvisor.svg"
+                            alt=""
+                          />
+                          9.0
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <div class="old-price">3.527.204đ / đêm</div>
+                      <div class="current-price">1.527.204đ / đêm</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-hotel">
+                  <div class="picture">
+                    <img
+                      src="assets/images/photos-hotel/sheraton-nhatrang.jpg"
+                      alt=""
+                    />
+                    <div class="sale-percent">58%</div>
+                    <div class="favorous">
+                       <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="medal">
+                      <img
+                        src="./assets/images/icons/icon_tag_the_best.svg"
+                        alt=""
+                        srcset=""
+                      />
+                    </div>
+                  </div>
+                  <div class="container-content-hotel">
+                    <div class="content-hotel">
+                      <div class="name">Khách sạn Sheraton Nha Trang</div>
+                      <div class="star-voted">
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <span class="type-hotel">Home stay</span>
+                      </div>
+                      <div class="location">
+                        <i class="fas fa-map-signs"></i>
+                        Thành Phố Nha Trang
+                      </div>
+                      <div class="review">
+                        <div class="mark">9.0</div>
+                        <div class="comment">Tuyệt vời (572 đánh giá)</div>
+                        <div class="mark-reivew">
+                          <img
+                            src="assets/images/icons/icon_tripadvisor.svg"
+                            alt=""
+                          />
+                          9.0
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <div class="old-price">3.527.204đ / đêm</div>
+                      <div class="current-price">1.527.204đ / đêm</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-hotel">
+                  <div class="picture">
+                    <img
+                      src="assets/images/photos-hotel/sheraton-nhatrang.jpg"
+                      alt=""
+                    />
+                    <div class="sale-percent">58%</div>
+                    <div class="favorous">
+                       <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="medal">
+                      <img
+                        src="./assets/images/icons/icon_tag_the_best.svg"
+                        alt=""
+                        srcset=""
+                      />
+                    </div>
+                  </div>
+                  <div class="container-content-hotel">
+                    <div class="content-hotel">
+                      <div class="name">Khách sạn Sheraton Nha Trang</div>
+                      <div class="star-voted">
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <i class="fas fa-star active"></i>
+                        <span class="type-hotel">Home stay</span>
+                      </div>
+                      <div class="location">
+                        <i class="fas fa-map-signs"></i>
+                        Thành Phố Nha Trang
+                      </div>
+                      <div class="review">
+                        <div class="mark">9.0</div>
+                        <div class="comment">Tuyệt vời (572 đánh giá)</div>
+                        <div class="mark-reivew">
+                          <img
+                            src="assets/images/icons/icon_tripadvisor.svg"
+                            alt=""
+                          />
+                          9.0
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <div class="old-price">3.527.204đ / đêm</div>
+                      <div class="current-price">1.527.204đ / đêm</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+<div class="pagination">
+    <div class="pagination-container">
+        <div class="pagination-hover-overlay"></div>
+        <a href="#0" class="pagination-prev">
+            <span class="icon-pagination icon-pagination-prev">
+              <i class="fas fa-chevron-left"></i>
+            </span>
+        </a>
+        <a href="#0" class="pagination-page-number active">1</a>
+        <a href="#0" class="pagination-page-number">2</a>
+        <a href="#0" class="pagination-page-number">3</a>
+        <a href="#0" class="pagination-page-number">4</a>
+        <a href="#0" class="pagination-page-number">5</a>
+        <a href="#0" class="pagination-page-number">6</a>
+        <a href="#0" class="pagination-page-number">7</a>
+
+        <a href="#0" class="pagination-next">
+            <span class="icon-pagination icon-pagination-next">
+              <i class="fas fa-chevron-right"></i>
+            </span>
+        </a>
+    </div>
+</div>
+
+          </div>
         </div>
       </div>
       <div class="container-footer">
@@ -252,6 +658,45 @@
               </p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+        </div>
+        <p class="title">Đăng Nhập</p>
+        <form action="">
+          <div class="modal-body">
+            <div class="group-button-login">
+              <button class="btn-login middle facebook">
+                <i class="fab fa-facebook"></i>Đăng nhập bằng Facebook
+              </button>
+              <button class="btn-login middle google">
+                <i class="fab fa-google-plus"></i>Đăng nhập bằng Google
+              </button>
+            </div>
+            <div class="form-inputs">
+              <input
+                name="email"
+                type="text"
+                placeholder="Nhập số điện thoại hoặc email"
+              />
+              <input
+                name="password"
+                type="password"
+                placeholder="Nhập mật khẩu"
+              />
+              <button class="btn-login login" type="submit">Đăng nhập</button>
+            </div>
+          </div>
+        </form>
+        <p>Khôi phục tài khoản</p>
+        <div class="modal-footer">
+          chưa có tài khoản? <button>Đăng ký tài khoản</button>
         </div>
       </div>
     </div>

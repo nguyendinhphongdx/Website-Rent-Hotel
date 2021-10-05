@@ -109,7 +109,6 @@ function onScrollPage(e) {
   }
 }
 function openDropdownAccount() {
-  console.log("a");
   const dropdown = document.getElementById("dropdown-account");
   if (dropdown) {
     dropdown.classList.toggle("active");
