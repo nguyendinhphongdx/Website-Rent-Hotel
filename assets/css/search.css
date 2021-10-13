@@ -57,6 +57,7 @@
 }
 .path .item,.path i{
     color: rgb(155, 151, 151);
+    font-size: 14px;
 }
 .path .item:first-child{
     font-size: 18px;

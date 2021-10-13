@@ -1,0 +1,224 @@
+.card-hotel{
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+}
+.card-hotel .span{
+    background-color: rgb(199, 199, 89);
+    width: fit-content;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+}
+
+/* CSS HEADER */
+.header-card{
+    display: flex;
+    justify-content: space-between;
+}
+.header-card .header-left{
+
+}
+.content-hotel .name{
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px;
+}
+.content-hotel .star-voted{
+    width: fit-content;
+}
+.content-hotel .star-voted{
+    width: fit-content;
+    margin: 10px 0px;
+}
+.content-hotel .review{
+    display: flex;
+    align-items: center;
+    padding: 15px 0px;
+    
+}
+.content-hotel .review .mark{
+    width: fit-content;
+}
+.content-hotel .review .comment{
+    margin: 0px 10px;
+}
+.content-hotel  a{
+    color: blueviolet;
+    margin: 0px 10px;
+}
+.header-card .header-right{
+    display: flex;
+    align-items: center;
+    
+}
+.header-right .price{
+    height: fit-content;
+    font-weight: 600;
+    margin-right: 10px;
+}
+.header-right .price .old-price{
+    font-weight: 500;
+    display: flex;
+}
+.header-right .price .old-price p{
+    text-decoration: line-through;
+}
+.header-right .price .old-price .percent{
+    margin:0px 7px;
+    background-color: red;
+    color: white;
+    padding: 4px;
+    border-radius: 5px;
+}
+.header-right .price .new-price{
+  font-size: 18px;
+}
+.header-right .btn-select{
+    background-color: rgb(255, 51, 102);
+    color: white;
+    height: fit-content;
+    padding: 15px 23px;
+    border-radius: 10px;cursor: pointer;
+    font-weight: 700;
+}
+.header-right .btn-select:hover{
+    background-color: rgb(226, 19, 70);
+}
+/*END CSS HEADER */
+/* CSS PICTURES */
+.card-hotel .pictures{
+    display: flex;
+    margin: 10px 5px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.pictures .main{
+    width: 50%;
+    padding-right: 5px;
+    overflow: hidden;
+}
+.pictures .main img{
+    width: 100%;
+    cursor: pointer;
+}
+.pictures .garery{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.pictures .garery .image{
+    width: 50%;
+    overflow: hidden;
+    padding:5px 5px;
+    border-radius: 10px;
+}
+.pictures .garery .image img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+.pictures img:hover{
+    transform: scale(1.1);
+    transition: all .3s ease;
+}
+/* END CSS PICTURES */
+/* CSS CONVENIENT */
+.more-infor {
+    display: flex;
+    
+}
+.more-infor .convenients,.more-infor .review{
+    width: 50%;
+    padding: 10px 15px;
+}
+.more-infor  .header .title{
+    color: #1a202c;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 23px;
+}
+.more-infor  .header .docLink{
+    color: #00B6F3;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+}
+.more-infor .convenients .container-convenients{
+  display: flex;  
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+.container-convenients .item-convenient{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 20%;
+    padding: 15px 0px;
+    align-items: center;
+}
+.container-convenients .item-convenient img{
+    width: 24px;
+    height: 24px;
+}
+.container-convenients .item-convenient p{
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+}
+.container-convenients .item-convenient:last-child p{
+    background-color: #5ac5e9;
+    width: fit-content;
+    padding: 20px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1c6780;
+   
+} 
+.more-infor .review{
+  
+}
+.review .container-review{
+    display: flex;
+    padding: 15px 0px;
+}
+.more-infor .review .compete{
+    font-size: 14px;
+    width: fit-content;
+    padding: 0px 5px;
+}
+.review .compete .item-compete{
+    display: flex;
+    margin: 15px 5px;
+    align-items: center;
+}
+.item-compete p.name{
+    width: 90px;
+}
+.item-compete progress{
+    margin-right: 8px;
+}
+.item-compete .total{
+    color: #805ae9;
+}
+.container-review .comment{
+    background-color: #cadce2;
+    border-radius: 15px;
+    padding: 25px;  
+}
+.container-review .comment .title{
+    font-weight: 700;
+    margin: 8px 0px;
+}
+.container-review .comment .content{
+    font-size: 14px;
+    margin: 15px 0px;
+}
+/* END CSS CONVENIENT */
