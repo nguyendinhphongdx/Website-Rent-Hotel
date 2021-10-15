@@ -192,8 +192,46 @@ body {
   outline: none;
   border: none;
 }
-
-
+/* CSS BUTTON PRICE */
+.container-price{
+  display: flex;
+  align-items: center;
+  
+}
+.container-price .price{
+  height: fit-content;
+  font-weight: 600;
+  margin-right: 10px;
+}
+.container-price .price .old-price{
+  font-weight: 500;
+  display: flex;
+}
+.container-price.price .old-price p{
+  text-decoration: line-through;
+}
+.container-price .price .old-price .percent{
+  margin:0px 7px;
+  background-color: red;
+  color: white;
+  padding: 4px;
+  border-radius: 5px;
+}
+.price .new-price{
+font-size: 18px;
+}
+.container-price .btn-select{
+  background-color: rgb(255, 51, 102);
+  color: white;
+  height: fit-content;
+  padding: 15px 23px;
+  border-radius: 10px;cursor: pointer;
+  font-weight: 700;
+}
+.container-price .btn-select:hover{
+  background-color: rgb(226, 19, 70);
+}
+/* END CSS BUTTON PRIC E */
 @-webkit-keyframes fadeIn {
   from {opacity: 0} 
   to {opacity: 1}
@@ -501,6 +539,55 @@ body {
   font-size: 15px;
 }
 /* END FOOTER */
+
+.cnt p {
+  font-size:14px;
+}
+
+#pointer-mini {
+  display: inline-block;
+  font-size: 14px; 
+  height: 20px;
+  width: 120px;
+  position: relative;
+  background: rgb(113, 170, 245);
+  text-align: center;
+  vertical-align: middle;
+}
+#pointer-mini:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-right: 10px solid white;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+#pointer-mini:before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-right: 10px solid rgb(137, 173, 228);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.cnt {
+  position: relative;
+  top: 0;
+  left: 12px;
+  height: 100%;
+  display: flex;
+  color: white;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 @media only screen and (max-width: 1400px) {
   .wrapper-content {
     width: 100%;
@@ -543,6 +630,146 @@ body {
     font-size: 14px;
   }
 }
+/* CSS RADIO  */
+/* CSS PROGESSBAR CIRCLE  */
+.wrapper-circle {
+  width: 100px; /* Set the size of the progress bar */
+  height: 120px;
+  /* position: absolute; Enable clipping */
+  clip: rect(0px, 100px, 100px, 50px); /* Hide half of the progress bar */
+}
+/* Set the sizes of the elements that make up the progress bar */
+.circle {
+  width: 120px;
+  height: 120px;
+  border: 10px solid rgb(29, 55, 112);
+  border-radius: 71px;
+  position: absolute;
+  clip: rect(0px, 74px, 120px, 0px);
+}
+/* Using the data attributes for the animation selectors. */
+/* Base settings for all animated elements */
+div[data-anim~=base] {
+  -webkit-animation-iteration-count: 1;  /* Only run once */
+  -webkit-animation-fill-mode: forwards; /* Hold the last keyframe */
+  -webkit-animation-timing-function:linear; /* Linear animation */
+}
+
+.wrapper-circle[data-anim~=wrapper] {
+  -webkit-animation-duration: 0.01s; /* Complete keyframes asap */
+  -webkit-animation-delay: 3s; /* Wait half of the animation */
+  -webkit-animation-name: close-wrapper; /* Keyframes name */
+}
+
+.circle[data-anim~=left] {
+  -webkit-animation-duration: 6s; /* Full animation time */
+  -webkit-animation-name: left-spin;
+}
+
+.circle[data-anim~=right] {
+  -webkit-animation-duration: 3s; /* Half animation time */
+  -webkit-animation-name: right-spin;
+}
+/* Rotate the right side of the progress bar from 0 to 180 degrees */
+@-webkit-keyframes right-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(180deg);
+  }
+}
+/* Rotate the left side of the progress bar from 0 to 360 degrees */
+@-webkit-keyframes left-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* Set the wrapper clip to auto, effectively removing the clip */
+@-webkit-keyframes close-wrapper {
+  to {
+    clip: rect(auto, auto, auto, auto);
+  }
+}
+
+/* END CSS PROGESSBAR CIRCLE  */
+
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  /* appearance: none; */
+  position: relative;
+  height: 20px;
+  width: 20px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+}
+.option-input:hover {
+  background: #9faab7;
+}
+.option-input:checked {
+  background: #4071e0;
+}
+.option-input:checked::before {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 13.66667px;
+  text-align: center;
+  line-height: 20px;
+}
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #40e0d0;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+.option-input.radio {
+  border-radius: 50%;
+}
+.option-input.radio::after {
+  border-radius: 50%;
+}
+
+
+
+
+
+/* END CSS RADIO  */
 @media only screen and (max-width: 750px) {
   /* hide navigation-header  */
   .navigation-header .menu-type {
