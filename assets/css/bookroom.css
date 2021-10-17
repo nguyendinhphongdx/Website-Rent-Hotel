@@ -1,0 +1,36 @@
+.content-page{
+    margin-top: 60px;
+}
+.bill{
+    width: 60%;
+}
+.bill .timer-pay{
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+}
+.timer-pay .time{
+    margin: 0px 20px;
+}
+.bill .card{
+    background-color: white;
+    margin: 20px 0px;
+    padding: 20px 10px;
+}
+.bill .card .title{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px 0px;
+}
+.card input {
+    width: 100%;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin: 10px 0px;
+    border: none;
+    border-bottom: 1px solid blue;
+    outline: none;
+}
