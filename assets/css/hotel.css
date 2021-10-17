@@ -382,7 +382,7 @@
     font-size: 23px;
     color: rgb(168, 155, 155);
 }
-.wrapper-review{
+.wrapper-review,.wrapper-intro{
     background-color: white;
     border-radius: 8px;
     box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
@@ -484,6 +484,8 @@ font-size: 14px;
     display: flex;
     margin: 10px 0px;
 }
+/*END  CSS REVIEW  */
+/* CSS REIVEW FROM CUSTOMER  */
 .container-comment{
     background-color: #e8f5f5;
     border-radius: 10px;
@@ -550,10 +552,11 @@ font-size: 14px;
 .container-comment .content-comment .item-comment{
     width: fit-content;
     padding: 20px 50px 20px 20px;
-    border-right: .5px solid #ccc;
+    border: .5px solid rgb(141, 135, 224);
     display: flex;
-    background-color: #ecfbff;
-    margin: 10px 0px;
+    background-color: #fbfdfd;
+    margin: 20px 0px;
+    border-radius: 10px;
 }
 .content-comment{
     margin: 20px 0px;
@@ -615,7 +618,65 @@ font-size: 14px;
 .item-comment .col-center .like{
   margin-top: 20px;
  }
-/*END  CSS REVIEW  */
+/* END CSS REIVEW FROM CUSTOMER  */
+/* CSS INTRO HOTEL   */
+.wrapper-intro {
+  background-color: #ffffff;
+  margin-top:20px;
+}
+.wrapper-intro .header .title{
+  font-size:20px;
+  font-weight:700
+}
+.wrapper-intro .row-intro{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:10px 20px;
+}
+.wrapper-intro .row-intro .introduction{
+  position: relative;
+  width: 40%;
+}
+.row-intro .introduction .box{
+  border: 1px solid rgb(117, 100, 216);
+  padding: 30px 30px;
+  border-radius: 10px;
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+  width: 120%;
+  background-color:white
+}
+.wrapper-intro .row-intro .image{
+  width: 60%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.wrapper-intro .row-intro .image img{
+  width: 100%;
+}
+.introduction .box .title{
+  font-size:16px;
+  font-weight:bold;
+}
+.introduction .box .content{
+  padding: 20px;
+  font-size: 14px;
+  color: rgb(94, 88, 88);
+}
+.introduction .box .view-more{
+  border: 1px solid #ccc;
+  width: fit-content;
+  padding:10px 20px;
+  border-radius: 5px;
+}
+.introduction .box .view-more:hover{
+  background-color: rgb(66, 66, 243);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color:white;
+}
+/* END CSS INTRO HOTEL   */
+
 
 
 
