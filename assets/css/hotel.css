@@ -439,12 +439,12 @@
     display: flex;
     justify-content: space-between;
 }
-.checklists .check-item{
+.check-item{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.checklists .check-item p{
+.check-item p{
 font-size: 14px;
 }
 .analysis{
