@@ -247,7 +247,7 @@ h1{
 .form-group{ 
     margin: 7px 0px;
 }
-.form-group input{
+.form-group input,.form-group select{
     width: 100%;
     color: #333;
     padding: 5px 8px;
