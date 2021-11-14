@@ -42,11 +42,11 @@
 
                 </div>
                 <div class="header-right">
-                    <a href="login.html">đăng xuất</a>
+                    <asp:Button runat="server" OnClick="btnLogout_Click" ID="btnLogout" Text="Đăng xuất"></asp:Button>
                 </div>
             </div>
             <div class="content-page">
-                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                 <asp:ContentPlaceHolder ID="MainContent"  runat="server">
             </asp:ContentPlaceHolder>
             </div>
         </div>

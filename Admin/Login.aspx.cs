@@ -22,7 +22,11 @@ namespace WebNCASP.Admin
             }
             String email1 = Request.QueryString["email"];
             String password2 = Request.QueryString["password"];
-
+            if (email1 == "admin@gmail.com" && password2 == "123")
+            {
+                Session["adMinLogedIn"] = true;
+                Response.Redirect("Index.aspx");
+            }
         }
     }
 }

@@ -11,7 +11,14 @@ namespace WebNCASP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            bool logedIn = (bool)Session["adMinLogedIn"];
+            if (logedIn!=true) { Response.Redirect("Login.aspx"); }
+        }
 
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session["adMinLogedIn"] = false;
+            Response.Redirect("Login.aspx");
         }
     }
 }

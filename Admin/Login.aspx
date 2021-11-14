@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WebNCASP.Admin.Login" %>
-
+<html>
 <!DOCTYPE html>
 
 <head runat="server">
@@ -58,7 +58,8 @@
                 </form>
             </div>
         </div>
-    </section>
+           <p>admin@gmail.com - 123</p>
+           </section>
 </body>
     <script > 
     const switchers = [...document.querySelectorAll('.switcher')]
