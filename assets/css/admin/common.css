@@ -278,10 +278,13 @@ h1{
     height:100px;   
     border-radius: 5px;
     margin-top: 5px;
+    display: flex;
+    width: 100%;
 }
 .form-group .image img{
-    width: 100%;
+    width: 100px;
     object-fit: fill;
+    margin: 0px 10px;
 }
 /* END CSS FORM   */
 /*

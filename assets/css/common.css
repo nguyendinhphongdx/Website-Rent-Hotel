@@ -330,7 +330,7 @@ font-size: 18px;
   background: white;
   transform: rotate(45deg);
 }
-.icon-account .dropdown button{
+.icon-account .dropdown button,.icon-account .dropdown input[type="button"]{
   border: none;
   padding:10px 8px;
   width: 100%;
@@ -339,7 +339,7 @@ font-size: 18px;
   border-radius: 5px;
   cursor: pointer;
 }
-.icon-account .dropdown button:hover{
+.icon-account .dropdown button:hover,.icon-account .dropdown input[type="button"]:hover{
   background-color: #ccc
 }
 .menu-contact .icon {

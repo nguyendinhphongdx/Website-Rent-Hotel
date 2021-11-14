@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin | Quản lý khách sạn</title>
+    <title>Admin | Quản lý đơn đặt</title>
     <link rel="stylesheet" href="../assets/css/admin/hotel.css">
     <link rel="stylesheet" href="../assets/css/admin/common.css">
     <script src="../assets/js/admin/index.js"></script>
@@ -21,10 +21,10 @@
                 <a href="index.html" class="item-side">
                     Trang chủ
                 </a>
-                <a href="a-hotel.html" class="item-side active">
+                <a href="a-hotel.html" class="item-side">
                     Quản lý khách sạn
                 </a>
-                <a href="a-room.html" class="item-side">
+                <a href="a-room.html" class="item-side active">
                     Quản lý phòng khách sạn
                 </a>
                 <a href="a-service.html" class="item-side">
@@ -54,7 +54,7 @@
                     <label for="tab1">Danh sách</label>
                     <!-- Tab 2 -->
                     <input type="radio" name="tabset" id="tab2" aria-controls="new">
-                    <label for="tab2">Thêm khách sạn</label>
+                    <label for="tab2">Thêm phòng</label>
                     <!-- Tab 3 -->
                     <input type="radio" name="tabset" id="tab3" aria-controls="change">
                     <label for="tab3">Sửa</label>
@@ -63,15 +63,16 @@
                       <section id="list" class="tab-panel">
                         <div class="row-container">
                             <div class="card card-list col-10">
-                                <div class="title">Danh sách khách sạn</div>
+                                <div class="title">Danh sách phòng</div>
                                 <div class="tbl-header">
                                     <table cellpadding="0" cellspacing="0" border="0">
                                         <thead>
                                             <tr>
                                                 <th>STT</th>
                                                 <th>Tên khách sạn</th>
-                                                <th>địa chỉ</th>
-                                                <th>Số phòng</th>
+                                                <th>Tên phòng</th>
+                                                <th>Số giường</th>
+                                                <th>Gía 1 đêm</th>
                                             </tr>
                                         </thead>
                                     </table>
@@ -280,25 +281,33 @@
                     </section>
                       <section id="new" class="tab-panel">
                         <div class="card card-info col-12">
-                            <div class="title">Thông tin khách sạn</div>
+                            <div class="title">Thông tin phòng</div>
                             <form class="form">
                                 <div class="form-group">
                                     <label for="name">Tên khách sạn</label>
-                                    <input type="text" id="name" placeholder="Tên khách sạn">
+                                    <select name="name">
+                                        <option>Khách sạn 1</option>
+                                        <option>Khách sạn 2</option>
+                                        <option>Khách sạn 3</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="image">Ảnh khách sạn</label>
-                                    <input type="file" id="image" multiple onchange="handleOnChangeInputImage(this,'print-picture')">
+                                    <label for="nameRoom">Tên phòng</label>
+                                    <input type="text" id="nameRoom" placeholder="Tên phòng">
+                                </div>
+                                <div class="form-group">
+                                    <label for="image">Ảnh phòng</label>
+                                    <input type="file" id="image" multiple="multiple" onchange="handleOnChangeInputImage(this,'print-picture')">
                                     <div class="image">
                                         <!-- <img id="print-picture" src="../assets/images/photos-hotel/logo_4_1009828.jpg" alt=""> -->
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="address">Địa chỉ</label>
-                                    <input type="text" id="address" placeholder="Tên khách sạn">
+                                    <label for="price">Gía 1 đêm</label>
+                                    <input type="text" id="price" placeholder="Gía 1 đêm">
                                 </div>
                                 <div class="form-group">
-                                    <label for="number">Số lượng phòng</label>
+                                    <label for="number">Số giường</label>
                                     <input type="number" id="number" placeholder="Số lượng phòng">
                                 </div>
                                 <div class="form-group">
@@ -314,30 +323,30 @@
                     </section>
                       <section id="change" class="tab-panel">
                         <div class="card card-info col-12">
-                            <div class="title">Sửa khách sạn</div>
+                            <div class="title">Sửa phòng</div>
                             <form class="form">
                                 <div class="form-group">
-                                    <label for="name">Tên khách sạn</label>
+                                    <label for="name">Tên phòng</label>
                                     <select name="name">
-                                        <option>Khách sạn 1</option>
-                                        <option>Khách sạn 2</option>
-                                        <option>Khách sạn 3</option>
+                                        <option>Phòng 1</option>
+                                        <option>Phòng 2</option>
+                                        <option>KhácPhòng 3</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="image">Ảnh khách sạn</label>
-                                    <input type="file" id="image" multiple onchange="handleOnChangeInputImage(this,'print-picture')">
+                                    <label for="image">Phòng</label>
+                                    <input type="file" id="image" multiple="multiple" onchange="handleOnChangeInputImage(this,'print-picture')">
                                     <div class="image">
-                                        <!-- <img id="print-picture" src="../assets/images/photos-hotel/logo_4_1009828.jpg" alt=""> -->
+                                        <img id="print-picture" src="../assets/images/photos-hotel/logo_4_1009828.jpg" alt="">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="address">Địa chỉ</label>
+                                    <label for="address">Gía 1 đêm</label>
                                     <input type="text" id="address" placeholder="Tên khách sạn">
                                 </div>
                                 <div class="form-group">
-                                    <label for="number">Số lượng phòng</label>
-                                    <input type="number" id="number" placeholder="Số lượng phòng">
+                                    <label for="number">Số giường</label>
+                                    <input type="number" id="number" placeholder="Số lượng giường">
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Mô tả</label>
