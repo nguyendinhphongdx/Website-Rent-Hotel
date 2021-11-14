@@ -274,20 +274,13 @@ body {
     cursor: pointer;
 }
 
-.btn-login {
+.btn-login,.btn-signup {
 	color: #fbfdff;
 	background: #c3225e;
 	transform: translateX(-30%);
 }
-.btn-login:hover{
+.btn-login:hover,.btn-signup:hover{
     background: #7a1e40;
     transition: all .3s ease-out;
 }
-.btn-signup {
-	color: #a7e245;
-	background: #245a91;
-	transform: translateX(30%);
-}
-.btn-signup:hover {
-	background: #173f68;
-}
+
