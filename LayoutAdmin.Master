@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LayoutAdmin.master.cs" Inherits="WebNCASP.LayoutAdmin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+        <title><%: Page.Title %> - My ASP.NET Application</title>
+    <link href="Content/assets/css/admin/common.css" rel="stylesheet" />
+    <link href="Content/assets/css/admin/index.css" rel="stylesheet" />
+</head>
+<body onload="onLoad()">
+    <form id="form1" runat="server">
+         <div class="wrapper-page">
+        <div class="sidebar">
+            <div class="container-sidebar">
+                <div class="header-side">
+                    <a href="index.aspx">Admin Page</a>
+                </div>
+                <a href="index.aspx" class="item-side active">
+                   Trang chủ
+                </a>
+                <a href="hotel.aspx" class="item-side">
+                    Quản lý khách sạn
+                </a>
+                <a href="room.aspx" class="item-side">
+                    Quản lý phòng khách sạn
+                </a>
+                <a href="service.aspx" class="item-side">
+                    Quản lý dịch vụ
+                </a>
+                <a href="bookroom.aspx" class="item-side">
+                    Quản lý đơn đặt phòng
+                </a>
+                <a href="custumer.aspx" class="item-side">
+                    Khách hàng
+                </a>
+            </div>
+        </div>
+        <div class="main">
+            <div class="header-page">
+                <div class="header-left">
+
+                </div>
+                <div class="header-right">
+                    <a href="login.html">đăng xuất</a>
+                </div>
+            </div>
+            <div class="content-page">
+                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

@@ -105,6 +105,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\BookRoom.aspx" />
+    <Content Include="Admin\Custumer.aspx" />
+    <Content Include="Admin\Hotel.aspx" />
+    <Content Include="Admin\Index.aspx" />
+    <Content Include="Admin\Login.aspx" />
+    <Content Include="Admin\Room.aspx" />
+    <Content Include="Admin\Service.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -128,6 +135,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="LayoutC.Master" />
     <Content Include="LayoutC2.Master" />
+    <Content Include="LayoutAdmin.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -162,6 +170,55 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\BookRoom.aspx.cs">
+      <DependentUpon>BookRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BookRoom.aspx.designer.cs">
+      <DependentUpon>BookRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Custumer.aspx.cs">
+      <DependentUpon>Custumer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Custumer.aspx.designer.cs">
+      <DependentUpon>Custumer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Hotel.aspx.cs">
+      <DependentUpon>Hotel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Hotel.aspx.designer.cs">
+      <DependentUpon>Hotel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Room.aspx.cs">
+      <DependentUpon>Room.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Room.aspx.designer.cs">
+      <DependentUpon>Room.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Service.aspx.cs">
+      <DependentUpon>Service.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Service.aspx.designer.cs">
+      <DependentUpon>Service.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Customer\BookRoom.aspx.cs">
@@ -202,6 +259,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LayoutAdmin.Master.cs">
+      <DependentUpon>LayoutAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LayoutAdmin.Master.designer.cs">
+      <DependentUpon>LayoutAdmin.Master</DependentUpon>
+    </Compile>
     <Compile Include="LayoutC.Master.cs">
       <DependentUpon>LayoutC.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -226,7 +290,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Admin\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
