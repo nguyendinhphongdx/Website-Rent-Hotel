@@ -1,0 +1,237 @@
+.wallpaper-header {
+  padding: 7px 0px;
+  top: 0;
+  background-color: white;
+}
+.content-page {
+  background-color: #f0f7f9;
+  width: 100%;
+  margin: 0;
+  padding: 10px 0;
+  border-radius: 12px;
+  margin-top: 150px;
+  margin-bottom: 20px;
+}
+.content-page .wrapper-content {
+}
+.header-banner {
+  padding: 5px 0px;
+}
+.header-banner .logo {
+  width: 125px;
+  margin-right: 20px;
+}
+.header-banner .logo img {
+  width: 100%;
+}
+.menu-type ul li.active a {
+  border: none;
+}
+.menu-type ul a {
+  color: black;
+}
+.menu-contact {
+  color: black;
+}
+.box-option {
+  padding: 0;
+  margin-top: 0px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.box-option .container-box .box-item .input,
+.total-day span {
+  height: 40px;
+}
+.container-footer {
+  margin-top: 0px;
+}
+.footer {
+  padding-top: 0px;
+}
+/* CSS path */
+.path {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+.path .item,.path i{
+    color: rgb(155, 151, 151);
+    font-size: 14px;
+}
+.path .item:first-child{
+    font-size: 18px;
+}
+.path .item:last-child{
+    color: #000;
+}
+.path i{
+    margin: 0px 8px;
+}
+
+/* CSSS FILTER */
+.box-filter {
+  background-color: white;
+  width: 250px;
+  padding: 10px 10px;
+  border-radius: 5px;
+}
+.box-filter>.tittle{
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: .5px solid rgb(177, 206, 250);
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+}
+.filter-item{
+    border-bottom: .5px solid rgb(177, 206, 250);
+    padding: 10px 0px;
+}
+.filter-item .tittle{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    margin-bottom: 10px;
+}
+.box-filter>.tittle a{
+    font-weight: 400;
+    color: blueviolet;
+    font-size: .9rem;
+}
+#slider {
+  display: flex;
+  align-items: center;
+}
+#slider input[type="number"] {
+  padding: 5px 3px;
+  width: 100px;
+  outline: none;
+  border: .5px solid skyblue;
+  border-radius: 3px;
+}
+#slider > i {
+  margin: 0px 5px;
+}
+#slider input[type="number"]:focus {
+  background-color: rgb(215, 227, 250);
+}
+.filter-row{
+    position: relative;
+    margin: 8px;
+    display: flex;
+    font-size: 14px;
+}
+.filter-row input[type="checkbox"]:checked{
+    background-color: rgb(146, 160, 223);
+}
+.filter-row input[type="checkbox"]:hover{
+    cursor: pointer;
+}
+.filter-row input[type="checkbox"]{
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    margin-right: 15px;
+}
+.stars i {
+  color: rgb(150, 212, 24);
+  margin: 0px 3px;
+}
+/* END CSS FILTER */
+/* CSS TAB CONTENT */
+.container-content{
+    display: flex;
+}
+.tabs-container{
+    width: -webkit-fill-available;
+}
+.tabs-container .tabs-header ul{
+    display: flex;
+    border-bottom: 0.5px solid #eee;
+}
+.tabs-container .tabs-header ul li{
+    margin: 0px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 8px 0px;
+    position: relative;
+    transition: all .2s;
+    text-align: center;
+}
+.tabs-container .tabs-header ul li p{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+}
+.tabs-header ul li:hover{
+    color: blue;
+}
+
+.tabs-header ul li:first-child>.active-tab,.tabs-header ul li:hover>.active-tab{
+    display: block;
+}
+.active-tab{
+    position: absolute;
+    display: none;
+    border-bottom: 2px solid blue;
+    width: 100%;
+    bottom: 0px;
+}
+.container-hotel .box-hotel{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+}
+.container-hotel .box-hotel .picture{
+    max-width: 275px;
+    width: 30%;
+    min-width: 180px;
+    border-radius: 10px;
+    height: 180px;
+}
+.box-hotel .container-content-hotel {
+    height: 180px;
+    padding: 0px 15px;
+    width: -webkit-fill-available;
+}
+.content-hotel{
+    font-size: 14px;
+}
+.content-hotel .type-hotel{
+    color: rgb(255, 0, 0);
+    padding: 3px 8px;
+    font-size: 12px;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+.container-content-hotel .review, .review .mark-reivew{
+    justify-content: flex-start;
+}
+.container-content-hotel .review .comment{
+    margin: 0px 10px;
+}
+
+/* END CSS TAB CONTENT */
+
+/* PAGGING */
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+.pagination-container{
+    padding: 5px 0px;
+}
+.pagination-container a{
+    padding: 7px 10px;
+}
+.pagination-container a:hover,.pagination-container a.active{
+    background-color: blueviolet;
+    color: white;
+    border-radius: 5px;
+}
+/* END PAGGING */

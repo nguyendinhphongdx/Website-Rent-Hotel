@@ -1,0 +1,682 @@
+.card-hotel {
+  background-color: white;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+}
+.card-hotel .span {
+  background-color: rgb(199, 199, 89);
+  width: fit-content;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+}
+
+/* CSS HEADER */
+.header-card {
+  display: flex;
+  justify-content: space-between;
+}
+.header-card .header-left {
+}
+.content-hotel .name {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 10px;
+}
+.content-hotel .star-voted {
+  width: fit-content;
+}
+.content-hotel .star-voted {
+  width: fit-content;
+  margin: 10px 0px;
+}
+.content-hotel .review {
+  display: flex;
+  align-items: center;
+  padding: 15px 0px;
+}
+.content-hotel .review .mark {
+  width: fit-content;
+}
+.content-hotel .review .comment {
+  margin: 0px 10px;
+}
+.content-hotel a {
+  color: blueviolet;
+  margin: 0px 10px;
+}
+
+/*END CSS HEADER */
+/* CSS PICTURES */
+.card-hotel .pictures {
+  display: flex;
+  margin: 10px 5px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.pictures .main {
+  width: 50%;
+  padding-right: 5px;
+  overflow: hidden;
+}
+.pictures .main img {
+  width: 100%;
+  cursor: pointer;
+}
+.pictures .garery {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.pictures .garery .image {
+  width: 50%;
+  overflow: hidden;
+  padding: 5px 5px;
+  border-radius: 10px;
+}
+.pictures .garery .image img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+.card-hotel .pictures img:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+/* END CSS PICTURES */
+/* CSS CONVENIENT */
+.more-infor {
+  display: flex;
+}
+.more-infor .convenients,
+.more-infor .review {
+  width: 50%;
+  padding: 10px 15px;
+}
+.more-infor .header .title {
+  color: #1a202c;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 23px;
+}
+.more-infor .header .docLink {
+  color: #00b6f3;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+.more-infor .convenients .container-convenients {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+.container-convenients .item-convenient {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 20%;
+  padding: 15px 0px;
+  align-items: center;
+}
+.container-convenients .item-convenient img {
+  width: 24px;
+  height: 24px;
+}
+.container-convenients .item-convenient p {
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 14px;
+}
+.container-convenients .item-convenient:last-child p {
+  background-color: #5ac5e9;
+  width: fit-content;
+  padding: 20px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1c6780;
+}
+.more-infor .review {
+}
+.review .container-review {
+  display: flex;
+  padding: 15px 0px;
+}
+.more-infor .review .compete {
+  font-size: 14px;
+  width: fit-content;
+  padding: 0px 5px;
+}
+.review .compete .item-compete {
+  display: flex;
+  margin: 15px 5px;
+  align-items: center;
+}
+.item-compete p.name {
+  width: 90px;
+}
+.item-compete progress {
+  margin-right: 8px;
+}
+.item-compete .total {
+  color: #805ae9;
+}
+.container-review .comment {
+  background-color: #cadce2;
+  border-radius: 15px;
+  padding: 25px;
+}
+.container-review .comment .title {
+  font-weight: 700;
+  margin: 8px 0px;
+}
+.container-review .comment .content {
+  font-size: 14px;
+  margin: 15px 0px;
+}
+/* END CSS CONVENIENT */
+/* CSS SELECT ROOM  */
+.wrapper-rooms {
+  margin: 10px 0px;
+  padding: 20px 0px;
+}
+.wrapper .title {
+  color: #1a202c;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 23px;
+  margin-bottom: 5px;
+}
+.wrapper-rooms .container-rooms {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container-rooms .item-room {
+  background-color: white;
+  width: 100%;
+  border-radius: 8px;
+  padding: 35px 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  margin-bottom: 20px;
+}
+.item-room .col.col-left {
+  width: 30%;
+  max-width: 220px;
+}
+.col.col-left .container-picture{
+    position: sticky;
+    top: 151px;
+}
+.item-room .col.col-left .pictures {
+  border-radius: 10px;
+  overflow: hidden;
+
+}
+.pictures .picture-main {
+  width: 100%;
+}
+.pictures .picture-main img {
+  width: 100%;
+  object-fit: cover;
+  height: 150px;
+  overflow: hidden;
+}
+.pictures .picture-more {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.pictures .picture-more .picture {
+  width: 32%;
+  display: flex;
+  padding: 0px 0px;
+  height: 60px;
+}
+.pictures .picture-more .picture img {
+  width: 100%;
+  object-fit: cover;
+}
+.item-room .col.col-left #pointer-mini {
+  position: absolute;
+  top: -10px;
+}
+.more-picture {
+  color: #8284f5;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+.item-room .col.col-right {
+  width: -webkit-fill-available;
+}
+.item-room .col.col-right .header {
+  flex-wrap: wrap;
+  position: sticky;
+  top: 140px;
+  padding-left: 10px;
+  box-shadow: rgb(0 0 0 / 20%) 0px 8px 10px -10px;
+  opacity: 1;
+  transition: all 0.4s ease 0s;
+  height: 85px;
+  position: sticky;
+  background-color: white;
+}
+.item-room .col.col-right .header .name {
+  color: #1a202c;
+  font-size: 18px;
+  font-weight: 600;
+  width: 100%;
+}
+.item-room .col.col-right .header .more {
+  display: flex;
+  font-size: 14px;
+  padding: 15px 0px;
+  width: 100%;
+}
+.more .area{
+    margin-right:10px;
+}
+.more div i{
+    margin-right: 5px;
+}
+.selections {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 10px;
+}
+.selections .selection-item{
+    display: flex;
+    width: 100%;
+    font-size: 14px;
+    border-top: 1px solid #ccc;    
+}
+.selection-item .col{
+    padding: 15px 0px;
+}
+.selection-item .col:not(:last-child){
+    border-right: 1px solid #ccc;
+}
+.selections .selection-item .col-info{
+    width: 50%;
+}
+.col-info .select-name{
+    font-weight: 600;
+}
+.col-info p{
+    margin: 10px 0px;
+    cursor: pointer;
+}
+.col-info p:hover{
+    color: #2f9cc0;
+}
+.col-info p:last-child{
+    color: red;
+}
+.col-info p i{
+    font-size: 14px;
+}
+.selection-item .col-person,.col-bed{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.item-bed{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.col-person p,.item-bed p{
+    text-align: center;
+    width: 100%;
+}
+.selections .selection-item .col-bed{
+    width: 20%;
+}
+.selections .selection-item .col-select{
+    width: fit-content;
+}
+.col-person p,.item-bed:not(:last-child)::after{
+    content: '-- hoặc --';
+    margin: 15px 0px;
+}
+.selection-item .col-select{
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.selection-item .col-select .price{
+    margin-right: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+.col-select .price .old-price{
+    text-decoration: line-through;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 7px 0px;
+}
+.col-select .price .percent{
+  text-align: right;
+  width: fit-content;
+  padding: 4px 8px;
+  border-radius: 10px;
+  background-color: red;
+  font-size: 14px;
+  color: white;
+  align-self: flex-end;
+
+}
+.col i{
+    font-size: 23px;
+    color: rgb(168, 155, 155);
+}
+.wrapper-review,.wrapper-intro{
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    padding: 20px 10px;
+}
+.wrapper .sub-title{
+    font-size: 14px;
+    color: rgb(209, 113, 113);
+}
+/* END CSS SELECT ROOM  */
+/* CSS REVIEW  */
+
+.tabs-review{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #ccc;
+}
+.tabs-review .tab{
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    position: relative;
+    padding-bottom: 15px;
+    padding: 0px 20px 15px 20px;
+    justify-content: center;
+    cursor: pointer;
+}
+.tabs-review .tab:hover{
+    background-color: #d6ebf1;
+    transition: all .25s ease;
+}
+.tabs-review .tab img{
+    width: 35px;
+    margin: 0px 15px;
+}
+.tabs-review .tab p{
+    font-weight: 600;
+    color: #448fa8;
+}
+.tabs-review .tab.active p{
+    color: black;
+}
+.tabs-review .tab.active .laser{
+    position: absolute;
+    border: 2px solid #805ae9;
+    width: 100%;
+    bottom: 0;
+}
+.checklists{
+    background-color: #eef3f5;
+    padding: 20px 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.check-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.check-item p{
+font-size: 14px;
+}
+.analysis{
+    display: flex;
+    align-items: center;
+}
+.analysis .wrapper-circle{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.analysis .reviews{
+    display: flex;
+    width: -webkit-fill-available;
+    flex-wrap: wrap;
+}
+.reviews .compete{
+    border-right: 1px solid #ccc;
+    padding: 20px 20px;
+    width: 60%;
+}
+
+.reviews .compete .item-compete progress,.services .item-compete progress{
+    width: 80%;
+    
+}
+.reviews .comment{
+    width: 40%;
+    padding: 20px 40px;
+}
+.reviews .services{
+    flex-wrap: wrap;
+}
+.reviews .compete .item-compete,.reviews .services .item-compete{
+    width: 100%;
+    display: flex;
+    margin: 10px 0px;
+}
+/*END  CSS REVIEW  */
+/* CSS REIVEW FROM CUSTOMER  */
+.container-comment{
+    background-color: #e8f5f5;
+    border-radius: 10px;
+    padding: 20px 15px ;
+}
+.container-comment .header-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container-comment .header-left .title{
+    font-size: 15px;
+}
+.container-comment .header-left .images{
+    display: flex;
+}
+.header-left .images .image{
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0px 10px;
+    position: relative;
+}
+.header-left .images .image:hover{
+    cursor: pointer;
+}
+.header-left .images .image img{
+    width: 100%;
+}
+.images .image:last-child::after{
+    content: 'More';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: .6;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-comment .header .header-right{
+    display: flex;
+}
+.header .header-right .btn-option{
+    border: .5px solid rgb(131, 138, 228);
+    padding: 8px 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+.header .header-right .btn-option:hover{
+    opacity: .9;
+}
+.header .header-right .btn-option.active{
+    background-color: #00b6f3;
+    color: white;
+}
+
+.container-comment .content-comment .item-comment{
+    width: fit-content;
+    padding: 20px 50px 20px 20px;
+    border: .5px solid rgb(141, 135, 224);
+    display: flex;
+    background-color: #fbfdfd;
+    margin: 20px 0px;
+    border-radius: 10px;
+}
+.content-comment{
+    margin: 20px 0px;
+}
+.item-comment .col-left{
+    display: flex;
+    width: 20%;
+}
+.item-comment .col-left .avatar{
+    width: 60px;
+    height: 60px;
+    margin: 0px 10px;
+    align-self: center;
+}
+.avatar img{
+    width: 100%;
+}
+.item-comment .col-left .infor{
+    
+}
+.item-comment .col-left .infor .name{
+    font-weight: 600;
+    font-size: 17px;
+    color: black;
+}
+.item-comment .col-left .infor{
+    margin: 5px 0px;
+    font-size: 14px;
+    color: #57727a;
+}
+.item-comment .col-left .infor p{
+    margin: 8px 0px;
+}
+.item-comment .col-left .infor p i{
+    margin-right: 8px;
+}
+.item-comment .col-right .mark{
+    background-color: #dad8f7;
+    border-radius: 10px;
+    padding: 20px 30px;
+}
+.item-comment .col-right .mark .row{
+    white-space: nowrap;
+    text-align: center;
+}
+.mark .row.number{
+    color: #805ae9;
+    font-weight: 700;
+    font-size: 26px;
+}
+.item-comment .col-center{
+    width: 70%;
+    padding: 0px 20px;
+}
+.item-comment .col-center .content{
+   font-size: 15px;
+   color: #303536;
+}
+.item-comment .col-center .like{
+  margin-top: 20px;
+ }
+/* END CSS REIVEW FROM CUSTOMER  */
+/* CSS INTRO HOTEL   */
+.wrapper-intro {
+  background-color: #ffffff;
+  margin-top:20px;
+}
+.wrapper-intro .header .title{
+  font-size:20px;
+  font-weight:700
+}
+.wrapper-intro .row-intro{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:10px 20px;
+}
+.wrapper-intro .row-intro .introduction{
+  position: relative;
+  width: 40%;
+}
+.row-intro .introduction .box{
+  border: 1px solid rgb(117, 100, 216);
+  padding: 30px 30px;
+  border-radius: 10px;
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+  width: 120%;
+  background-color:white
+}
+.wrapper-intro .row-intro .image{
+  width: 60%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.wrapper-intro .row-intro .image img{
+  width: 100%;
+}
+.introduction .box .title{
+  font-size:16px;
+  font-weight:bold;
+}
+.introduction .box .content{
+  padding: 20px;
+  font-size: 14px;
+  color: rgb(94, 88, 88);
+}
+.introduction .box .view-more{
+  border: 1px solid #ccc;
+  width: fit-content;
+  padding:10px 20px;
+  border-radius: 5px;
+}
+.introduction .box .view-more:hover{
+  background-color: rgb(66, 66, 243);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color:white;
+}
+/* END CSS INTRO HOTEL   */
+
+
+
+
