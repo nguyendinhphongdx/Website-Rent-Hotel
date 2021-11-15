@@ -42,32 +42,33 @@
                                 <div class="title">Thông tin phòng</div>
                                     <div class="form-group">
                                         <label for="name">Tên khách sạn</label>
-                                        <select name="name">
-                                            <option>Khách sạn 1</option>
-                                            <option>Khách sạn 2</option>
-                                            <option>Khách sạn 3</option>
-                                        </select>
+                                        <asp:DropDownList ID="update_hotelName" runat="server" name="name">
+                                            <asp:ListItem value="1">Khách sạn 1</asp:ListItem>
+                                            <asp:ListItem value="2">Khách sạn 2</asp:ListItem>
+                                             <asp:ListItem value="3">Khách sạn 3</asp:ListItem>
+                                        </asp:DropDownList>
                                     </div>
                                     <div class="form-group">
+                                        <asp:HiddenField ID="update_roomId" runat="server" Value="1"/>
                                         <label for="nameRoom">Tên phòng</label>
-                                        <input type="text" id="nameRoom" placeholder="Tên phòng">
+                                        <asp:TextBox runat="server" type="text" id="update_roomName" placeholder="Tên phòng"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="image">Ảnh phòng</label>
-                                        <input 
-                                            type="file" id="image" multiple="multiple" 
-                                            onchange="handleOnChangeInputImage(this,'imagesUpload')">
+                                        <asp:FileUpload AllowMultiple="true" runat="server" 
+                                            type="file" id="update_image"  
+                                            onchange="handleOnChangeInputImage(this,'imagesUpload')"/>
                                         <div class="image" id="imagesUpload">
                                             <!-- <img id="print-picture" src="../assets/images/photos-hotel/logo_4_1009828.jpg" alt=""> -->
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="price">Gía 1 đêm</label>
-                                        <input type="text" id="price" placeholder="Gía 1 đêm">
+                                        <asp:TextBox runat="server" type="number" id="update_price" placeholder="Gía 1 đêm"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="number">Số giường</label>
-                                        <input type="number" id="number" placeholder="Số lượng phòng">
+                                        <asp:TextBox runat="server" type="number" id="update_number" placeholder="Số lượng phòng"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="description">Mô tả</label>
@@ -75,7 +76,7 @@
                                     </div>
                                     <div class="card-footer">
                                         <button class="btn btn-dash">Hủy</button>
-                                        <button class="btn btn-primary">Thêm hoặc Sửa</button>
+                                        <asp:Button runat="server" ID="btnUpdate" CssClass="btn btn-primary" Text="Thêm hoặc Sửa" OnClick="btnUpdate_Click"/>
                                     </div>
                             </div>
                            </div>
@@ -85,31 +86,34 @@
                             <div class="title">Thông tin phòng</div>
                                 <div class="form-group">
                                     <label for="name">Tên khách sạn</label>
-                                    <select name="name">
-                                        <option>Khách sạn 1</option>
-                                        <option>Khách sạn 2</option>
-                                        <option>Khách sạn 3</option>
-                                    </select>
+                                    <asp:DropDownList runat="server" ID="add_nameHotel" name="name">
+                                        <asp:ListItem Value="1">Khách sạn 1</asp:ListItem>
+                                        <asp:ListItem Value="2">Khách sạn 2</asp:ListItem>
+                                        <asp:ListItem Value="3">Khách sạn 3</asp:ListItem>
+                                    </asp:DropDownList>
                                 </div>
                                 <div class="form-group">
-                                    <label for="nameRoom">Tên phòng</label>
-                                    <input type="text" id="nameRoom" placeholder="Tên phòng">
+                                    <label for="add_nameRoom">Tên phòng</label>
+                                    <asp:TextBox runat="server" ID="add_nameRoom" placeholder="Tên phòng"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="image">Ảnh phòng</label>
-                                    <input type="file" id="image" multiple="multiple" 
-                                        onchange="handleOnChangeInputImage(this,'imagesAdd')">
+                                    <asp:FileUpload runat="server"
+                                        id="add_images" AllowMultiple="true"
+                                        onchange="handleOnChangeInputImage(this,'imagesAdd')"/>
                                     <div class="image" id="imagesAdd">
                                         <!-- <img id="print-picture" src="../assets/images/photos-hotel/logo_4_1009828.jpg" alt=""> -->
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="price">Gía 1 đêm</label>
-                                    <input type="text" id="price" placeholder="Gía 1 đêm">
+                                    <label for="add_price">Gía 1 đêm</label>
+                                    <asp:TextBox runat="server" ID="add_price" placeholder="Gía 1 đêm"/>
+
                                 </div>
                                 <div class="form-group">
-                                    <label for="number">Số giường</label>
-                                    <input type="number" id="number" placeholder="Số lượng phòng">
+                                    <label for="add_number">Số giường</label>
+                                    <input type="number" id="number" placeholder="Số giường">
+                                    <asp:TextBox runat="server" ID="add_number" placeholder="Số giường"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Mô tả</label>
@@ -118,6 +122,7 @@
                                 <div class="card-footer">
                                     <button class="btn btn-dash">Hủy</button>
                                     <button class="btn btn-primary">Thêm hoặc Sửa</button>
+                                    <asp:Button  Text="Thêm mới" ID="btnAdd" runat="server" OnClick="btnAdd_Click" CssClass="btn btn-primary"/>
                                 </div>
                         </div>
                     </section>

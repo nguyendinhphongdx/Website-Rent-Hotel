@@ -18,7 +18,7 @@ const handleOnChangeInputImage = async (e, des = "") => {
     }
 }
 const onLoad = () => {
-    ListenEvent();
+   ListenEvent();
 }
 const ListenEvent = () => {
     const buttonsScroll = document.getElementsByClassName("scroll-card-info");
@@ -26,7 +26,8 @@ const ListenEvent = () => {
         buttonsScroll[index].addEventListener("click", () => ScrollToCardInfor());
     }
 }
-const ScrollToCardInfor = () => {
+const ScrollToCardInfor = (e) => {
+   // console.log({ e });
     const cardInfor = document.getElementById("card-info");
     window.scrollTo({
         top: cardInfor.getBoundingClientRect().height,

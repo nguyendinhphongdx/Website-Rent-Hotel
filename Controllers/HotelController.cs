@@ -7,5 +7,6 @@ namespace WebNCASP.Controllers
 {
     public class HotelController
     {
+
     }
 }
