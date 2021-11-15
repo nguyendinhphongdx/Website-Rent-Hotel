@@ -1,6 +1,12 @@
 function listentEvent() {
   listentInputPlace();
   listenModal();
+  const urlParams = new URLSearchParams(window.location.search);
+  const myParam = urlParams.get('place');
+  const daterange = urlParams.get('daterange');
+  const people =  urlParams.get('peopple');
+  if(myParam) document.getElementById("input-place").value = myParam;
+  if(daterange) document.getElementById("daterange").value = daterange;
 }
 function listentInputPlace() {
   const locations = document.getElementsByClassName("item-cities");
@@ -114,3 +120,4 @@ function openDropdownAccount() {
     dropdown.classList.toggle("active");
   }
 }
+
