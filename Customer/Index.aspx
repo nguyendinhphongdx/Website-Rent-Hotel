@@ -4,7 +4,6 @@
       <div class="wrapper-content">
         <div class="box-option">
           <div class="title-box">Khách sạn</div>
-          <form action="./search.html">
             <div class="container-box">
               <div class="box-item item-place">
                 <div class="title">Địa điểm</div>
@@ -96,11 +95,10 @@
                 </div>
                 <div class="indicator active"></div>
               </div>
-              <button class="box-item item-search" style="color:white">
+              <asp:LinkButton runat="server" ID="btnSearch" CssClass="box-item item-search" style="color:white" OnClick="btnSearch_Click">
                 <i class="fas fa-search fa-2x"></i>
-              </button>
+              </asp:LinkButton>
             </div>
-          </form>
         </div>
       </div>
     </div>

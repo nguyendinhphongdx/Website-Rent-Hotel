@@ -6,7 +6,7 @@ function listentInputPlace() {
   const locations = document.getElementsByClassName("item-cities");
   for (dow = 0; dow < locations.length; dow++) {
     locations[dow].addEventListener("click", (e) => {
-      document.getElementById("input-place").value = e.target.innerText.trim();
+        document.getElementById("input-place").value = e.target.innerText.trim();
     })
   }
 }

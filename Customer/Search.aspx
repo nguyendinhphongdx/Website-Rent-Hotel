@@ -131,7 +131,7 @@
               <div class="container-hotel">
                 <div class="box-hotel">
                   <div class="picture">
-                    <a href="hotel.html">
+                    <a href="hotel.aspx">
                       <img
                       src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg"
                       alt=""
@@ -151,7 +151,7 @@
                   </div>
                   <div class="container-content-hotel">
                     <div class="content-hotel">
-                      <a href="hotel.html">
+                      <a href="hotel.aspx">
                         <div class="name">Khách sạn Sheraton Nha Trang</div>
                       </a>
                       <div class="star-voted">
@@ -186,7 +186,7 @@
                 </div>
                 <div class="box-hotel">
                   <div class="picture">
-                    <a href="hotel.html">
+                    <a href="hotel.aspx">
                       <img
                       src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg"
                       alt=""
@@ -206,7 +206,7 @@
                   </div>
                   <div class="container-content-hotel">
                     <div class="content-hotel">
-                      <a href="hotel.html">
+                      <a href="hotel.aspx">
                         <div class="name">Khách sạn Sheraton Nha Trang</div>
                       </a>
                       <div class="star-voted">
@@ -241,7 +241,7 @@
                 </div>
                 <div class="box-hotel">
                   <div class="picture">
-                    <a href="hotel.html">
+                    <a href="hotel.aspx">
                       <img
                       src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg"
                       alt=""
@@ -261,7 +261,7 @@
                   </div>
                   <div class="container-content-hotel">
                     <div class="content-hotel">
-                      <a href="hotel.html">
+                      <a href="hotel.aspx">
                         <div class="name">Khách sạn Sheraton Nha Trang</div>
                       </a>
                       <div class="star-voted">
@@ -296,7 +296,7 @@
                 </div>
                 <div class="box-hotel">
                   <div class="picture">
-                    <a href="hotel.html">
+                    <a href="hotel.aspx">
                       <img
                       src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg"
                       alt=""
@@ -316,7 +316,7 @@
                   </div>
                   <div class="container-content-hotel">
                     <div class="content-hotel">
-                      <a href="hotel.html">
+                      <a href="hotel.aspx">
                         <div class="name">Khách sạn Sheraton Nha Trang</div>
                       </a>
                       <div class="star-voted">
@@ -351,7 +351,7 @@
                 </div>
                 <div class="box-hotel">
                   <div class="picture">
-                    <a href="hotel.html">
+                    <a href="hotel.aspx">
                       <img
                       src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg"
                       alt=""
@@ -371,7 +371,7 @@
                   </div>
                   <div class="container-content-hotel">
                     <div class="content-hotel">
-                      <a href="hotel.html">
+                      <a href="hotel.aspx">
                         <div class="name">Khách sạn Sheraton Nha Trang</div>
                       </a>
                       <div class="star-voted">

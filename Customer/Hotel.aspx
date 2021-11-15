@@ -49,7 +49,7 @@
                   </div>
 
                 </div>
-                <a href="bookroom.html">
+                <a href="bookroom.aspx">
                   <div class="btn-select">
                     Chọn Phòng
                   </div>
@@ -276,7 +276,7 @@
                         </div>
 
                       </div>
-                      <a href="bookroom.html">
+                      <a href="bookroom.aspx">
                         <div class="btn-select">
                           Chọn Phòng
                         </div>
@@ -327,153 +327,7 @@
                         </div>
 
                       </div>
-                      <a href="bookroom.html">
-                        <div class="btn-select">
-                          Chọn Phòng
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item-room">
-              <div class="col col-left">
-                <div class="container-picture">
-                  <div class="pictures">
-                    <div id="pointer-mini">
-                      <div class="cnt">
-                        <p>Được đề xuất</p>
-                      </div>
-                    </div>
-                    <div class="picture-main">
-                      <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
-                    </div>
-                    <div class="picture-more">
-                      <div class="picture">
-                        <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
-                      </div>
-                      <div class="picture">
-                        <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
-                      </div>
-                      <div class="picture">
-                        <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="more-picture">
-                    Xem hình ảnh và tiện nghi
-                  </div>
-                </div>
-
-              </div>
-              <div class="col col-right">
-                <div class="header">
-                  <div class="name">Phòng Deluxe</div>
-                  <div class="more">
-                    <div class="area"><i class="fas fa-landmark"></i>32m2</div>
-                    <div class="facade">
-                      <i class="fab fa-squarespace"></i>Hướng Thành Phố
-                    </div>
-                  </div>
-                </div>
-                <div class="selections">
-                  <div class="selection-item">
-                    <div class="col col-info">
-                      <div class="select-name">
-                        Lựa chọn 1
-                      </div>
-                      <p class="return">
-                        <i class="far fa-id-card"></i>
-                        Không hỗ trợ hoàn trả hủy
-                      </p>
-                      <p class="breakfast">
-                        <i class="fas fa-utensils"></i>
-                        Không bao gồm bữa ăn sáng
-                      </p>
-                      <p class="verify">
-                        <i class="fas fa-bolt"></i>
-                        Xác nhận ngay
-                      </p>
-                      <p>Chỉ còn 3 phòng chống</p>
-                    </div>
-                    <div class="col col-person">
-                      <i class="fas fa-user"></i>
-                      <p>x2 người</p>
-                    </div>
-                    <div class="col col-bed">
-                      <div class="item-bed">
-                        <i class="fas fa-bed"></i>
-                        <p>1 giường đôi</p>
-                      </div>
-                      <div class="item-bed">
-                        <i class="fas fa-bed"></i>
-                        <p>1 giường đôi</p>
-                      </div>
-                    </div>
-                    <div class="col col-select container-price">
-                      <div class="price">
-                        <p class="percent">5%</p>
-                        <div class="old-price">
-                          <p>1.7000.000 VND / đêm</p>
-                        </div>
-                        <div class="new-price">
-                          1.7000.000 VND / đêm
-                        </div>
-
-                      </div>
-                      <a href="bookroom.html">
-                        <div class="btn-select">
-                          Chọn Phòng
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="selection-item">
-                    <div class="col col-info">
-                      <div class="select-name">
-                        Lựa chọn 1
-                      </div>
-                      <p class="return">
-                        <i class="far fa-id-card"></i>
-                        Không hỗ trợ hoàn trả hủy
-                      </p>
-                      <p class="breakfast">
-                        <i class="fas fa-utensils"></i>
-                        Không bao gồm bữa ăn sáng
-                      </p>
-                      <p class="verify">
-                        <i class="fas fa-bolt"></i>
-                        Xác nhận ngay
-                      </p>
-                      <p>Chỉ còn 3 phòng chống</p>
-                    </div>
-                    <div class="col col-person">
-                      <i class="fas fa-user"></i>
-                      <p>x2 người</p>
-                    </div>
-                    <div class="col col-bed">
-                      <div class="item-bed">
-                        <i class="fas fa-bed"></i>
-                        <p>1 giường đôi</p>
-                      </div>
-                      <div class="item-bed">
-                        <i class="fas fa-bed"></i>
-                        <p>1 giường đôi</p>
-                      </div>
-                    </div>
-                    <div class="col col-select container-price">
-                      <div class="price">
-                        <p class="percent">5%</p>
-                        <div class="old-price">
-                          <p>1.7000.000 VND / đêm</p>
-                        </div>
-                        <div class="new-price">
-                          1.7000.000 VND / đêm
-                        </div>
-
-                      </div>
-                      <a href="bookroom.html">
+                      <a href="bookroom.aspx">
                         <div class="btn-select">
                           Chọn Phòng
                         </div>
@@ -568,7 +422,7 @@
                         </div>
 
                       </div>
-                      <a href="bookroom.html">
+                      <a href="bookroom.aspx">
                         <div class="btn-select">
                           Chọn Phòng
                         </div>
@@ -619,153 +473,7 @@
                         </div>
 
                       </div>
-                      <a href="bookroom.html">
-                        <div class="btn-select">
-                          Chọn Phòng
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item-room">
-              <div class="col col-left">
-                <div class="container-picture">
-                  <div class="pictures">
-                    <div id="pointer-mini">
-                      <div class="cnt">
-                        <p>Được đề xuất</p>
-                      </div>
-                    </div>
-                    <div class="picture-main">
-                      <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
-                    </div>
-                    <div class="picture-more">
-                      <div class="picture">
-                        <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
-                      </div>
-                      <div class="picture">
-                        <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
-                      </div>
-                      <div class="picture">
-                        <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="more-picture">
-                    Xem hình ảnh và tiện nghi
-                  </div>
-                </div>
-
-              </div>
-              <div class="col col-right">
-                <div class="header">
-                  <div class="name">Phòng Deluxe</div>
-                  <div class="more">
-                    <div class="area"><i class="fas fa-landmark"></i>32m2</div>
-                    <div class="facade">
-                      <i class="fab fa-squarespace"></i>Hướng Thành Phố
-                    </div>
-                  </div>
-                </div>
-                <div class="selections">
-                  <div class="selection-item">
-                    <div class="col col-info">
-                      <div class="select-name">
-                        Lựa chọn 1
-                      </div>
-                      <p class="return">
-                        <i class="far fa-id-card"></i>
-                        Không hỗ trợ hoàn trả hủy
-                      </p>
-                      <p class="breakfast">
-                        <i class="fas fa-utensils"></i>
-                        Không bao gồm bữa ăn sáng
-                      </p>
-                      <p class="verify">
-                        <i class="fas fa-bolt"></i>
-                        Xác nhận ngay
-                      </p>
-                      <p>Chỉ còn 3 phòng chống</p>
-                    </div>
-                    <div class="col col-person">
-                      <i class="fas fa-user"></i>
-                      <p>x2 người</p>
-                    </div>
-                    <div class="col col-bed">
-                      <div class="item-bed">
-                        <i class="fas fa-bed"></i>
-                        <p>1 giường đôi</p>
-                      </div>
-                      <div class="item-bed">
-                        <i class="fas fa-bed"></i>
-                        <p>1 giường đôi</p>
-                      </div>
-                    </div>
-                    <div class="col col-select container-price">
-                      <div class="price">
-                        <p class="percent">5%</p>
-                        <div class="old-price">
-                          <p>1.7000.000 VND / đêm</p>
-                        </div>
-                        <div class="new-price">
-                          1.7000.000 VND / đêm
-                        </div>
-
-                      </div>
-                      <a href="bookroom.html">
-                        <div class="btn-select">
-                          Chọn Phòng
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="selection-item">
-                    <div class="col col-info">
-                      <div class="select-name">
-                        Lựa chọn 1
-                      </div>
-                      <p class="return">
-                        <i class="far fa-id-card"></i>
-                        Không hỗ trợ hoàn trả hủy
-                      </p>
-                      <p class="breakfast">
-                        <i class="fas fa-utensils"></i>
-                        Không bao gồm bữa ăn sáng
-                      </p>
-                      <p class="verify">
-                        <i class="fas fa-bolt"></i>
-                        Xác nhận ngay
-                      </p>
-                      <p>Chỉ còn 3 phòng chống</p>
-                    </div>
-                    <div class="col col-person">
-                      <i class="fas fa-user"></i>
-                      <p>x2 người</p>
-                    </div>
-                    <div class="col col-bed">
-                      <div class="item-bed">
-                        <i class="fas fa-bed"></i>
-                        <p>1 giường đôi</p>
-                      </div>
-                      <div class="item-bed">
-                        <i class="fas fa-bed"></i>
-                        <p>1 giường đôi</p>
-                      </div>
-                    </div>
-                    <div class="col col-select container-price">
-                      <div class="price">
-                        <p class="percent">5%</p>
-                        <div class="old-price">
-                          <p>1.7000.000 VND / đêm</p>
-                        </div>
-                        <div class="new-price">
-                          1.7000.000 VND / đêm
-                        </div>
-
-                      </div>
-                      <a href="bookroom.html">
+                      <a href="bookroom.aspx">
                         <div class="btn-select">
                           Chọn Phòng
                         </div>
@@ -860,7 +568,7 @@
                         </div>
 
                       </div>
-                      <a href="bookroom.html">
+                      <a href="bookroom.aspx">
                         <div class="btn-select">
                           Chọn Phòng
                         </div>
@@ -911,7 +619,299 @@
                         </div>
 
                       </div>
-                      <a href="bookroom.html">
+                      <a href="bookroom.aspx">
+                        <div class="btn-select">
+                          Chọn Phòng
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item-room">
+              <div class="col col-left">
+                <div class="container-picture">
+                  <div class="pictures">
+                    <div id="pointer-mini">
+                      <div class="cnt">
+                        <p>Được đề xuất</p>
+                      </div>
+                    </div>
+                    <div class="picture-main">
+                      <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
+                    </div>
+                    <div class="picture-more">
+                      <div class="picture">
+                        <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
+                      </div>
+                      <div class="picture">
+                        <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
+                      </div>
+                      <div class="picture">
+                        <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="more-picture">
+                    Xem hình ảnh và tiện nghi
+                  </div>
+                </div>
+
+              </div>
+              <div class="col col-right">
+                <div class="header">
+                  <div class="name">Phòng Deluxe</div>
+                  <div class="more">
+                    <div class="area"><i class="fas fa-landmark"></i>32m2</div>
+                    <div class="facade">
+                      <i class="fab fa-squarespace"></i>Hướng Thành Phố
+                    </div>
+                  </div>
+                </div>
+                <div class="selections">
+                  <div class="selection-item">
+                    <div class="col col-info">
+                      <div class="select-name">
+                        Lựa chọn 1
+                      </div>
+                      <p class="return">
+                        <i class="far fa-id-card"></i>
+                        Không hỗ trợ hoàn trả hủy
+                      </p>
+                      <p class="breakfast">
+                        <i class="fas fa-utensils"></i>
+                        Không bao gồm bữa ăn sáng
+                      </p>
+                      <p class="verify">
+                        <i class="fas fa-bolt"></i>
+                        Xác nhận ngay
+                      </p>
+                      <p>Chỉ còn 3 phòng chống</p>
+                    </div>
+                    <div class="col col-person">
+                      <i class="fas fa-user"></i>
+                      <p>x2 người</p>
+                    </div>
+                    <div class="col col-bed">
+                      <div class="item-bed">
+                        <i class="fas fa-bed"></i>
+                        <p>1 giường đôi</p>
+                      </div>
+                      <div class="item-bed">
+                        <i class="fas fa-bed"></i>
+                        <p>1 giường đôi</p>
+                      </div>
+                    </div>
+                    <div class="col col-select container-price">
+                      <div class="price">
+                        <p class="percent">5%</p>
+                        <div class="old-price">
+                          <p>1.7000.000 VND / đêm</p>
+                        </div>
+                        <div class="new-price">
+                          1.7000.000 VND / đêm
+                        </div>
+
+                      </div>
+                      <a href="bookroom.aspx">
+                        <div class="btn-select">
+                          Chọn Phòng
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="selection-item">
+                    <div class="col col-info">
+                      <div class="select-name">
+                        Lựa chọn 1
+                      </div>
+                      <p class="return">
+                        <i class="far fa-id-card"></i>
+                        Không hỗ trợ hoàn trả hủy
+                      </p>
+                      <p class="breakfast">
+                        <i class="fas fa-utensils"></i>
+                        Không bao gồm bữa ăn sáng
+                      </p>
+                      <p class="verify">
+                        <i class="fas fa-bolt"></i>
+                        Xác nhận ngay
+                      </p>
+                      <p>Chỉ còn 3 phòng chống</p>
+                    </div>
+                    <div class="col col-person">
+                      <i class="fas fa-user"></i>
+                      <p>x2 người</p>
+                    </div>
+                    <div class="col col-bed">
+                      <div class="item-bed">
+                        <i class="fas fa-bed"></i>
+                        <p>1 giường đôi</p>
+                      </div>
+                      <div class="item-bed">
+                        <i class="fas fa-bed"></i>
+                        <p>1 giường đôi</p>
+                      </div>
+                    </div>
+                    <div class="col col-select container-price">
+                      <div class="price">
+                        <p class="percent">5%</p>
+                        <div class="old-price">
+                          <p>1.7000.000 VND / đêm</p>
+                        </div>
+                        <div class="new-price">
+                          1.7000.000 VND / đêm
+                        </div>
+
+                      </div>
+                      <a href="bookroom.aspx">
+                        <div class="btn-select">
+                          Chọn Phòng
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item-room">
+              <div class="col col-left">
+                <div class="container-picture">
+                  <div class="pictures">
+                    <div id="pointer-mini">
+                      <div class="cnt">
+                        <p>Được đề xuất</p>
+                      </div>
+                    </div>
+                    <div class="picture-main">
+                      <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
+                    </div>
+                    <div class="picture-more">
+                      <div class="picture">
+                        <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
+                      </div>
+                      <div class="picture">
+                        <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
+                      </div>
+                      <div class="picture">
+                        <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="more-picture">
+                    Xem hình ảnh và tiện nghi
+                  </div>
+                </div>
+
+              </div>
+              <div class="col col-right">
+                <div class="header">
+                  <div class="name">Phòng Deluxe</div>
+                  <div class="more">
+                    <div class="area"><i class="fas fa-landmark"></i>32m2</div>
+                    <div class="facade">
+                      <i class="fab fa-squarespace"></i>Hướng Thành Phố
+                    </div>
+                  </div>
+                </div>
+                <div class="selections">
+                  <div class="selection-item">
+                    <div class="col col-info">
+                      <div class="select-name">
+                        Lựa chọn 1
+                      </div>
+                      <p class="return">
+                        <i class="far fa-id-card"></i>
+                        Không hỗ trợ hoàn trả hủy
+                      </p>
+                      <p class="breakfast">
+                        <i class="fas fa-utensils"></i>
+                        Không bao gồm bữa ăn sáng
+                      </p>
+                      <p class="verify">
+                        <i class="fas fa-bolt"></i>
+                        Xác nhận ngay
+                      </p>
+                      <p>Chỉ còn 3 phòng chống</p>
+                    </div>
+                    <div class="col col-person">
+                      <i class="fas fa-user"></i>
+                      <p>x2 người</p>
+                    </div>
+                    <div class="col col-bed">
+                      <div class="item-bed">
+                        <i class="fas fa-bed"></i>
+                        <p>1 giường đôi</p>
+                      </div>
+                      <div class="item-bed">
+                        <i class="fas fa-bed"></i>
+                        <p>1 giường đôi</p>
+                      </div>
+                    </div>
+                    <div class="col col-select container-price">
+                      <div class="price">
+                        <p class="percent">5%</p>
+                        <div class="old-price">
+                          <p>1.7000.000 VND / đêm</p>
+                        </div>
+                        <div class="new-price">
+                          1.7000.000 VND / đêm
+                        </div>
+
+                      </div>
+                      <a href="bookroom.aspx">
+                        <div class="btn-select">
+                          Chọn Phòng
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="selection-item">
+                    <div class="col col-info">
+                      <div class="select-name">
+                        Lựa chọn 1
+                      </div>
+                      <p class="return">
+                        <i class="far fa-id-card"></i>
+                        Không hỗ trợ hoàn trả hủy
+                      </p>
+                      <p class="breakfast">
+                        <i class="fas fa-utensils"></i>
+                        Không bao gồm bữa ăn sáng
+                      </p>
+                      <p class="verify">
+                        <i class="fas fa-bolt"></i>
+                        Xác nhận ngay
+                      </p>
+                      <p>Chỉ còn 3 phòng chống</p>
+                    </div>
+                    <div class="col col-person">
+                      <i class="fas fa-user"></i>
+                      <p>x2 người</p>
+                    </div>
+                    <div class="col col-bed">
+                      <div class="item-bed">
+                        <i class="fas fa-bed"></i>
+                        <p>1 giường đôi</p>
+                      </div>
+                      <div class="item-bed">
+                        <i class="fas fa-bed"></i>
+                        <p>1 giường đôi</p>
+                      </div>
+                    </div>
+                    <div class="col col-select container-price">
+                      <div class="price">
+                        <p class="percent">5%</p>
+                        <div class="old-price">
+                          <p>1.7000.000 VND / đêm</p>
+                        </div>
+                        <div class="new-price">
+                          1.7000.000 VND / đêm
+                        </div>
+
+                      </div>
+                      <a href="bookroom.aspx">
                         <div class="btn-select">
                           Chọn Phòng
                         </div>

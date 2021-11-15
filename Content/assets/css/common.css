@@ -754,7 +754,6 @@ body {
     height: 120px;
     border: 10px solid rgb(29, 55, 112);
     border-radius: 71px;
-    position: absolute;
     clip: rect(0px, 74px, 120px, 0px);
 }
 /* Using the data attributes for the animation selectors. */
