@@ -403,3 +403,14 @@ td img {
     padding: 5px 0;
     border-top: 1px solid #ccc;
 }
+.scroll-card-info {
+    cursor: pointer;
+    padding: 0px 8px;
+
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 0px 10px;
+}
+.scroll-card-info:hover{
+    color:blue;
+}

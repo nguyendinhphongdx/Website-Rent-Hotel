@@ -4,29 +4,42 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebNCASP.Ultis;
 
 namespace WebNCASP.Admin
 {
     public partial class Login : System.Web.UI.Page
     {
+        Constant constant = new Constant();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Form.Count>0)
+            label.Text = "";
+            if (Request.Form.Count>0 && Request.Form["type"] == "signin")
             {
                 String email = Request.Form["email"];
-                String password = Request.Form["password"];
-                if (email == "admin@gmail.com" && password=="123")
+                String pass = Request.Form["password"];
+                if (email == "admin@gmail.com" && pass == "123")
                 {
-                    Response.Redirect("Admin/Index.asp");
+                    Session["adminLogedin"] = true;
+                    Response.Redirect("index.aspx");
+                }
+                else
+                {
+                    label.Text = "Thông tin tài khoản không chính xác!";
                 }
             }
-            String email1 = Request.QueryString["email"];
-            String password2 = Request.QueryString["password"];
-            if (email1 == "admin@gmail.com" && password2 == "123")
-            {
-                Session["adMinLogedIn"] = true;
-                Response.Redirect("Index.aspx");
-            }
+        }
+
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            //String email = login_email.Text;
+            //String pass = login_password.Text;
+            //if (email == "admin@gmail.com" && pass=="123")
+            //{
+            //    Session["adminLogedin"] = true;
+            //    Response.Redirect("index.aspx");
+            //}
         }
     }
 }

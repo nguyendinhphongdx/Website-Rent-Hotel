@@ -58,9 +58,9 @@
                         <input
                           type="file"
                           id="image"
-                          onchange="handleOnChangeInputImage(this,'print-picture')"
+                          onchange="handleOnChangeInputImage(this,'imagesUpdate')"
                         />
-                        <div class="image">
+                        <div class="image" id="imagesUpdate">
                           <!-- <img id="print-picture" src="../assets/images/photos-hotel/logo_4_1009828.jpg" alt=""> -->
                         </div>
                       </div>
@@ -95,7 +95,8 @@
               <section id="new" class="tab-panel">
                 <div class="card card-info col-12">
                   <div class="title">Thông tin khách sạn</div>
-                  <form class="form">
+                  <div class="form">
+                      <input type="hidden" name="type" value="addHotel"/>
                     <div class="form-group">
                       <label for="name">Tên khách sạn</label>
                       <input
@@ -109,9 +110,9 @@
                       <input
                         type="file"
                         id="image"
-                        onchange="handleOnChangeInputImage(this,'print-picture')"
+                        onchange="handleOnChangeInputImage(this,'imagesAdd')"
                       />
-                      <div class="image">
+                      <div class="image" id="imagesAdd">
                         <!-- <img id="print-picture" src="../assets/images/photos-hotel/logo_4_1009828.jpg" alt=""> -->
                       </div>
                     </div>
@@ -139,7 +140,7 @@
                       <button class="btn btn-dash">Hủy</button>
                       <button class="btn btn-primary">Thêm hoặc Sửa</button>
                     </div>
-                  </form>
+                  </div>
                 </div>
               </section>
             </div>
@@ -154,8 +155,8 @@
               <td>Khách sạn ${index} </td>
               <td>Địa chỉ</td>
               <td>${index}</td>
-              <td>
-                  <button class="scroll-card-info">Sửa</button> <button>Xóa</button>
+              <td style="display:flex">
+                  <div class="scroll-card-info">Sửa</div> <button>Xóa</button>
               </td>
           </tr>`;
   }

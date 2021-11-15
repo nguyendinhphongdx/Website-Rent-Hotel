@@ -21,7 +21,8 @@ namespace WebNCASP
         }
         void Session_Start(object sender, EventArgs e)
         {
-            Session["adMinLogedIn"] = false;
+                Session["adMinLogedIn"] = false;
+                Session["typeNav"] = "index";
         }
         void Session_End(object sender, EventArgs e)
         {

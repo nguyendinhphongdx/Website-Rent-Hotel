@@ -13,12 +13,13 @@
        <section class="forms-section">
         <h1 class="section-title">Quản lý truy cập</h1>
         <div class="forms">
+            <asp:Label ID="label" runat="server"></asp:Label>
             <div class="form-wrapper is-active">
                 <button type="button" class="switcher switcher-login">
                     Đăng nhập
                     <span class="underline"></span>
                 </button>
-                <form action="Login.aspx" class="form form-login" method="get">
+                <form  class="form form-login" method="post">
                     <fieldset>
                         <legend>Please, enter your email and password for login.</legend>
                         <div class="input-block">
@@ -29,6 +30,7 @@
                             <label for="login-password">Password</label>
                             <input name="password" id="login-password" type="password" required>
                         </div>
+                            <input name="type" type="hidden" value="signin">
                     </fieldset>
                     <button type="submit" class="btn-login">Login</button>
                 </form>
@@ -38,7 +40,8 @@
                     Đăng kí
                     <span class="underline"></span>
                 </button>
-                <form action="Login.aspx" class="form form-signup">
+                <form  class="form form-signup">
+                    <input name="type" type="hidden" value="signup">
                     <fieldset>
                         <legend>Please, enter your email, password and password confirmation for sign up.</legend>
                         <div class="input-block">

@@ -39,8 +39,8 @@
               <td>001200028407</td>
               <td>DINHPHONG</td>
               <td>****</td>
-              <td>
-                  <button class="scroll-card-info">Sửa</button> <button>Xóa</button>
+             <td style="display:flex">
+                  <div class="scroll-card-info">Sửa</div> <button>Xóa</button>
               </td>
           </tr>`;
     }

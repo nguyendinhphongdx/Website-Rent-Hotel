@@ -7,6 +7,7 @@
         <title><%: Page.Title %> - My ASP.NET Application</title>
     <link href="Content/assets/css/admin/common.css" rel="stylesheet" />
     <link href="Content/assets/css/admin/index.css" rel="stylesheet" />
+    <script src="/Content/assets/js/admin/index.js"></script>
 </head>
 <body onload="onLoad()">
     <form id="form1" runat="server">
@@ -16,22 +17,22 @@
                 <div class="header-side">
                     <a href="index.aspx">Admin Page</a>
                 </div>
-                <a href="index.aspx" class="item-side active">
+                <a href="index.aspx" class="item-side <%= (string) Session["typeNav"] == "index"?"active":"" %>">
                    Trang chủ
                 </a>
-                <a href="hotel.aspx" class="item-side">
+                <a href="hotel.aspx" class="item-side <%= (string) Session["typeNav"] == "hotel"?"active":"" %>"">
                     Quản lý khách sạn
                 </a>
-                <a href="room.aspx" class="item-side">
+                <a href="room.aspx" class="item-side <%= (string) Session["typeNav"] == "room"?"active":"" %>"">
                     Quản lý phòng khách sạn
                 </a>
-                <a href="service.aspx" class="item-side">
+                <a href="service.aspx" class="item-side <%= (string) Session["typeNav"] == "service"?"active":"" %>"">
                     Quản lý dịch vụ
                 </a>
-                <a href="bookroom.aspx" class="item-side">
+                <a href="bookroom.aspx" class="item-side <%= (string) Session["typeNav"] == "bookroom"?"active":"" %>"">
                     Quản lý đơn đặt phòng
                 </a>
-                <a href="custumer.aspx" class="item-side">
+                <a href="custumer.aspx" class="item-side <%= (string) Session["typeNav"] == "custumer"?"active":"" %>"">
                     Khách hàng
                 </a>
             </div>

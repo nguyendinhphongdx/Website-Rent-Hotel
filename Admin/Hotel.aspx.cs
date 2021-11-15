@@ -11,7 +11,16 @@ namespace WebNCASP.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["typeNav"] = "hotel";
+            if (Request.Form.Count>0)
+            {
+                string type = Request.Form["type"];
+                if (type==null) return;
+                switch (type)
+                {
 
+                }
+            }
         }
     }
 }

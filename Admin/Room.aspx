@@ -54,8 +54,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image">Ảnh phòng</label>
-                                        <input type="file" id="image" multiple="multiple" onchange="handleOnChangeInputImage(this,'print-picture')">
-                                        <div class="image">
+                                        <input 
+                                            type="file" id="image" multiple="multiple" 
+                                            onchange="handleOnChangeInputImage(this,'imagesUpload')">
+                                        <div class="image" id="imagesUpload">
                                             <!-- <img id="print-picture" src="../assets/images/photos-hotel/logo_4_1009828.jpg" alt=""> -->
                                         </div>
                                     </div>
@@ -95,8 +97,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="image">Ảnh phòng</label>
-                                    <input type="file" id="image" multiple="multiple" onchange="handleOnChangeInputImage(this,'print-picture')">
-                                    <div class="image">
+                                    <input type="file" id="image" multiple="multiple" 
+                                        onchange="handleOnChangeInputImage(this,'imagesAdd')">
+                                    <div class="image" id="imagesAdd">
                                         <!-- <img id="print-picture" src="../assets/images/photos-hotel/logo_4_1009828.jpg" alt=""> -->
                                     </div>
                                 </div>
@@ -131,8 +134,8 @@
               <td>Khách sạn ${index} </td>
               <td>${index}</td>
               <td>${index % 2 == 0 ? "Đã thanh toán" : "Chưa thanh toán"}</td>
-              <td>
-                  <button class="scroll-card-info">Sửa</button> <button>Xóa</button>
+             <td style="display:flex">
+                  <div class="scroll-card-info">Sửa</div> <button>Xóa</button>
               </td>
           </tr>`;
         }

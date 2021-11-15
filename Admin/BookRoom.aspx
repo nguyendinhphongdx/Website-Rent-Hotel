@@ -102,9 +102,9 @@
             <td>Khách sạn ${index} </td>
             <td>${index}</td>
             <td>${index%2==0?"Đã thanh toán":"Chưa thanh toán"}</td>
-            <td>
-                <button class="scroll-card-info">Sửa</button> <button>Xóa</button>
-            </td>
+           <td style="display:flex">
+                  <div class="scroll-card-info">Sửa</div> <button>Xóa</button>
+              </td>
         </tr>`;
   }
   tableFill.innerHTML = element;
