@@ -116,12 +116,17 @@
           </div>
           <div class="card-detail">
             <div class="card detail-room">
-              <div class="image">
-                <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
-              </div>
-              <div class="name">
-                Phòng Superior (nâng hạng phòng Luxury (tùy tình trạng phòng))
-              </div>
+                 <asp:Repeater runat="server" ID="Repeater_RoomSelected">
+                  <ItemTemplate>
+                      <div class="image">
+                        <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
+                      </div>
+                       <div class="name">
+                        <%#Eval("TenPhong")%>
+                      </div>
+                  </ItemTemplate>
+              </asp:Repeater>
+             
               <div class="sub-item">
                 <i class="fas fa-user"></i>
                 <p>2 người </p>
@@ -148,7 +153,7 @@
             </div>
             <div class="card detail-pay">
                 <div class="item-detail">
-                  <p class="key">1 phòng x 1 đêm</p>
+                  <p class="key"><%# roomsInCart.Count+"" %> phòng x 1 đêm</p>
                   <p class="value">1.317.000 đ</p>
                 </div>
                 <div class="item-detail">

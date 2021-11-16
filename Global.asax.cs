@@ -6,6 +6,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using WebNCASP.Models;
 
 namespace WebNCASP
 {
@@ -23,6 +24,8 @@ namespace WebNCASP
         {
                 Session["adMinLogedIn"] = false;
                 Session["typeNav"] = "index";
+                Session["Cart"] = new List<RoomModel> { };
+
         }
         void Session_End(object sender, EventArgs e)
         {

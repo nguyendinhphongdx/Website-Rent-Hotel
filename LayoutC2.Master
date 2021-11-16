@@ -52,9 +52,12 @@
                   <i class="fas fa-phone-alt fa-lg"></i>
                   <div class="text">19002083</div>
                 </div>
-                <div class="icon icon-bell">
-                  <i class="far fa-bell fa-lg"></i>
-                </div>
+                  <a href="BookRoom.aspx">
+                    <div class="icon icon-bell">
+                      <i class="far fa-bell fa-lg"></i>
+                        <asp:Label runat="server" ID="NumberRoomCart"/>
+                    </div>
+                  </a>
                 <div class="icon icon-account" onclick="openDropdownAccount()">
                   <i class="far fa-user-circle fa-lg"></i>
                   <i class="fas fa-chevron-down"></i>
@@ -166,9 +169,9 @@
                 </div>
                 <div class="indicator active"></div>
               </div>
-              <button class="box-item item-search" style="color:white">
+              <asp:LinkButton runat="server" ID="btnSearch" CssClass="box-item item-search" style="color:white" OnClick="btnSearch_Click">
                 <i class="fas fa-search fa-2x"></i>
-              </button>
+              </asp:LinkButton>
             </div>
          
           </div>

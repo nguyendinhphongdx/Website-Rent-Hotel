@@ -114,3 +114,6 @@ function openDropdownAccount() {
     dropdown.classList.toggle("active");
   }
 }
+function addRoomToCart() {
+    
+}
