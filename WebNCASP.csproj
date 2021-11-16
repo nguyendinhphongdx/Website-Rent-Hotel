@@ -221,7 +221,6 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Customer\BookRoom.aspx.cs">
       <DependentUpon>BookRoom.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -284,6 +283,7 @@
     <Compile Include="Models\HotelModel.cs" />
     <Compile Include="Models\RoomModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlProvider.cs" />
     <Compile Include="Ultis\Constant.cs" />
     <Compile Include="Ultis\Helpers.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
@@ -297,6 +297,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\upload\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
