@@ -43,6 +43,43 @@ namespace WebNCASP.Controllers.customer
             object[] paramsValue = new object[] { MaPhong, MaDon };
             return provider.ExecuteNonProc(nameProc, paramsName, paramsValue);
         }
+        public DataTable GetAllBillSet(int Makh)
+        {
+            //create proc show_DonDaDat @MaKh int
+            //as
+            //begin
+            //    select a.MaDonDat,a.NgayBatDau,a.NgayKetThuc,a.SoLuongNguoiLon,a.SoLuongTreEm, COUNT(a.MaDonDat) as N'SoLuongPhong',c.TenKhachSan,c.Anh
+            //    from DonDatPhong a, ChiTietDonDatPhong b, KhachSan c, Phong d
+            //    where a.MaDonDat = b.MaDonDat and b.MaPhong = d.MaPhong and d.MaKhachSan = c.MaKhachSan and a.MaKhachHang = @MaKh
+            //    group by a.MaDonDat,a.NgayBatDau,a.NgayKetThuc,a.SoLuongNguoiLon,a.SoLuongTreEm,c.TenKhachSan,c.Anh
+            //end
+            string nameProc = "show_DonDaDat";
+            string[] paramsName = new string[] { "@MaKh" };
+            object[] paramsValue = new object[] { Makh };
+            return provider.ExecuteProc(nameProc, paramsName, paramsValue);
+        }
+        public bool DeleteBill(int MaHD)
+        {
+            //create proc delete_DonDaDat @MaDon int
+            //as
+            //begin
+            //    begin
+            //        delete
+            //        from ChiTietDonDatPhong
+            //        where MaDonDat = @MaDon
+            //    end
+            //    begin
+            //        delete
+            //        from DonDatPhong
+            //        where MaDonDat = @MaDon
+            //    end
+            //end
+            string nameProc = "delete_DonDaDat";
+            string[] paramsName = new string[] { "@MaDon" };
+            object[] paramsValue = new object[] { MaHD };
+            if (provider.ExecuteNonProc(nameProc, paramsName, paramsValue)>0) return true;
+            return false;
+        }
 
     }
 

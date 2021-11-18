@@ -20,6 +20,7 @@
 </head>
 <body onload="listentEvent()">
     <form id="form1" runat="server">
+         <asp:ScriptManager runat="server" ID="scriptManager"></asp:ScriptManager>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="#">About</a>

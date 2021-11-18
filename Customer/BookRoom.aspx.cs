@@ -18,6 +18,7 @@ namespace WebNCASP.Customer
         public List<RoomModel> roomsInCart = new List<RoomModel> { };
         HotelController hotelController = new HotelController();
         CustomerController customerController = new CustomerController();
+        BillController billController = new BillController();
         Converter converter = new Converter();
         CustomerModel customer;
         public bool isEmpty = false;
@@ -26,11 +27,12 @@ namespace WebNCASP.Customer
         protected void Page_Load(object sender, EventArgs e)
         {
             currentCustomer = (AccountModel)Session["customerCurrent"];
-            if (currentCustomer!=null)
+            if (currentCustomer != null)
             {
                 ShowInfoBill();
             }
-            else {
+            else
+            {
                 Response.Redirect("Search.aspx");
             }
         }
@@ -41,7 +43,7 @@ namespace WebNCASP.Customer
             //show info hotel
             int HotelSelected = Convert.ToInt32(Session["HotelSelected"]);
             DataTable result = hotelController.DetailHotel(HotelSelected);
-            if (result.Rows.Count>0)
+            if (result.Rows.Count > 0)
             {
                 HotelModel hotel = converter.GetHotelInRow(result.Rows[0]);
                 nameHotel.Text = hotel.TenKhachSan;
@@ -56,6 +58,13 @@ namespace WebNCASP.Customer
             {
                 isEmpty = true;
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "ToastMessage('Đơn trống!')", true);
+            }
+            AccountModel accCurrent = (AccountModel)Session["customerCurrent"];
+            if (accCurrent != null)
+            {
+                customer = customerController.GetKhachHangInFo(accCurrent.MaTaiKhoan);
+                Repeater_BillInParted.DataSource = billController.GetAllBillSet(customer.MaKhachHang);
+                Repeater_BillInParted.DataBind();
             }
         }
 
@@ -72,7 +81,7 @@ namespace WebNCASP.Customer
             startDate.Text = start;
             long timeend = DateTime.ParseExact(end, "MM/dd/yyyy", CultureInfo.InvariantCulture).Ticks;
             long timestart = DateTime.ParseExact(start, "MM/dd/yyyy", CultureInfo.InvariantCulture).Ticks;
-            night = (timeend - timestart)/ 864000000000 +"";
+            night = (timeend - timestart) / 864000000000 + "";
 
         }
 
@@ -81,8 +90,8 @@ namespace WebNCASP.Customer
             string people = Request.QueryString["people"] != null ? Request.QueryString["people"] + "" : Helpers.GetPeopleStringDefault(1, 2, 0);
             email.Text = currentCustomer.Email;
             string[] peopleSplit = people.Split(',');
-            numberParent.Text = peopleSplit[1].Split(' ')[0];
-            numberChild.Text = peopleSplit[2].Split(' ')[0];
+            numberParent.Text = peopleSplit[1].Trim().Split(' ')[0];
+            numberChild.Text = peopleSplit[2].Trim().Split(' ')[0];
             AccountModel accCurrent = (AccountModel)Session["customerCurrent"];
             if (accCurrent != null)
             {
@@ -106,7 +115,7 @@ namespace WebNCASP.Customer
             List<RoomModel> list = (List<RoomModel>)Session["Cart"];
             int index = list.FindIndex(item => item.MaPhong == idRoom);
             list.RemoveAt(index);
-            roomsInCart = list; 
+            roomsInCart = list;
             if (roomsInCart != null)
             {
                 Session["Cart"] = roomsInCart;
@@ -114,7 +123,7 @@ namespace WebNCASP.Customer
                 var master = Master as LayoutC2;
                 if (master != null)
                 {
-                    master.NumberRoomCart = roomsInCart.Count+"";
+                    master.NumberRoomCart = roomsInCart.Count + "";
                 }
                 Repeater_RoomSelected.DataBind();
             }
@@ -138,38 +147,56 @@ namespace WebNCASP.Customer
 
         protected void btnPay_Click(object sender, EventArgs e)
         {
-            if (customer!=null)
+            if (customer != null)
             {
-                BillController billController = new BillController();
-                BillModel bill = new BillModel();
-                bill.MaKhachHang = customer.MaKhachHang;
-                bill.SoLuongNguoiLon = Convert.ToInt32(numberParent.Text);
-                bill.SoLuongTreEm = Convert.ToInt32(numberChild.Text);
-                bill.NgayBatDau = Convert.ToDateTime(DateTime.ParseExact(startDate.Text,"MM/dd/yyyy",CultureInfo.InvariantCulture));
-                bill.NgayKetThuc = Convert.ToDateTime(DateTime.ParseExact(endDate.Text, "MM/dd/yyyy", CultureInfo.InvariantCulture));
-                // insert hoa don
-                int BillId = billController.BookBill(bill);
-                if (BillId!=-1)
+                if (roomsInCart.Count > 0)
                 {
-                    List<RoomModel> roomsInCart = (List<RoomModel>)Session["Cart"];
-                    roomsInCart.ForEach(item =>
+                    BillModel bill = new BillModel();
+                    bill.MaKhachHang = customer.MaKhachHang;
+                    bill.SoLuongNguoiLon = Convert.ToInt32(numberParent.Text);
+                    bill.SoLuongTreEm = Convert.ToInt32(numberChild.Text);
+                    bill.NgayBatDau = Convert.ToDateTime(DateTime.ParseExact(startDate.Text, "MM/dd/yyyy", CultureInfo.InvariantCulture));
+                    bill.NgayKetThuc = Convert.ToDateTime(DateTime.ParseExact(endDate.Text, "MM/dd/yyyy", CultureInfo.InvariantCulture));
+                    // insert hoa don
+                    int BillId = billController.BookBill(bill);
+                    if (BillId != -1)
                     {
-                        billController.AddRoomIntoBill(BillId, item.MaPhong);
-                    });
-                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "ToastMessage('Đặt phòng thành công!')", true);
+                        List<RoomModel> roomsInCart = (List<RoomModel>)Session["Cart"];
+                        roomsInCart.ForEach(item =>
+                        {
+                            billController.AddRoomIntoBill(BillId, item.MaPhong);
+                        });
+                        Repeater_BillInParted.DataSource = billController.GetAllBillSet(customer.MaKhachHang);
+                        Repeater_BillInParted.DataBind();
+                        ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "ToastMessage('Đặt phòng thành công!')", true);
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "ToastMessage('Đặt đơn không thành công!')", true);
+                    }
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "ToastMessage('Đặt đơn không thành công!')", true);
+                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "ToastMessage('Chưa chọn phòng!')", true);
                 }
             }
             else
             {
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "ToastMessage('Vui lòng đăng nhập lại!')", true);
             }
+        }
 
-           
 
+        protected void Delete_Command(object sender, CommandEventArgs e)
+        {
+            LinkButton button = (LinkButton)sender;
+            int MaHoaDon = Convert.ToInt32(button.CommandArgument.ToString());
+            billController.DeleteBill(MaHoaDon);
+            AccountModel accCurrent = (AccountModel)Session["customerCurrent"];
+            customer = customerController.GetKhachHangInFo(accCurrent.MaTaiKhoan);
+            Repeater_BillInParted.DataSource = billController.GetAllBillSet(customer.MaKhachHang);
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "ToastMessage('Xóa thành công!')", true);
+            DataBind();
         }
     }
 }

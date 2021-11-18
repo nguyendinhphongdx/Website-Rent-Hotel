@@ -24,14 +24,17 @@ namespace WebNCASP
         public AccountModel currentCustomer;
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<RoomModel> roomsCart = (List<RoomModel>)Session["Cart"];
-            Number.Text = roomsCart.Count+"";
-            currentCustomer = (AccountModel)Session["customerCurrent"];
-            if (currentCustomer != null)
+            if (!Page.IsPostBack)
             {
-                userName.Text = currentCustomer.Email;
+                List<RoomModel> roomsCart = (List<RoomModel>)Session["Cart"];
+                Number.Text = roomsCart.Count + "";
+                currentCustomer = (AccountModel)Session["customerCurrent"];
+                if (currentCustomer != null)
+                {
+                    userName.Text = currentCustomer.Email;
+                }
+                Notifee.Text = "";
             }
-            Notifee.Text = "";
             
         }
       

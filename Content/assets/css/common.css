@@ -967,7 +967,7 @@ div[data-anim~=base] {
 
 /*CSS ALERT*/
 .alert {
-    position:absolute;
+    position:fixed;
     top:50px;
     right:10px;
     z-index:99999;

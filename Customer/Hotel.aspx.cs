@@ -19,17 +19,14 @@ namespace WebNCASP.Customer
         Converter converter = new Converter();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
+            var hotelId = Session["HotelSelected"];
+            if (hotelId != null)
             {
-                var hotelId = Session["HotelSelected"];
-                if (hotelId != null)
-                {
-                    ShowDetailHotelAndListRoom();
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "ToastMessage('Not Found Hotel')", true);
-                }
+                ShowDetailHotelAndListRoom();
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "ToastMessage('Not Found Hotel')", true);
             }
 
         }
@@ -74,11 +71,20 @@ namespace WebNCASP.Customer
         }
         protected void btnSelect_Click(object sender, EventArgs e)
         {
+        }
+
+        protected void RepeaterRoom_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
+        }
+
+        public void btnSelect_Command(object sender, CommandEventArgs e)
+        {
             Button btn = (Button)sender;
             int idRoom = Convert.ToInt32(btn.CommandArgument.ToString());
             List<RoomModel> list = (List<RoomModel>)Session["ListRoom"];
             RoomModel roomIsSeleted = list.Find(item => item.MaPhong == idRoom);
-            if (roomIsSeleted!=null)
+            if (roomIsSeleted != null)
             {
                 List<RoomModel> cartRooms = (List<RoomModel>)Session["Cart"];
                 cartRooms.Add(roomIsSeleted);
@@ -87,13 +93,12 @@ namespace WebNCASP.Customer
                 if (master != null)
                 {
                     master.NumberRoomCart = cartRooms.Count + "";
+                    Label label = (Label)master.FindControl("Number");
+                    label.Text = cartRooms.Count + "";
+                    txtTest.Text = cartRooms.Count + "";
+                    ScriptManager.RegisterStartupScript(this, Page.GetType(), "Initialize", "ToastMessage('Thêm thành công')", true);
                 }
             }
-        }
-
-        protected void RepeaterRoom_ItemCommand(object source, RepeaterCommandEventArgs e)
-        {
-
         }
     }
 }

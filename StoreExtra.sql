@@ -42,3 +42,31 @@ as
 begin
 	insert into ChiTietDonDatPhong values(@MaDon,@MaPhong)
 end
+
+-- DANH SÁCH ĐƠN HÀNG ĐÃ ĐẶT 
+go
+create proc show_DonDaDat @MaKh int
+as 
+begin
+	select a.MaDonDat,a.NgayBatDau,a.NgayKetThuc,a.SoLuongNguoiLon,a.SoLuongTreEm, COUNT(a.MaDonDat) as N'SoLuongPhong',a.TrangThai,c.TenKhachSan,c.Anh
+	from DonDatPhong a, ChiTietDonDatPhong b, KhachSan c, Phong d
+	where a.MaDonDat = b.MaDonDat and b.MaPhong = d.MaPhong and d.MaKhachSan = c.MaKhachSan and a.MaKhachHang = @MaKh
+	group by a.MaDonDat,a.NgayBatDau,a.NgayKetThuc,a.SoLuongNguoiLon,a.SoLuongTreEm,c.TenKhachSan,c.Anh,a.TrangThai
+end
+exec show_DonDaDat 1
+-- XÓA ĐƠN HÀNG ĐÃ ĐẶT 
+go
+create proc delete_DonDaDat @MaDon int
+as 
+begin
+	begin
+		delete 
+		from ChiTietDonDatPhong
+		where MaDonDat = @MaDon
+	end
+	begin
+		delete 
+		from DonDatPhong
+		where MaDonDat = @MaDon
+	end
+end

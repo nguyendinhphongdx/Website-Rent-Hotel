@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LayoutC2.Master" AutoEventWireup="true" CodeBehind="Hotel.aspx.cs" Inherits="WebNCASP.Customer.Hotel" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="path">
+  <asp:UpdatePanel runat="server" ID="UpdatePanel1">
+      <ContentTemplate>
+            <div class="path">
         <div class="item">Khách sạn</div>
         <i class="fas fa-angle-right"></i>
         <div class="item">Hà Nội</div>
@@ -213,7 +215,7 @@
                                             <ItemTemplate>
                                                 <div class="picture">
                                                     <%--<img src="/Content/upload/<%# Eval("Anh") %>" alt="<%# Eval("Anh") %>">--%>
-                                                     <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
+                                                    <img src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg" alt="">
                                                 </div>
                                             </ItemTemplate>
                                         </asp:Repeater>
@@ -276,12 +278,12 @@
                                                 <p><%#Eval("DonGia")%> / đêm</p>
                                             </div>
                                             <div class="new-price">
-                                               <%#Eval("DonGia")%> / đêm
+                                                <%#Eval("DonGia")%> / đêm
                                             </div>
 
                                         </div>
 
-                                        <asp:Button runat="server" CssClass="btn-select" CommandArgument='<%#Eval("MaPhong")%>' Text="Chọn Phòng" ID="btnSelect" OnClick="btnSelect_Click" />
+                                        <asp:Button runat="server" CssClass="btn-select" CommandArgument='<%#Eval("MaPhong")%>' Text="Chọn Phòng" ID="btnSelect" OnCommand="btnSelect_Command" />
                                     </div>
                                 </div>
                             </div>
@@ -289,6 +291,7 @@
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
+            <asp:Label ID="txtTest" runat="server"/>
         </div>
     </div>
     <div class="wrapper wrapper-review">
@@ -718,4 +721,6 @@
             </div>
         </div>
     </div>
+      </ContentTemplate>
+  </asp:UpdatePanel>
 </asp:Content>
