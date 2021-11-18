@@ -43,7 +43,7 @@ namespace WebNCASP
         }
 
         // string query = "update from tblTaikHON set matkhau=123 where ádsda",
-        // object[] values = new object[]{"email@gmail.com","123"};
+        // object[] values = new object[]{"email@gmail.
         // => datatable delete, update
         public int ExecuteNonQuery(string query, Object[] parameters = null)
         {

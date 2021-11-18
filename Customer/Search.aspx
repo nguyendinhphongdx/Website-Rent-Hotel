@@ -136,7 +136,7 @@
                         <div class="box-hotel">
                             <div class="picture">
                                 <img 
-                                    src="/Content/assets/images/photos-hotel/sheraton-nhatrang.jpg"
+                                    src="/Content/upload/<%# Eval("Anh") %>"
                                     alt="<%# Eval("Anh") %>" />
                                 <div class="sale-percent">58%</div>
                                 <div class="favorous">

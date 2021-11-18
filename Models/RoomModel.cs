@@ -14,6 +14,7 @@ namespace WebNCASP.Models
 
         public RoomModel()
         {
+
         }
 
         public RoomModel(int maPhong, string tenPhong, float donGia, int maKhachSan)

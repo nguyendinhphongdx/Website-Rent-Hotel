@@ -45,5 +45,13 @@ namespace WebNCASP.Ultis
             }
             return true;
         }
+        public static string GetDateRangeStringDefault()
+        {
+            return DateTime.Now.ToString("MM/dd/yyyy") +"-"+ DateTime.Now.AddDays(1).ToString("MM/dd/yyyy");
+        }
+        public static string GetPeopleStringDefault(int room, int parent, int child)
+        {
+            return room+" phòng,"+parent+" người lớn,"+child+" trẻ em";
+        }
     }
 }

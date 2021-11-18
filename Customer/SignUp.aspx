@@ -12,37 +12,35 @@
               <div class="row">
                 <div class="col">
                   <label for="name">Họ tên *</label>
-                  <input id="name" name="name" type="text" required="required" placeholder="Họ tên">
+                  <asp:TextBox runat="server" ID="name" name="name" type="text" required="required" placeholder="Họ tên"/>
                 </div>
                 <div class="col">
                   <label for="phone">Số điện thoại *</label>
-                  <input type="text" required="required" name="phone"  id="phone" placeholder="Số điện thoại">
+                     <asp:TextBox runat="server" ID="phone" name="name" type="text" required="required" placeholder="Số điện thoại"/>
                 </div>
               </div>
               <div class="row">
                 <div class="col col-full">
-                  <label for="address">Địa chỉ *</label>
-                  <input type="text" required="required" name="address" id="address" placeholder="Địa chỉ">
+                  <label for="address">CMND *</label>
+                      <asp:TextBox runat="server" ID="CMND" name="name" type="text" required="required" placeholder="Số CMND"/>
                 </div>
                 <div class="col">
                   <label for="age">Tuổi</label>
-                  <input id="age" name="age" type="number" min="18" placeholder="Tuổi">
+                  <asp:TextBox runat="server" ID="age" name="name" type="number" required="required" placeholder="Tuổi"/>
                 </div>
               </div>
               <div class="row">
                 <div class="col">
                   <label for="email">Email *</label>
-                  <input type="email" required="required" name="email" id="email" placeholder="Email">
+                      <asp:TextBox runat="server" ID="email" name="email" type="email" required="required" placeholder="Email"/>
                 </div>
                 <div class="col">
                   <label for="password">Mật khẩu</label>
-                  <input type="password" required="required" name="password" id="password"  placeholder="Password">
+                 <asp:TextBox runat="server" ID="password" name="password" type="password" required="required" placeholder="Password"/>
                 </div>
               </div>
               <div class="row">
-                <button class="btn-sign">
-                  Đăng ký
-                </B>
+                <asp:Button ID="btnSignUp" OnClick="btnSignUp_Click" runat="server" CssClass="btn-sign" Text="Đăng ký"/>
               </div>
             </div>
           </form>
