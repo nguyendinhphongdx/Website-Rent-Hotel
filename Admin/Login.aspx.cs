@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebNCASP.Controllers.admin;
 using WebNCASP.Ultis;
 
 namespace WebNCASP.Admin
@@ -13,19 +15,27 @@ namespace WebNCASP.Admin
         Constant constant = new Constant();
         protected void Page_Load(object sender, EventArgs e)
         {
+            AdminController adminController = new AdminController();
             label.Text = "";
             if (Request.Form.Count>0 && Request.Form["type"] == "signin")
             {
                 String email = Request.Form["email"];
                 String pass = Request.Form["password"];
-                if (email == "admin@gmail.com" && pass == "123")
+                if (email != "" && pass != "")
                 {
-                    Session["adminLogedin"] = true;
-                    Response.Redirect("index.aspx");
+                    DataTable taikhoan = adminController.check_Login(email,pass);
+                    if (taikhoan.Rows.Count > 0)
+                    {
+                        Session["adminLogedin"] = true;
+                        Response.Redirect("index.aspx");
+                    }
+                    else
+                        label.Text = "Thông tin tài khoản không chính xác!";
+
                 }
                 else
                 {
-                    label.Text = "Thông tin tài khoản không chính xác!";
+                    label.Text = "Hãy nhập đầy đủ thông tin!";
                 }
             }
         }

@@ -156,7 +156,6 @@ namespace WebNCASP
                         cmd.Parameters.AddWithValue(parameterNames[i], parameters[i]);
                         i++;
                     }
-
                 }
                 data = cmd.ExecuteNonQuery();
                 cnn.Close();

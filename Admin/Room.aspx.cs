@@ -18,9 +18,10 @@ namespace WebNCASP.Admin
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            RoomModel room = new RoomModel();
+            RoomModel1 room = new RoomModel1();
             room.MaPhong = Convert.ToInt32(update_roomId.Value);
             room.MaKhachSan = Convert.ToInt32(update_hotelName.SelectedValue);
+            room.TenKhachSan = update_hotelName.Text;
             room.TenPhong = update_roomName.Text;
             room.DonGia = float.Parse(update_price.Text);
             IList<HttpPostedFile> files = update_image.PostedFiles;
@@ -30,8 +31,9 @@ namespace WebNCASP.Admin
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            RoomModel room = new RoomModel();
+            RoomModel1 room = new RoomModel1();
             room.MaKhachSan = Convert.ToInt32(add_nameHotel.SelectedValue);
+            room.TenKhachSan = add_nameHotel.Text;
             room.TenPhong = add_nameRoom.Text;
             room.DonGia = float.Parse(add_price.Text);
             IList<HttpPostedFile> files = add_images.PostedFiles;

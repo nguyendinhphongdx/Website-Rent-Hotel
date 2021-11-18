@@ -11,10 +11,11 @@ GO
 create table TaiKhoan
 (
 	MaTaiKhoan int identity(1,1) primary key,
-	TenTaiKhoan nvarchar(30),
+	Email nvarchar(50),
 	MatKhau varchar(100),
 	MaLoaiTK int references LoaiTaiKhoan(MaLoaiTaiKhoan)
 );
+
 GO
 create table KhachHang
 (
@@ -22,6 +23,7 @@ create table KhachHang
 	TenKhachHang nvarchar(50),
 	SoDienThoai varchar(10),
 	CMND varchar(12),
+	Email varchar(50),
 	MaTaiKhoan int references TaiKhoan(MaTaiKhoan)
 );
 GO
@@ -52,9 +54,6 @@ create table Phong
 	DonGia int,
 	MaKhachSan int references KhachSan(MaKhachSan)
 );
-GO
-alter table Phong 
-add SoGiuong int
 
 GO
 create table ChiTietDonDatPhong
@@ -63,6 +62,9 @@ create table ChiTietDonDatPhong
 	MaPhong int references Phong(MaPhong),
 	constraint PK_CTDonDatPhong primary key(MaDonDat,MaPhong)
 );
+GO
+alter table ChiTietDonDatPhong
+add SoGiuong int
 GO
 create table DichVu
 (
@@ -112,18 +114,62 @@ GO
 ---2 loại tài khoản admin, customer---
 insert into LoaiTaiKhoan(TenLoai)
 values('admin'),('customer')
+
 ---proc---
+go
+create proc show_KhachHang_TaiKhoan
+as
+select MaKhachHang,TenKhachHang,SoDienThoai,KhachHang.Email as Email,CMND,TaiKhoan.MaTaiKhoan as MaTaiKhoan,MatKhau from KhachHang, TaiKhoan
+where KhachHang.MaTaiKhoan=TaiKhoan.MaTaiKhoan and MaLoaiTK=2;
+
+go
+create proc show_KhachHang_MaKH
+@MaKH int
+as
+select MaKhachHang,TenKhachHang,SoDienThoai,KhachHang.Email as Email,CMND,TaiKhoan.MaTaiKhoan as MaTaiKhoan,MatKhau from KhachHang, TaiKhoan
+where KhachHang.MaTaiKhoan=TaiKhoan.MaTaiKhoan and MaLoaiTK=2 and MaKhachHang=@MaKH
+
+go 
+create proc update_KhachHang_TaiKhoan
+@maKH int,@tenKH nvarchar(50),@SDT varchar(10),@email varchar(50),@CMND varchar(12),@MatKhau varchar(100),@maTK int
+as
+begin
+update KhachHang
+set TenKhachHang=@tenKH, SoDienThoai=@SDT, Email=@email, CMND=@CMND
+where MaKhachHang=@maKH
+update TaiKhoan
+set Email=@email,MatKhau=@MatKhau
+where MaTaiKhoan=@maTK
+end
+
+go
+create proc delete_KhachHang_TaiKhoan
+@MaKH int
+as
+begin
+declare @maTK int
+set @maTK=(select KhachHang.MaTaiKhoan from TaiKhoan,KhachHang where MaKhachHang=@MaKH and TaiKhoan.MaTaiKhoan=KhachHang.MaTaiKhoan)
+delete KhachHang
+where MaKhachHang=@MaKH
+delete TaiKhoan
+where MaTaiKhoan=@maTK
+end
+
+
 go
 create proc check_Login
 @email nvarchar(30),@password varchar(100)
 as
-select * from TaiKhoan where @email=TenTaiKhoan and @password=MatKhau
+select * from TaiKhoan
+where Email=@email and MatKhau=@password
+
 go
 create proc insert_TaiKhoan
-@TenTaiKhoan nvarchar(30), @MatKhau varchar(100), @LoaiTaiKhoan int
+@email varchar(50), @MatKhau varchar(100), @LoaiTaiKhoan int
 as 
-insert into TaiKhoan(TenTaiKhoan,MatKhau,MaLoaiTK)
-values(@TenTaiKhoan,@MatKhau,@LoaiTaiKhoan);
+insert into TaiKhoan(Email,MatKhau,MaLoaiTK)
+values(@email,@MatKhau,@LoaiTaiKhoan);
+
 go
 create proc show_TaiKhoan
 as
@@ -146,17 +192,17 @@ where MaTaiKhoan=@MaTaiKhoan
 
 go
 create proc Sign_up
-@TenTK nvarchar(30), @MatKhau varchar(100),
+@Email varchar(50), @MatKhau varchar(100),
 @HoTenKH nvarchar(50), @SDT varchar(10),
 @CMND varchar(12) 
 as
 begin
-	insert TaiKhoan(TenTaiKhoan,MatKhau,MaLoaiTK) 
-	values(@TenTK,@MatKhau,2);
+	insert TaiKhoan(Email,MatKhau,MaLoaiTK) 
+	values(@Email,@MatKhau,2);
 	declare @MaTK int
-	set @MaTK=(select MaTaiKhoan from TaiKhoan where MatKhau=@MatKhau and TenTaiKhoan=@TenTK)
-	insert into KhachHang(TenKhachHang,SoDienThoai,CMND,MaTaiKhoan)
-	values(@TenTK,@SDT,@CMND,@MaTK)
+	set @MaTK=(select MaTaiKhoan from TaiKhoan where MatKhau=@MatKhau and Email=@Email)
+	insert into KhachHang(TenKhachHang,SoDienThoai,CMND,Email,MaTaiKhoan)
+	values(@HoTenKH,@SDT,@CMND,@Email,@MaTK)
 end;
 
 go
@@ -165,6 +211,7 @@ create proc insert_KhachSan
 as
 insert into KhachSan(TenKhachSan,DiaChi,Anh)
 values(@TenKS,@Diachi,@Anh)
+
 go
 create proc update_KhachSan 
 @MaKS int, @TenKS nvarchar(30),@Diachi nvarchar(50),@Anh varchar(100)
@@ -179,6 +226,8 @@ create proc delete_KhachSan
 as
 delete KhachSan
 where MaKhachSan=@MaKhachSan
+delete Phong
+where MaKhachSan=@MaKhachSan
 
 go
 create proc search_KhachSan_DiaDiem
@@ -190,7 +239,14 @@ where DiaChi like N'%'+@DiaDiem+'%'
 go
 create proc show_KhachSan
 as
-select * from KhachSan
+select MaKhachSan,TenKhachSan,DiaChi,Anh from KhachSan
+
+go
+create proc show_KhachSan_SoPhong
+as
+select KhachSan.MaKhachSan as MaKhachSan,TenKhachSan,DiaChi,Anh,count(MaPhong) as SoPhong from KhachSan left join Phong
+on KhachSan.MaKhachSan=Phong.MaKhachSan
+group by KhachSan.MaKhachSan,TenKhachSan,DiaChi,Anh
 
 go
 create proc insert_Phong
@@ -218,12 +274,12 @@ where MaPhong=@MaPhong
 
 
 ----search--------
---go
---create proc search_Phong
---@TenPhong nvarchar(50),@SoGiuong int,@DonGia int,@MaKhachSan int
---as
---if(@TenPhong=N'NULL')
---select * from Phong
+go
+create proc show_Phong_MaKS
+@MaKhachSan int
+as
+select * from Phong
+where MaKhachSan=@MaKhachSan
 ---------------------------
 go
 create proc show_DonDatPhong

@@ -15,6 +15,15 @@ namespace WebNCASP.Admin
     {
 
         /// <summary>
+        /// listRoom control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView listRoom;
+
+        /// <summary>
         /// update_hotelName control.
         /// </summary>
         /// <remarks>
@@ -58,15 +67,6 @@ namespace WebNCASP.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox update_price;
-
-        /// <summary>
-        /// update_number control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox update_number;
 
         /// <summary>
         /// btnUpdate control.

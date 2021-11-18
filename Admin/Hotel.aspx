@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LayoutAdmin.Master" AutoEventWireup="true" CodeBehind="Hotel.aspx.cs" Inherits="WebNCASP.Admin.Hotel" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LayoutAdmin.Master" AutoEventWireup="true" CodeBehind="Hotel.aspx.cs" Inherits="WebNCASP.Admin.Hotel" EnableEventValidation="false"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link href="../Content/assets/css/admin/hotel.css" rel="stylesheet" />
@@ -24,10 +24,10 @@
                             <table cellpadding="0" cellspacing="0" border="0">
                                 <thead>
                                     <tr>
-                                        <th class="col-1">STT</th>
-                                        <th>Hình ảnh</th>
+                                        <th class="col-1">Mã Khách sạn</th>
                                         <th>Tên khách sạn</th>
-                                        <th>địa chỉ</th>
+                                        <th>Địa chỉ</th>
+                                        <th>Ảnh</th>
                                         <th>Số phòng</th>
                                         <th>Hành động</th>
                                     </tr>
@@ -36,7 +36,25 @@
                         </div>
                         <div class="tbl-content">
                             <table cellpadding="0" cellspacing="0" border="0">
-                                <tbody id="table-fill"></tbody>
+                               <%-- <tbody id="table-fill"></tbody>--%>
+                                 <asp:ListView runat="server" ID="listViewHotel" >
+                                
+                                    <ItemTemplate>
+                                        <tr>
+                                            <td><%#Eval("MaKhachSan") %></td>
+                                             <td><%#Eval("TenKhachSan") %></td>
+                                             <td><%#Eval("DiaChi") %></td>
+                                             <td><img id="image" alt="" src="../Content/upload/<%#Eval("Anh") %>"/>
+                                                </td>
+                                             <td><%#Eval("SoPhong") %></td>
+                                             <td>
+                                                 <asp:Button runat="server" ID="btn_Sua" Text="Sửa" CommandArgument='<%#Eval("MaKhachSan") %>' OnClick="btn_Sua_Click"/>
+                                                 <asp:Button runat="server" ID="btn_Xoa" Text="Xóa" CommandArgument='<%#Eval("MaKhachSan") %>' OnClick="btn_Xoa_Click"/>
+                                             </td>
+                                        </tr>
+                                    </ItemTemplate>
+                                </asp:ListView>
+
                             </table>
                         </div>
                     </div>
@@ -48,20 +66,23 @@
                             <input type="hidden" name="type" value="updateHotel" />
                             <div class="form-group">
                                 <label for="name">Tên khách sạn</label>
-                                <asp:DropDownList name="name" runat="server" id="update_nameHotel">
-                                    <asp:ListItem value="1">Khách sạn 1</asp:ListItem>
+                                <asp:DropDownList name="name" runat="server" id="update_nameHotel" AutoPostBack="true">
+                                   <%-- <asp:ListItem value="1">Khách sạn 1</asp:ListItem>
                                      <asp:ListItem value="2">Khách sạn 2</asp:ListItem>
-                                     <asp:ListItem value="3">Khách sạn 3</asp:ListItem>
+                                     <asp:ListItem value="3">Khách sạn 3</asp:ListItem>--%>
                                 </asp:DropDownList>
                             </div>
                             <div class="form-group">
                                 <label for="image">Ảnh khách sạn</label>
-                                <asp:FileUpload runat="server"
+                                <asp:FileUpload runat="server" AllowMultiple="false"
                                     type="file"
                                     ID="update_image"
                                     name="image"
-                                    onchange="handleOnChangeInputImage(this,'imagesUpdate')" />
+                                    OnLoad="update_image_Load"
+                                    onchange="handleOnChangeInputImage(this,'imagesUpdate')"
+                                    />
                                 <div class="image" id="imagesUpdate">
+                                    <asp:Image  runat="server" ID="img" />
                                     <!-- <img id="print-picture" src="../assets/images/photos-hotel/logo_4_1009828.jpg" alt=""> -->
                                 </div>
                             </div>
@@ -107,7 +128,7 @@
                         </div>
                         <div class="form-group">
                             <label for="image">Ảnh khách sạn</label>
-                            <asp:FileUpload runat="server"
+                            <asp:FileUpload runat="server" AllowMultiple="false"
                                 type="file"
                                 name="image"
                                 ID="add_imageHotel"

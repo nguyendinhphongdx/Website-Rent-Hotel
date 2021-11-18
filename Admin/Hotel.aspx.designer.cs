@@ -15,6 +15,15 @@ namespace WebNCASP.Admin
     {
 
         /// <summary>
+        /// listViewHotel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView listViewHotel;
+
+        /// <summary>
         /// update_nameHotel control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace WebNCASP.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload update_image;
+
+        /// <summary>
+        /// img control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image img;
 
         /// <summary>
         /// update_Address control.

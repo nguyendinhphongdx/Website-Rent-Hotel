@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LayoutAdmin.Master" AutoEventWireup="true" CodeBehind="Room.aspx.cs" Inherits="WebNCASP.Admin.Room" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LayoutAdmin.Master" AutoEventWireup="true" CodeBehind="Room.aspx.cs" Inherits="WebNCASP.Admin.Room" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
   <link href="../Content/assets/css/admin/hotel.css" rel="stylesheet" />
     <div class="tabset">
@@ -30,8 +30,21 @@
                                 </div>
                                 <div class="tbl-content">
                                     <table cellpadding="0" cellspacing="0" border="0">
-                                        <tbody id="table-fill">
-                                        </tbody>
+                                       <%-- <tbody id="table-fill">
+                                        </tbody>--%>
+                                        <asp:ListView runat="server" ID="listRoom">
+                                             <ItemTemplate>
+                                        <tr>
+                                            <td><%#Eval("MaPhong") %></td>
+                                             <td><%#Eval("TenPhong") %></td>
+                                             <td><%#Eval("DonGia") %></td>
+<%--                                             <td><%#Eval("MaKhachSan") %></td>--%>
+                                             <td><%#Eval("TenKhachSan") %></td>
+                                             <td><asp:Button runat="server" ID="btn_Sua" Text="Sửa" CommandArgument='<%#Eval("MaPhong") %>' OnClick="btn_Sua_Click"/></td>
+                                             <td><asp:Button runat="server" ID="btn_Xoa" Text="Xóa" CommandArgument='<%#Eval("MaPhong") %>' OnClick="btn_Xoa_Click"/></td>
+                                        </tr>
+                                            </ItemTemplate>
+                                        </asp:ListView>
                                     </table>
                                 </div>
                             </div>
@@ -42,10 +55,10 @@
                                 <div class="title">Thông tin phòng</div>
                                     <div class="form-group">
                                         <label for="name">Tên khách sạn</label>
-                                        <asp:DropDownList ID="update_hotelName" runat="server" name="name">
-                                            <asp:ListItem value="1">Khách sạn 1</asp:ListItem>
+                                        <asp:DropDownList ID="update_hotelName" runat="server" name="name" AutoPostBack="true">
+                                            <%--<asp:ListItem value="1">Khách sạn 1</asp:ListItem>
                                             <asp:ListItem value="2">Khách sạn 2</asp:ListItem>
-                                             <asp:ListItem value="3">Khách sạn 3</asp:ListItem>
+                                             <asp:ListItem value="3">Khách sạn 3</asp:ListItem>--%>
                                         </asp:DropDownList>
                                     </div>
                                     <div class="form-group">
@@ -66,17 +79,17 @@
                                         <label for="price">Gía 1 đêm</label>
                                         <asp:TextBox runat="server" type="number" id="update_price" placeholder="Gía 1 đêm"/>
                                     </div>
-                                    <div class="form-group">
+                                    <%--<div class="form-group">
                                         <label for="number">Số giường</label>
                                         <asp:TextBox runat="server" type="number" id="update_number" placeholder="Số lượng phòng"/>
-                                    </div>
+                                    </div>--%>
                                     <div class="form-group">
                                         <label for="description">Mô tả</label>
                                         <textarea id="description" rows="5" ></textarea>
                                     </div>
                                     <div class="card-footer">
                                         <button class="btn btn-dash">Hủy</button>
-                                        <asp:Button runat="server" ID="btnUpdate" CssClass="btn btn-primary" Text="Thêm hoặc Sửa" OnClick="btnUpdate_Click"/>
+                                        <asp:Button runat="server" ID="btnUpdate" CssClass="btn btn-primary" Text="Sửa" OnClick="btnUpdate_Click"/>
                                     </div>
                             </div>
                            </div>

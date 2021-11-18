@@ -23,6 +23,20 @@ namespace WebNCASP.Ultis
                 return false;     
             }
         }
+        public static bool SingleUploadFile(HttpPostedFile uploadedFile,string filename)
+        {
+           // string fn = System.IO.Path.GetFileName(uploadedFile.FileName);
+            string SaveLocation = System.Web.HttpContext.Current.Server.MapPath("/Content/upload") + "\\" + filename;
+            try
+            {
+                uploadedFile.SaveAs(SaveLocation);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         public static bool MultiUploadFile(IList<HttpPostedFile> listFile)
         {
            for(var i = 0; i < listFile.Count; i++)
