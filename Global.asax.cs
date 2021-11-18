@@ -22,10 +22,12 @@ namespace WebNCASP
         }
         void Session_Start(object sender, EventArgs e)
         {
-                Session["adMinLogedIn"] = false;
-                Session["typeNav"] = "index";
-                Session["Cart"] = new List<RoomModel> { };
-
+            Session["adMinLogedIn"] = false;
+            Session["typeNav"] = "index";
+            Session["Cart"] = new List<RoomModel> { };
+            Session["HotelSelected"] = null;
+            Session["ListRoom"] = new List<RoomModel> { };
+            Session["customerCurrent"] = null;
         }
         void Session_End(object sender, EventArgs e)
         {

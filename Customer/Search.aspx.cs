@@ -4,22 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebNCASP.Controllers.customer;
 using WebNCASP.Models;
 
 namespace WebNCASP.Customer
 {
     public partial class Search : System.Web.UI.Page
     {
+        HotelController hotelController = new HotelController();
         List<HotelModel> list = new List<HotelModel> { };
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Response.Redirect("search.aspx?place=" + place + "&daterange=" + daterange + "&people=" + people);
-            for (var i = 0; i < 5; i++)
-            {
-                HotelModel hotel = new HotelModel(i,"Khách sạn "+i,"Địa chỉ "+i,"Anh");
-                list.Add(hotel);
-            }
-            Repeater_Hotel.DataSource = list;
+            Repeater_Hotel.DataSource = hotelController.GetAllHotel();
             Repeater_Hotel.DataBind();
         }
 
@@ -27,8 +23,9 @@ namespace WebNCASP.Customer
         {
             LinkButton btn = (LinkButton)sender;
             int idHotel = Convert.ToInt32(btn.CommandArgument.ToString());
+            Session["HotelSelected"] = idHotel;
             string query = Request.QueryString.ToString();
-            Response.Redirect("Hotel.aspx?"+query+"?"+"hotel="+ idHotel);
+            Response.Redirect("Hotel.aspx?"+query+"&"+"hotel="+ idHotel);
         }
     }
 }

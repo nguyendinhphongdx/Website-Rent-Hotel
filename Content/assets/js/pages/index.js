@@ -114,6 +114,10 @@ function openDropdownAccount() {
     dropdown.classList.toggle("active");
   }
 }
-function addRoomToCart() {
-    
+function ToastMessage(message) {
+    const Alert = document.createElement("div");
+    Alert.classList = "alert fade alert-simple alert-success";
+    Alert.innerHTML = `<strong class="font__weight-semibold">Message!</strong> ${message}`;
+    document.getElementById("alerts").appendChild(Alert);
+    setTimeout(() =>  Alert.remove(), 3000);
 }

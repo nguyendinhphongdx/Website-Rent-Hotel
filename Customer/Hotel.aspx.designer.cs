@@ -15,6 +15,33 @@ namespace WebNCASP.Customer
     {
 
         /// <summary>
+        /// nameHotel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label nameHotel;
+
+        /// <summary>
+        /// addressHotel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label addressHotel;
+
+        /// <summary>
+        /// imageHotel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imageHotel;
+
+        /// <summary>
         /// RepeaterRoom control.
         /// </summary>
         /// <remarks>

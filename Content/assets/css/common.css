@@ -252,6 +252,7 @@ body {
     border-radius: 10px;
     cursor: pointer;
     font-weight: 700;
+    outline: auto;
 }
 
     .container-price .btn-select:hover {
@@ -404,7 +405,9 @@ body {
         .icon-account .dropdown button:hover, .icon-account .dropdown input[type="button"]:hover {
             background-color: #ccc
         }
-
+        .icon-account .dropdown #userName {
+            color:black
+        }
 .menu-contact .icon {
     margin: 0px 10px;
     cursor: pointer;
@@ -960,4 +963,21 @@ div[data-anim~=base] {
     .daterangepicker .drp-calendar {
         width: 50%;
     }
+}
+
+/*CSS ALERT*/
+.alert {
+    position:absolute;
+    top:50px;
+    right:10px;
+    z-index:99999;
+    background-color:greenyellow;
+    padding:15px 15px;     
+    border-radius:10px
+}
+.notify{
+    color:red
+}
+.userName{
+    color:black
 }

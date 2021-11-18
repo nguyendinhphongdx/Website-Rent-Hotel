@@ -221,6 +221,12 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\admin\Test.cs" />
+    <Compile Include="Controllers\customer\BillController.cs" />
+    <Compile Include="Controllers\customer\CustomerController.cs" />
+    <Compile Include="Controllers\customer\HotelController.cs" />
+    <Compile Include="Controllers\customer\ImageRoom.cs" />
+    <Compile Include="Controllers\customer\RoomController.cs" />
     <Compile Include="Customer\BookRoom.aspx.cs">
       <DependentUpon>BookRoom.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -280,6 +286,10 @@
     <Compile Include="LayoutC2.Master.designer.cs">
       <DependentUpon>LayoutC2.Master</DependentUpon>
     </Compile>
+    <Compile Include="Models\Customer\AccountModel.cs" />
+    <Compile Include="Models\Customer\BillModel.cs" />
+    <Compile Include="Models\Customer\Converter.cs" />
+    <Compile Include="Models\Customer\CustomerModel.cs" />
     <Compile Include="Models\HotelModel.cs" />
     <Compile Include="Models\RoomModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -297,7 +307,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\upload\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
