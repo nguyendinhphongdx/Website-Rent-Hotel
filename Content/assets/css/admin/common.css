@@ -1,0 +1,416 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrapper-page {
+    display: flex;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+    .wrapper-page .sidebar {
+        background-color: rgb(255, 255, 255);
+        width: 220px;
+        transition: 0.5s;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    .wrapper-page .main {
+        background-color: rgb(240, 241, 250);
+        width: auto;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+/* CSS SIDE BAR  */
+.container-sidebar {
+    padding: 10px 10px;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar .item-side {
+    display: flex;
+    margin: 15px 0px;
+    border-radius: 6px;
+    padding: 10px 10px;
+    cursor: pointer;
+    border: .5px solid #ccc;
+    color: black
+}
+
+    .sidebar .item-side:hover {
+        transition: all .2s ease;
+        background-color: rgb(33, 15, 114);
+        color: white;
+    }
+
+    .sidebar .item-side.active {
+        background-color: rgb(33, 15, 114);
+        color: white;
+    }
+
+.header-side {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+    .header-side a {
+        font-family: cursive;
+    }
+/* END CSS SIDE BAR  */
+/*  CSS HEADER  */
+.main {
+    display: flex;
+}
+
+    .main .header-page {
+        width: 100%;
+        background-color: #fff;
+        height: fit-content;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        border-bottom: 1px solid blue;
+    }
+
+    .main .content-page {
+        padding: 20px;
+    }
+
+.row-container {
+    display: flex;
+}
+/*  CSS HEADER  */
+/* CSS TABLE   */
+
+h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.tbl-header {
+    background-color: rgba(136, 91, 91, 0.3);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.tbl-content {
+    max-height: 480px;
+    min-height: 300px;
+    overflow-x: auto;
+    margin-top: 0px;
+    border: 1px solid rgba(71, 65, 65, 0.3);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: fit-content;
+}
+
+th {
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 12px;
+    border-bottom: solid 1px rgba(36, 27, 27, 0.1);
+}
+
+
+/* demo styles */
+
+body {
+    background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+    background: linear-gradient(to right, #25c481, #25b7c4);
+    font-family: 'Roboto', sans-serif;
+}
+
+.card {
+    background: white;
+    border-radius: 7px;
+    padding: 10px;
+    margin: 10px;
+    height: fit-content;
+}
+
+    .card .title {
+        font-weight: bold;
+        margin: 10px 0px;
+    }
+
+.card-footer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+    .card-footer .btn {
+        padding: 8px 10px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        margin: 0px 10px;
+    }
+
+.btn.btn-dash {
+    background-color: rgb(189, 207, 107);
+    color: rgb(3, 0, 0);
+}
+
+.btn.btn-primary {
+    background-color: blueviolet;
+    color: white;
+}
+/* follow me template */
+.made-with-love {
+    margin-top: 40px;
+    padding: 10px;
+    clear: left;
+    text-align: center;
+    font-size: 10px;
+    font-family: arial;
+}
+
+    .made-with-love i {
+        font-style: normal;
+        color: #F50057;
+        font-size: 14px;
+        position: relative;
+        top: 2px;
+    }
+
+    .made-with-love a {
+        text-decoration: none;
+    }
+
+        .made-with-love a:hover {
+            text-decoration: underline;
+        }
+
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.tbl-content table tbody tr:nth-child(even) {
+    background-color: rgb(206, 217, 238);
+}
+
+table tbody {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+/* END CSS TABLE  */
+.col-10 {
+    width: 100%;
+}
+
+.col-9 {
+    width: 90%;
+}
+
+.col-8 {
+    width: 80%;
+}
+
+.col-7 {
+    width: 70%;
+}
+
+.col-6 {
+    width: 60%;
+}
+
+.col-5 {
+    width: 50%;
+}
+
+.col-4 {
+    width: 40%;
+}
+
+.col-3 {
+    width: 30%;
+}
+
+.col-2 {
+    width: 20%;
+}
+
+.col-1 {
+    width: 10%;
+}
+
+/* CSS FORM   */
+.form-group {
+    margin: 7px 0px;
+}
+
+    .form-group input, .form-group select {
+        width: 100%;
+        color: #333;
+        padding: 5px 8px;
+        border: 1px solid rgb(214, 213, 213);
+        outline: none;
+        border-radius: 5px;
+        margin-top: 5px
+    }
+
+        .form-group input[type="text"]:focus, .form-group input[type="text"]:hover {
+            border: 1px solid rgb(93, 90, 216);
+            transition: all 0.2s linear;
+        }
+
+    .form-group label {
+        font-weight: bold;
+    }
+
+    .form-group textarea {
+        width: 100%;
+        color: #333;
+        padding: 5px 8px;
+        border: 1px solid rgb(214, 213, 213);
+        outline: none;
+        border-radius: 5px;
+        margin-top: 5px
+    }
+
+    .form-group .image {
+        width: 150px;
+        overflow: hidden;
+        height: 100px;
+        border-radius: 5px;
+        margin-top: 5px;
+        display: flex;
+        width: 100%;
+    }
+
+        .form-group .image img {
+            width: 100px;
+            object-fit: fill;
+            margin: 0px 10px;
+        }
+
+td img {
+    width: 100px;
+    height: 60px;
+}
+/* END CSS FORM   */
+/*
+ CSS for the main interaction
+*/
+.tabset > input[type="radio"] {
+    position: absolute;
+    left: -200vw;
+}
+
+.tabset .tab-panel {
+    display: none;
+}
+
+.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+    display: block;
+}
+
+/*
+   Styling
+  */
+
+.tabset > label {
+    position: relative;
+    display: inline-block;
+    padding: 5px 15px 5px;
+    border: 1px solid transparent;
+    border-bottom: 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    .tabset > label::after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        background: #8d8d8d;
+    }
+
+    .tabset > label:hover,
+    .tabset > input:focus + label {
+        color: #06c;
+    }
+
+        .tabset > label:hover::after,
+        .tabset > input:focus + label::after,
+        .tabset > input:checked + label::after {
+            background: #06c;
+        }
+
+.tabset > input:checked + label {
+    border-color: #ccc;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+    font-weight: 600;
+}
+
+.tabset > input + label {
+    color: rgb(105, 100, 100);
+}
+
+.tab-panel {
+    padding: 5px 0;
+    border-top: 1px solid #ccc;
+}
+.scroll-card-info {
+    cursor: pointer;
+    padding: 0px 8px;
+
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 0px 10px;
+}
+.scroll-card-info:hover{
+    color:blue;
+}

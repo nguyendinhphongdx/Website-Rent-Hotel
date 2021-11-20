@@ -1,0 +1,983 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+*::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f5;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+    background-color: #f5f5f5;
+}
+
+* {
+}
+
+    *::-webkit-scrollbar-thumb {
+        background-color: #575555;
+        border: 2px solid #555555;
+    }
+
+ul li i {
+    color: rgb(65, 52, 52);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.wrapper-content {
+    width: 1370px;
+    margin: 0 auto;
+}
+/* side bar  */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+    /* The navigation menu links */
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+    /* Position and style the close button (top right corner) */
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left 0.5s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+}
+/* edn side bar  */
+/* modal account */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 12; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    position: fixed;
+    background-color: white;
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+    .modal-content > .title {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 22px;
+        font-weight: 600;
+    }
+/* The Close Button */
+.close {
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-header {
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+    .modal-body .btn-login {
+        padding: 10px 8px;
+        border-radius: 7px;
+        outline: none;
+        border: .5px solid #ccc;
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        margin: 20px 0px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+        .modal-body .btn-login:hover {
+            transition: all 0.2s;
+            opacity: .8;
+        }
+
+        .modal-body .btn-login > i {
+            font-size: 24px;
+            margin-right: 30px;
+        }
+
+        .modal-body .btn-login.facebook > i {
+            color: blueviolet
+        }
+
+        .modal-body .btn-login.google > i {
+            color: rgb(190, 138, 69)
+        }
+
+.modal-content .form-inputs input {
+    padding: 12px 10px;
+    width: 100%;
+    font-weight: 500;
+    margin: 5px 0px;
+    outline: none;
+    border: none;
+    background-color: rgb(238, 222, 222)
+}
+
+.modal-body .btn-login.login {
+    justify-content: center;
+    background-color: rgb(221, 90, 90);
+    color: white;
+    height: 46px;
+}
+
+.modal-content p, .modal-footer {
+    font-size: 14px;
+    text-align: center;
+    margin: 15px;
+}
+
+    .modal-content p:hover, .modal-footer button {
+        color: blueviolet;
+        transition: all 0.2s;
+        cursor: pointer;
+        outline: none;
+        border: none;
+    }
+/* CSS BUTTON PRICE */
+.container-price {
+    display: flex;
+    align-items: center;
+}
+
+    .container-price .price {
+        height: fit-content;
+        font-weight: 600;
+        margin-right: 10px;
+    }
+
+        .container-price .price .old-price {
+            font-weight: 500;
+            display: flex;
+        }
+
+            .container-price.price .old-price p {
+                text-decoration: line-through;
+            }
+
+            .container-price .price .old-price .percent {
+                margin: 0px 7px;
+                background-color: red;
+                color: white;
+                padding: 4px;
+                border-radius: 5px;
+            }
+
+.price .new-price {
+    font-size: 18px;
+}
+
+.container-price .btn-select {
+    background-color: rgb(255, 51, 102);
+    color: white;
+    height: fit-content;
+    padding: 15px 23px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    outline: auto;
+}
+
+    .container-price .btn-select:hover {
+        background-color: rgb(226, 19, 70);
+    }
+/* END CSS BUTTON PRIC E */
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+/* end modal account  */
+/* NAVIGATION  */
+@keyframes opacityHeader {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.wall-active {
+    background-color: rgb(66, 113, 175);
+    animation: opacityHeader ease .5s;
+}
+
+.wallpaper-header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    padding: 20px 0px;
+}
+
+.header-banner {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+    .header-banner .navigation-header,
+    .menu-type ul,
+    .menu-contact {
+        display: flex;
+    }
+
+.navigation-header {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-type ul a {
+    padding: 10px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    color: white;
+    display: block;
+}
+
+.menu-type ul li.active a {
+    border-bottom: 3px solid white;
+}
+
+.group-item-contact {
+    display: flex;
+}
+
+    .group-item-contact:nth-child(1) {
+        margin-right: 20px;
+    }
+
+    .group-item-contact i {
+        margin-right: 20px;
+    }
+
+.menu-contact .icon.icon-account {
+    display: flex;
+    position: relative;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+.dropdown.active {
+    display: block !important;
+    animation: scaleIn;
+    transition: all 0.5s;
+}
+
+.icon-account .dropdown {
+    display: none;
+    top: 35px;
+    position: absolute;
+    background: white;
+    width: 220px;
+    height: fit-content;
+    padding: 5px 10px;
+    right: 0px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 1;
+}
+
+    .icon-account .dropdown .caret-dropdown {
+        position: absolute;
+        top: -7px;
+        z-index: -10;
+        right: 15px;
+        width: 15px;
+        height: 15px;
+        background: white;
+        transform: rotate(45deg);
+    }
+
+    .icon-account .dropdown button, .icon-account .dropdown input[type="button"] {
+        border: none;
+        padding: 10px 8px;
+        width: 100%;
+        text-align: left;
+        transition: all ease 0.2s;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .icon-account .dropdown button:hover, .icon-account .dropdown input[type="button"]:hover {
+            background-color: #ccc
+        }
+        .icon-account .dropdown #userName {
+            color:black
+        }
+.menu-contact .icon {
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.menu-contact .text {
+    font-size: 15px;
+}
+/* END NAVIGATION  */
+/* box option */
+.box-option {
+    padding: 64px 0 240px 0;
+    margin-top: 40px;
+}
+
+    .box-option .title-box {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 36px;
+        color: white;
+    }
+
+    .box-option .container-box {
+        display: flex;
+        justify-content: space-between;
+        background-color: azure;
+        border-radius: 10px;
+        padding: 10px 20px;
+    }
+
+        .box-option .container-box .box-item:not(:last-child) {
+            position: relative;
+            flex: auto;
+        }
+
+        .box-option .container-box .box-item .title,
+        .total-day span {
+            color: brown;
+        }
+
+        .box-option .container-box .box-item .input,
+        .total-day span {
+            outline: none;
+            border: none;
+            color: black;
+            font-weight: 700;
+            font-size: 16px;
+            height: 50px;
+            width: 100%;
+        }
+
+.total-day {
+    align-items: center;
+    display: flex;
+    width: 50px;
+}
+
+.box-option .container-box .box-item .indicator {
+    position: absolute;
+    height: 5px;
+    width: 90%;
+}
+
+.box-option .container-box .box-item {
+    position: relative;
+}
+
+.box-item .input:focus ~ .indicator {
+    border-bottom: 5px solid blueviolet;
+}
+
+.box-item .input.input-place:focus ~ .dropdown.cities {
+    display: block;
+}
+
+.box-item .input.input-people:focus ~ .dropdown.people {
+    display: block;
+}
+
+.box-item.item-search {
+    background-color: rgb(199 113 113);
+    padding: 0px 35px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex: 0.2;
+    align-items: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+    .box-item.item-search i {
+        color: #fff;
+    }
+
+.box-option .container-box .box-item .dropdown {
+    display: none;
+    position: absolute;
+    width: 106%;
+    background-color: white;
+    left: -6%;
+    margin-top: 12px;
+    border-radius: 15px;
+    padding: 8px 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 100;
+}
+
+    .box-option .container-box .box-item .dropdown:active {
+        display: block !important;
+    }
+
+.box-item .dropdown.people:hover {
+    display: block;
+}
+
+    .box-item .dropdown.people:hover ~ .indicator {
+        border-bottom: 5px solid blueviolet;
+    }
+
+.box-item .dropdown.cities {
+    overflow-y: scroll;
+    height: 400px;
+}
+
+.box-item .dropdown ul li {
+    padding: 20px 10px;
+    color: black;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+    .box-item .dropdown ul li i {
+        margin-right: 15px;
+    }
+
+    .box-item .dropdown ul li:hover {
+        background-color: #ccc;
+    }
+
+.box-item .dropdown.people .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 10px;
+    align-items: center;
+}
+
+.row.room .type.quality {
+    font-size: 17px;
+}
+
+.row .edit-number {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .row .edit-number .circle {
+        width: 40px;
+        height: 40px;
+        background-color: aqua;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 10px;
+    }
+/* end box option */
+/* FOOTER  */
+.container-footer {
+    background-color: #deedf1;
+    margin-top: -50px;
+    z-index: -35;
+    position: absolute;
+    width: 100%;
+}
+
+.footer {
+    padding-top: 50px;
+}
+
+    .footer p {
+        font-size: 14px;
+    }
+
+    .footer .logo {
+        margin: 20px 10px;
+    }
+
+    .footer .more-info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .footer .more-info .column p {
+            margin: 10px;
+            cursor: pointer;
+        }
+
+            .footer .more-info .column p:hover {
+                color: blueviolet;
+            }
+
+        .footer .more-info .column .title {
+            font-size: 17px;
+            font-weight: 600;
+            width: 100%;
+        }
+
+    .footer .more-info {
+        border-bottom: 0.5px solid #ccc;
+    }
+
+    .footer .copy-right {
+        padding: 10px 0px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+        .footer .copy-right img {
+            height: 50px;
+        }
+
+        .footer .copy-right p {
+            margin: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 15px;
+        }
+/* END FOOTER */
+
+.cnt p {
+    font-size: 14px;
+}
+
+#pointer-mini {
+    display: inline-block;
+    font-size: 14px;
+    height: 20px;
+    width: 120px;
+    position: relative;
+    background: rgb(113, 170, 245);
+    text-align: center;
+    vertical-align: middle;
+}
+
+    #pointer-mini:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-right: 10px solid white;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+    }
+
+    #pointer-mini:before {
+        content: "";
+        position: absolute;
+        left: -10px;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-right: 10px solid rgb(137, 173, 228);
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+    }
+
+.cnt {
+    position: relative;
+    top: 0;
+    left: 12px;
+    height: 100%;
+    display: flex;
+    color: white;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1400px) {
+    .wrapper-content {
+        width: 100%;
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .container-box {
+        flex-wrap: wrap;
+    }
+
+    .box-item {
+        width: 100%;
+    }
+
+        .box-item.item-search {
+            padding: 10px 5px;
+            flex: 1;
+        }
+
+    .wrapper-content {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0px 10px;
+    }
+
+    .box-option {
+        padding: 20px 0 0 0;
+    }
+
+    .box-utility {
+        width: 20% !important;
+        min-width: 150px !important;
+    }
+
+    .item-option {
+        width: 25%;
+        min-width: 80px;
+    }
+
+    .icon-option {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .title-option {
+        font-size: 14px;
+    }
+}
+/* CSS RADIO  */
+/* CSS PROGESSBAR CIRCLE  */
+.wrapper-circle {
+    width: 100px; /* Set the size of the progress bar */
+    height: 120px;
+    /* position: absolute; Enable clipping */
+    clip: rect(0px, 100px, 100px, 50px); /* Hide half of the progress bar */
+}
+/* Set the sizes of the elements that make up the progress bar */
+.circle {
+    width: 120px;
+    height: 120px;
+    border: 10px solid rgb(29, 55, 112);
+    border-radius: 71px;
+    clip: rect(0px, 74px, 120px, 0px);
+}
+/* Using the data attributes for the animation selectors. */
+/* Base settings for all animated elements */
+div[data-anim~=base] {
+    -webkit-animation-iteration-count: 1; /* Only run once */
+    -webkit-animation-fill-mode: forwards; /* Hold the last keyframe */
+    -webkit-animation-timing-function: linear; /* Linear animation */
+}
+
+.wrapper-circle[data-anim~=wrapper] {
+    -webkit-animation-duration: 0.01s; /* Complete keyframes asap */
+    -webkit-animation-delay: 3s; /* Wait half of the animation */
+    -webkit-animation-name: close-wrapper; /* Keyframes name */
+}
+
+.circle[data-anim~=left] {
+    -webkit-animation-duration: 6s; /* Full animation time */
+    -webkit-animation-name: left-spin;
+}
+
+.circle[data-anim~=right] {
+    -webkit-animation-duration: 3s; /* Half animation time */
+    -webkit-animation-name: right-spin;
+}
+/* Rotate the right side of the progress bar from 0 to 180 degrees */
+@-webkit-keyframes right-spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(180deg);
+    }
+}
+/* Rotate the left side of the progress bar from 0 to 360 degrees */
+@-webkit-keyframes left-spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+/* Set the wrapper clip to auto, effectively removing the clip */
+@-webkit-keyframes close-wrapper {
+    to {
+        clip: rect(auto, auto, auto, auto);
+    }
+}
+
+/* END CSS PROGESSBAR CIRCLE  */
+
+@keyframes click-wave {
+    0% {
+        height: 40px;
+        width: 40px;
+        opacity: 0.35;
+        position: relative;
+    }
+
+    100% {
+        height: 200px;
+        width: 200px;
+        margin-left: -80px;
+        margin-top: -80px;
+        opacity: 0;
+    }
+}
+
+.option-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    /* appearance: none; */
+    position: relative;
+    height: 20px;
+    width: 20px;
+    transition: all 0.15s ease-out 0s;
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    position: relative;
+}
+
+    .option-input:hover {
+        background: #9faab7;
+    }
+
+    .option-input:checked {
+        background: #4071e0;
+    }
+
+        .option-input:checked::before {
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            content: '✔';
+            display: inline-block;
+            font-size: 13.66667px;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        .option-input:checked::after {
+            -webkit-animation: click-wave 0.65s;
+            -moz-animation: click-wave 0.65s;
+            animation: click-wave 0.65s;
+            background: #40e0d0;
+            content: '';
+            display: block;
+            position: relative;
+            z-index: 100;
+        }
+
+    .option-input.radio {
+        border-radius: 50%;
+    }
+
+        .option-input.radio::after {
+            border-radius: 50%;
+        }
+
+
+
+
+
+/* END CSS RADIO  */
+@media only screen and (max-width: 750px) {
+    /* hide navigation-header  */
+    .navigation-header .menu-type {
+        display: none;
+    }
+
+    .group-item-contact,
+    .icon:not(.icon.icon-bar) {
+        display: none;
+    }
+
+    .navigation-header {
+        justify-content: flex-end;
+    }
+    /* hide pciture mobile  */
+    .container-app .picture {
+        display: none;
+    }
+
+    .container-app .qr-code,
+    .container-app .check-list {
+        width: 50%;
+    }
+
+    .dowload-app .wallpaper {
+        top: 0px;
+        height: 100%;
+    }
+    /* hidle picture mail  */
+    .container-sign-up .text-box {
+        display: none;
+    }
+
+    p,
+    .item-province {
+        font-size: 14px;
+    }
+    /* small item-hotel-by-location */
+    .item-hotel-by-location {
+        width: 20%;
+    }
+
+        .item-hotel-by-location .caption {
+            font-size: 14px;
+        }
+
+        .item-hotel-by-location .description {
+            font-size: 12px;
+        }
+
+        .item-hotel-by-location .picture {
+            width: 100px;
+            height: 100px;
+        }
+
+    .component .title {
+        font-size: 18px;
+    }
+
+    .dropdown {
+        width: 100% !important;
+        left: 0px !important;
+    }
+
+    .daterangepicker.ltr.show-calendar.openscenter {
+        width: 100%;
+        top: 248px !important;
+    }
+
+    .daterangepicker .drp-calendar {
+        width: 50%;
+    }
+}
+
+/*CSS ALERT*/
+.alert {
+    position:fixed;
+    top:50px;
+    right:10px;
+    z-index:99999;
+    background-color:greenyellow;
+    padding:15px 15px;     
+    border-radius:10px
+}
+.notify{
+    color:red
+}
+.userName{
+    color:black
+}

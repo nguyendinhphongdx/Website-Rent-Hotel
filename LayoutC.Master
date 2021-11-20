@@ -1,0 +1,270 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LayoutC.master.cs" Inherits="WebNCASP.LayoutC" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <link href="/Content/assets/css/index.css" rel="stylesheet" />
+    <link href="/Content/assets/css/all.min.css" rel="stylesheet" />
+    <link href="/Content/assets/css/daterangepicker.css" rel="stylesheet" />
+    <link href="/Content/assets/css/common.css" rel="stylesheet" />
+
+
+    <script src="/Content/assets/js/jquery.min.js"></script>
+    <script src="/Content/assets/js/moment.min.js"></script>
+    <script src="/Content/assets/js/daterangepicker.min.js"></script>
+    <script src="/Content/assets/js/pages/index.js"></script>
+
+
+</head>
+
+<body onscroll="onScrollPage(this)" onload="listentEvent()">
+    <form id="form1" runat="server">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="wallpaper-header">
+            <div class="wrapper-content">
+                <div class="header-banner">
+                    <div class="logo">
+                        <img src="/Content/assets/images/icons/icon_logo_mytour_white.svg" />
+                    </div>
+                    <div class="navigation-header">
+                            <div class="menu-type">
+                                <ul>
+                                    <li class="active"><a href="">Khách sạn</a></li>
+                                    <li><a href="">Vé máy bay</a></li>
+                                    <li><a href="">Tour & Sự kiện</a></li>
+                                    <li><a href="">The memories</a></li>
+                                </ul>
+                            </div>
+                            <asp:Label ID="Notifee" CssClass="notify" runat="server"></asp:Label>
+                            <div class="menu-contact">
+                                <div class="group-item-contact">
+                                    <i class="fas fa-phone-alt fa-lg"></i>
+                                    <div class="text">19002083</div>
+                                </div>
+                                <asp:LinkButton runat="server" ID="CartRoom" OnClick="CartRoom_Click">
+                                    <div class="icon icon-bell">
+                                        <i class="far fa-bell fa-lg"></i>
+                                        <span>
+                                            <asp:Label ID="Number" runat="server" Text="0" />
+                                        </span>
+                                    </div>
+                                </asp:LinkButton>
+
+                                <div class="icon icon-account" onclick="openDropdownAccount()">
+
+                                    <i class="far fa-user-circle fa-lg"></i>
+                                    <i class="fas fa-chevron-down"></i>
+                                    <div id="dropdown-account" class="dropdown account">
+                                        <div class="caret-dropdown"></div>
+                                        <% if (currentCustomer == null)
+                                            { %>
+                                        <input type="button" class="sign-in" id="btn-signIn" value="Đăng Nhập" />
+                                        <a href="SignUp.aspx">
+                                            <input type="button" class="sign-out" value="Đăng Ký" />
+                                        </a>
+                                        <%}
+                                            else
+                                            { %>
+                                        <asp:Label ID="userName" runat="server"></asp:Label>
+                                        <asp:Button ID="Logout" runat="server" Text="Đăng Xuất" OnClick="Logout_Click"></asp:Button>
+                                        <%  } %>
+                                    </div>
+
+                                </div>
+                                <div class="icon icon-bar" onclick="openNav()">
+                                    <i class="fas fa-bars fa-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="bar-icon-drawer"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="container-footer">
+            <div class="wrapper-content">
+                <div class="footer">
+                    <div class="logo">
+                        <img src="Content/assets/images/icons/icon_mytour_blue_large.svg" alt="" />
+                    </div>
+                    <div class="more-info">
+                        <div class="column">
+                            <div class="title">
+                                Công ty cổ phần du lịch Việt Nam VNTravel
+                            </div>
+                            <p>Tổng đài chăm sóc: 1900 2083</p>
+                            <p>Email: hotro@mytour.vn</p>
+                            <p>
+                                Văn phòng Hà Nội: Tầng 11, Tòa Peakview, 36 Hoàng Cầu, Đống Đa
+                            </p>
+                            <p>
+                                Văn phòng HCM: Tầng 6, Tòa Nhà Central Park, 117 Nguyễn Du,
+                Q.1
+                            </p>
+                            <p>Mytour Store: 168 Xã Đàn, Đống Đa, Hà Nội</p>
+                        </div>
+                        <div class="column column-policy">
+                            <div class="title">Chính sách & Quy định</div>
+                            <p>Chính sách và quy định chung</p>
+                            <p>Quy định về thanh toán</p>
+                            <p>Quy định về xác nhận thông tin đặt phòng</p>
+                            <p>Chính sách về hủy đặt phòng và hoàn trả tiền</p>
+                            <p>Chính sách bảo mật thông tin</p>
+                            <p>Quy chế hoạt động</p>
+                            <p>Chính sách bảo mật</p>
+                            <p>Quy trình giải quyết tranh chấp, khiếu nại</p>
+                        </div>
+                        <div class="column column-custumer">
+                            <div class="title">Khách hàng và đối tác</div>
+                            <p>Đăng nhập HMS</p>
+                            <p>Tuyển dụng</p>
+                            <p>Liên hệ</p>
+                        </div>
+                    </div>
+                    <div class="copy-right">
+                        <p>
+                            Mytour là thành viên của VNTravel Group - Một trong những tập
+              đoàn đứng đầu Đông Nam Á về du lịch trực tuyến và các dịch vụ
+              liên quan
+                        </p>
+                        <img src="Content/assets/images/icons/icon_company_group.svg" alt="" srcset="" />
+                        <p>
+                            Copyright © 2020 - CÔNG TY CỔ PHẦN DU LỊCH VIỆT NAM VNTRAVEL -
+              Đăng ký kinh doanh số 0108886908 - do Sở Kế hoạch và Đầu tư
+              thành phố Hà Nội cấp lần đầu ngày 04 tháng 09 năm 2019
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- The Modal -->
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                </div>
+                <p class="title">Đăng Nhập</p>
+                <div>
+                    <div class="modal-body">
+                        <div class="group-button-login">
+                            <button class="btn-login middle facebook">
+                                <i class="fab fa-facebook"></i>Đăng nhập bằng Facebook
+                            </button>
+                            <button class="btn-login middle google">
+                                <i class="fab fa-google-plus"></i>Đăng nhập bằng Google
+                            </button>
+                        </div>
+                        <div class="form-inputs">
+                            <asp:TextBox
+                                runat="server"
+                                ID="txtEmail"
+                                name="email"
+                                type="text"
+                                placeholder="Nhập số điện thoại hoặc email" />
+                            <asp:TextBox
+                                runat="server"
+                                ID="txtPassword"
+                                name="password"
+                                type="password"
+                                placeholder="Nhập mật khẩu" />
+                            <asp:Button ID="btnLogin" runat="server" CssClass="btn-login login" OnClick="btnLogin_Click" Text="Đăng nhập" type="submit"></asp:Button>
+                        </div>
+                    </div>
+                </div>
+                <p>Khôi phục tài khoản</p>
+                <div class="modal-footer">
+                    chưa có tài khoản?  <a href="signup.aspx">
+                        <button>Đăng ký tài khoản</button></a>
+                </div>
+            </div>
+        </div>
+          <div id="alerts" class="col-sm-12">
+            </div>
+    </form>
+</body>
+<script>
+    const provinces = [
+        "Thừa Thiên - Huế",
+        "Kiên Giang",
+        "Hải Phòng",
+        "Gia Lai",
+        "Bình Định",
+        "An Giang",
+        "Nghệ An",
+        "Hưng Yên",
+        "Bắc Kạn",
+        "Quảng Ninh",
+        "Hà Nội",
+        "Quảng Bình",
+        "Quảng Ngãi",
+        "Bến Tre",
+        "Bà Rịa - Vũng Tàu",
+        "Thanh Hóa",
+        "Ninh Thuận",
+        "Bạc Liêu",
+        "Cao Bằng",
+        "Lâm Đồng",
+        "Lào Cai",
+        "Bình Dương",
+        "Bình Thuận",
+        "Bắc Giang",
+        "Hà Giang",
+        "Bắc Ninh",
+        "Lạng Sơn",
+        "Quảng Nam",
+        "Sơn La",
+        "Tây Ninh",
+        "Long An",
+        "Đồng Nai",
+        "Hồ Chí Minh",
+        "Hải Dương",
+        "Bình Phước",
+        "Hà Nam",
+        "Vĩnh Long",
+        "Cần Thơ",
+        "Vĩnh Phúc",
+        "Đắk Lắk",
+        "Cà Mau",
+        "Tiền Giang",
+        "Khánh Hòa",
+        "Quảng Trị",
+        "Hà Tĩnh",
+        "Trà Vinh",
+        "Đồng Tháp",
+        "Hòa Bình",
+        "Phú Thọ",
+        "Đà Nẵng",
+        "Hậu Giang",
+        "Sóc Trăng",
+        "Tuyên Quang",
+        "Đắk Nông",
+        "Thái Nguyên",
+        "Kon Tum",
+        "Điện Biên",
+        "Phú Yên",
+        "Thái Bình",
+        "Ninh Bình",
+    ];
+    var jsString = "";
+    provinces.forEach(item => {
+        jsString += `<div class="item-province">${item}</div>`;
+    });
+    document.getElementsByClassName("table-province")[0].innerHTML = jsString;
+</script>
+</html>

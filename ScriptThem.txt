@@ -1,0 +1,30 @@
+-- Chi tiết đặt phòng
+create proc insert_ChiTietDatPhong
+@MaDonDat int,
+@MaPhong int,
+@SoGiuong int
+as begin
+insert into ChiTietDonDatPhong(MaDonDat,MaPhong, SoGiuong)
+values (@MaDonDat, @MaPhong, @SoGiuong)
+end
+
+-- Xóa chi tiết đơn đặt
+create proc delete_ChiTiet
+@MaDonDat int
+as begin
+delete ChiTietDonDatPhong where @MaDonDat = MaDonDat
+end
+-- Sửa đơn đặt phòng
+create proc Update_DonDat
+(@MaDonDat int ,
+@NgayKetThuc date,
+@SoNguoiLon int, 
+@SoTreEm int,
+@TrangThai bit)
+as begin
+update DonDatPhong 
+set NgayKetThuc = @NgayKetThuc, SoLuongNguoiLon = @SoNguoiLon, SoLuongTreEm = @SoTreEm, TrangThai = @TrangThai
+where MaDonDat = @MaDonDat
+end
+
+

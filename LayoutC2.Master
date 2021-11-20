@@ -1,0 +1,309 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LayoutC2.master.cs" Inherits="WebNCASP.LayoutC2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Đặt phòng khách sạn hạng sang</title>
+    <link rel="stylesheet" href="/Content/assets/css/index.css" />
+    <link rel="stylesheet" href="/Content/assets/css/all.min.css" />
+    <link rel="stylesheet" href="/Content/assets/css/common.css" />
+    <link rel="stylesheet" href="/Content/assets/css/search.css" />
+    <link rel="stylesheet" href="/Content/assets/css/hotel.css" />
+    <link rel="stylesheet" href="/Content/assets/css/bookroom.css" />
+
+    <link rel="stylesheet" media="all" href="/Content/assets/css/daterangepicker.css" />
+    <script type="text/javascript" src="/Content/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/Content/assets/js/moment.min.js"></script>
+    <script type="text/javascript" src="/Content/assets/js/daterangepicker.min.js"></script>
+    <script src="/Content/assets/js/pages/index.js"></script>
+</head>
+<body onload="listentEvent()">
+    <form id="form1" runat="server">
+         <asp:ScriptManager runat="server" ID="scriptManager"></asp:ScriptManager>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+        <div id="main">
+            <div class="wallpaper-header">
+                <div class="wrapper-content">
+                    <div class="header-banner">
+                        <div class="logo">
+                            <a href="Index.aspx">
+                                <img src="/Content/assets/images/icons/icon_mytour_blue_large.svg" /></a>
+                        </div>
+                        <div class="navigation-header">
+                            <div class="menu-type">
+                                <ul>
+                                    <li class="active"><a href="">Khách sạn</a></li>
+                                    <li><a href="">Vé máy bay</a></li>
+                                    <li><a href="">Tour & Sự kiện</a></li>
+                                    <li><a href="">The memories</a></li>
+                                </ul>
+                            </div>
+                            <asp:Label ID="Notifee" CssClass="notify" runat="server"></asp:Label>
+                            <div class="menu-contact">
+                                <div class="group-item-contact">
+                                    <i class="fas fa-phone-alt fa-lg"></i>
+                                    <div class="text">19002083</div>
+                                </div>
+                                <asp:LinkButton runat="server" ID="CartRoom" OnClick="CartRoom_Click">
+                                    <div class="icon icon-bell">
+                                        <i class="far fa-bell fa-lg"></i>
+                                        <span>
+                                            <asp:Label ID="Number" runat="server" Text="0" />
+                                        </span>
+                                    </div>
+                                </asp:LinkButton>
+
+                                <div class="icon icon-account" onclick="openDropdownAccount()">
+
+                                    <i class="far fa-user-circle fa-lg"></i>
+                                    <i class="fas fa-chevron-down"></i>
+                                    <div id="dropdown-account" class="dropdown account">
+                                        <div class="caret-dropdown"></div>
+                                        <% if (currentCustomer == null)
+                                            { %>
+                                        <input type="button" class="sign-in" id="btn-signIn" value="Đăng Nhập" />
+                                        <a href="SignUp.aspx">
+                                            <input type="button" class="sign-out" value="Đăng Ký" />
+                                        </a>
+                                        <%}
+                                            else
+                                            { %>
+                                        <asp:Label ID="userName" runat="server"></asp:Label>
+                                        <asp:Button ID="Logout" runat="server" Text="Đăng Xuất" OnClick="Logout_Click"></asp:Button>
+                                        <%  } %>
+                                    </div>
+
+                                </div>
+                                <div class="icon icon-bar" onclick="openNav()">
+                                    <i class="fas fa-bars fa-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bar-icon-drawer"></div>
+                    </div>
+                    <div class="box-option">
+
+                        <div class="container-box">
+                            <div class="box-item item-place">
+                                <div class="title">Địa điểm</div>
+                                <input class="input input-place" name="place" type="text" id="input-place" autocomplete="off"
+                                    placeholder="Thành phố, khách sạn, điểm đến" />
+                                <div class="indicator"></div>
+                                <div class="dropdown cities">
+                                    <h3>Các địa điểm nổi bật</h3>
+                                    <ul>
+                                        <li class="item-cities"><i class="fas fa-map-marker-alt"></i>Hà Nội</li>
+                                        <li class="item-cities">
+                                            <i class="fas fa-map-marker-alt"></i>TP Hồ Chí Minh
+                                        </li>
+                                        <li class="item-cities">
+                                            <i class="fas fa-map-marker-alt"></i>Bà Rịa - Vũng Tàu
+                                        </li>
+                                        <li class="item-cities"><i class="fas fa-map-marker-alt"></i>Đà Nẵng</li>
+                                        <li class="item-cities"><i class="fas fa-map-marker-alt"></i>Đà Lạt</li>
+                                        <li class="item-cities"><i class="fas fa-map-marker-alt"></i>Nha Trang</li>
+                                        <li class="item-cities"><i class="fas fa-map-marker-alt"></i>Hội An</li>
+                                        <li class="item-cities"><i class="fas fa-map-marker-alt"></i>Long An</li>
+                                        <li class="item-cities"><i class="fas fa-map-marker-alt"></i>Bến Tre</li>
+                                        <li class="item-cities"><i class="fas fa-map-marker-alt"></i>Vĩnh Long</li>
+                                        <li class="item-cities"><i class="fas fa-map-marker-alt"></i>Khánh Hòa</li>
+                                        <li class="item-cities"><i class="fas fa-map-marker-alt"></i>Phú Thọ</li>
+                                        <li class="item-cities"><i class="fas fa-map-marker-alt"></i>Hà Giang</li>
+                                        <li class="item-cities">
+                                            <i class="fas fa-map-marker-alt"></i>Thừa Thiên Huế
+                                        </li>
+                                        <li class="item-cities"><i class="fas fa-map-marker-alt"></i>Quảng Ngãi</li>
+                                        <li class="item-cities"><i class="fas fa-map-marker-alt"></i>Cao Bằng</li>
+                                        <li class="item-cities"><i class="fas fa-map-marker-alt"></i>Thái Nghyên</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="box-item item-start-day">
+                                <div class="title">Thời gian đi</div>
+                                <input class="input input-start-day" name="daterange" id="daterange" autocomplete="off"
+                                    placeholder="Ngày đến" value="" onchange="listentInputTime(this)" />
+                                <div class="indicator active"></div>
+                            </div>
+                            <div class="total-day">
+                                <span>
+                                    <span id="number-date">2</span>
+                                    <i class="fas fa-moon" style="color: black"></i>
+                                </span>
+                            </div>
+                            <div class="box-item item-people">
+                                <div class="title">Số phòng, số khách</div>
+                                <input class="input input-people" type="text" id="input-people" name="people" autocomplete="off"
+                                    placeholder="1 Phòng, 2 người lớn, 0 trẻ em" value="1 Phòng, 2 người lớn, 0 trẻ em" readonly />
+                                <div class="dropdown people">
+                                    <div class="row room">
+                                        <div class="type">Phòng</div>
+                                        <div class="edit-number">
+                                            <div class="circle minus" onclick="editNumber('room','minus')">
+                                                <i class="fas fa-minus"></i>
+                                            </div>
+                                            <div class="quality" id="quality-room">1</div>
+                                            <div class="circle plus" onclick="editNumber('room','plus')">
+                                                <i class="fas fa-plus"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row room">
+                                        <div class="type">Người lớn</div>
+                                        <div class="edit-number">
+                                            <div class="circle minus" onclick="editNumber('person','minus')">
+                                                <i class="fas fa-minus"></i>
+                                            </div>
+                                            <div class="quality" id="quality-person">2</div>
+                                            <div class="circle plus" onclick="editNumber('person','plus')">
+                                                <i class="fas fa-plus"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row room">
+                                        <div class="type">Trẻ em</div>
+                                        <div class="edit-number" onclick="editNumber('child','minus')">
+                                            <div class="circle minus">
+                                                <i class="fas fa-minus"></i>
+                                            </div>
+                                            <div class="quality" id="quality-child">0</div>
+                                            <div class="circle plus" onclick="editNumber('child','plus')">
+                                                <i class="fas fa-plus"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="indicator active"></div>
+                            </div>
+                            <asp:LinkButton runat="server" ID="btnSearch" CssClass="box-item item-search" Style="color: white" OnClick="btnSearch_Click">
+                <i class="fas fa-search fa-2x"></i>
+                            </asp:LinkButton>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="content-page">
+                <div class="wrapper-content">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                </div>
+                <div class="container-footer">
+                    <div class="wrapper-content">
+                        <div class="footer">
+                            <div class="logo">
+                                <img
+                                    src="/assets/images/icons/icon_mytour_blue_large.svg"
+                                    alt="" />
+                            </div>
+                            <div class="more-info">
+                                <div class="column">
+                                    <div class="title">
+                                        Công ty cổ phần du lịch Việt Nam VNTravel
+                                    </div>
+                                    <p>Tổng đài chăm sóc: 1900 2083</p>
+                                    <p>Email: hotro@mytour.vn</p>
+                                    <p>
+                                        Văn phòng Hà Nội: Tầng 11, Tòa Peakview, 36 Hoàng Cầu, Đống Đa
+                                    </p>
+                                    <p>
+                                        Văn phòng HCM: Tầng 6, Tòa Nhà Central Park, 117 Nguyễn Du,
+                  Q.1
+                                    </p>
+                                    <p>Mytour Store: 168 Xã Đàn, Đống Đa, Hà Nội</p>
+                                </div>
+                                <div class="column column-policy">
+                                    <div class="title">Chính sách & Quy định</div>
+                                    <p>Chính sách và quy định chung</p>
+                                    <p>Quy định về thanh toán</p>
+                                    <p>Quy định về xác nhận thông tin đặt phòng</p>
+                                    <p>Chính sách về hủy đặt phòng và hoàn trả tiền</p>
+                                    <p>Chính sách bảo mật thông tin</p>
+                                    <p>Quy chế hoạt động</p>
+                                    <p>Chính sách bảo mật</p>
+                                    <p>Quy trình giải quyết tranh chấp, khiếu nại</p>
+                                </div>
+                                <div class="column column-custumer">
+                                    <div class="title">Khách hàng và đối tác</div>
+                                    <p>Đăng nhập HMS</p>
+                                    <p>Tuyển dụng</p>
+                                    <p>Liên hệ</p>
+                                </div>
+                            </div>
+                            <div class="copy-right">
+                                <p>
+                                    Mytour là thành viên của VNTravel Group - Một trong những tập
+                đoàn đứng đầu Đông Nam Á về du lịch trực tuyến và các dịch vụ
+                liên quan
+                                </p>
+                                <img
+                                    src="/Content/assets/images/icons/icon_company_group.svg"
+                                    alt=""
+                                    srcset="" />
+                                <p>
+                                    Copyright © 2020 - CÔNG TY CỔ PHẦN DU LỊCH VIỆT NAM VNTRAVEL -
+                Đăng ký kinh doanh số 0108886908 - do Sở Kế hoạch và Đầu tư
+                thành phố Hà Nội cấp lần đầu ngày 04 tháng 09 năm 2019
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+            </div>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                    </div>
+                    <p class="title">Đăng Nhập</p>
+                    <div>
+                        <div class="modal-body">
+                            <div class="group-button-login">
+                                <button class="btn-login middle facebook">
+                                    <i class="fab fa-facebook"></i>Đăng nhập bằng Facebook
+                                </button>
+                                <button class="btn-login middle google">
+                                    <i class="fab fa-google-plus"></i>Đăng nhập bằng Google
+                                </button>
+                            </div>
+                            <div class="form-inputs">
+                                <asp:TextBox
+                                    runat="server"
+                                    ID="txtEmail"
+                                    name="email"
+                                    type="text"
+                                    placeholder="Nhập số điện thoại hoặc email" />
+                                <asp:TextBox
+                                    runat="server"
+                                    ID="txtPassword"
+                                    name="password"
+                                    type="password"
+                                    placeholder="Nhập mật khẩu" />
+                                <asp:Button ID="btnLogin" runat="server" CssClass="btn-login login" OnClick="btnLogin_Click" Text="Đăng nhập" type="submit"></asp:Button>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Khôi phục tài khoản</p>
+                    <div class="modal-footer">
+                        chưa có tài khoản?  <a href="signup.aspx">
+                            <button>Đăng ký tài khoản</button></a>
+                    </div>
+                </div>
+            </div>
+            <div id="alerts" class="col-sm-12">
+            </div>
+    </form>
+</body>
+
+</html>
